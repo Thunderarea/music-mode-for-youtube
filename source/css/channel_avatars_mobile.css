@@ -1,0 +1,12 @@
+.topbar-menu-button-avatar img,
+.active-account-icon img {
+  content: url("../img/photo.jpg");
+}
+
+ytm-profile-icon:not(.topbar-menu-button-avatar):not(.active-account-icon) {
+    display: none !important;
+}
+
+.channel-list-sub-menu-avatars {
+    opacity: 0 !important;
+}

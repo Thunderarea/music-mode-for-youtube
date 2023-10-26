@@ -1,0 +1,217 @@
+/* Recommended videos in the video page */
+ytm-video-with-context-renderer,
+ytm-radio-renderer,
+ytm-compact-playlist-renderer,
+/* playlist videos */
+ytm-playlist-panel-video-renderer,
+/* Playlist page */
+ytm-playlist-video-renderer,
+/* Channel page */
+ytm-compact-video-renderer,
+/* Lists of songs on Music channel */
+ytm-compact-station-renderer {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1) !important;
+  padding-bottom: 10px !important;
+  box-shadow: 0 1px rgba(255, 255, 255, 0.10196078431372549) !important;
+}
+
+ytm-video-with-context-renderer img.video-thumbnail-img,
+ytm-radio-renderer img.video-thumbnail-img,
+ytm-compact-playlist-renderer img.video-thumbnail-img,
+ytm-playlist-panel-video-renderer img.video-thumbnail-img,
+ytm-playlist-video-renderer img.video-thumbnail-img,
+ytm-compact-video-renderer img.video-thumbnail-img,
+/* games */
+ytm-video-card-renderer img.video-thumbnail-img,
+/* album in search */
+ytm-universal-watch-card-renderer img {
+  display: none !important;
+}
+
+ytm-video-with-context-renderer .video-thumbnail-bg {
+  opacity: 0 !important;
+}
+
+ytm-video-with-context-renderer .video-thumbnail-overlay-bottom-group {
+  position: relative !important;
+}
+
+ytm-video-with-context-renderer ytm-media-item {
+  display: flex !important;
+  flex-direction: column-reverse !important;
+}
+
+ytm-video-with-context-renderer .media-item-thumbnail-container {
+  margin-top: 6px !important;
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  padding-right: 5px !important;
+}
+
+ytm-video-with-context-renderer ytm-media-item .details,
+ytm-radio-renderer ytm-media-item .details,
+ytm-compact-playlist-renderer ytm-media-item .details {
+  margin-bottom: 6px !important;
+}
+
+ytm-thumbnail-overlay-time-status-renderer {
+  margin: 0 !important;
+  padding: 2px 6px !important;
+  display: block !important;
+  position: relative !important;
+}
+
+/* Homepage */
+ytm-browse .video-thumbnail-overlay-bottom-group,
+ytm-compact-playlist-renderer .video-thumbnail-overlay-bottom-icon,
+ytm-radio-renderer .video-thumbnail-overlay-bottom-icon {
+  margin-right: 12px !important;
+}
+
+/* It adds the :before pseudoclass on the YouTube home page because the images did not load */
+.video-thumbnail-container-large:before {
+  display: none !important;
+}
+
+/* Mix on homepage */
+ytm-compact-playlist-renderer .video-thumbnail-overlay-side,
+ytm-radio-renderer .video-thumbnail-overlay-bottom-icon {
+  position: relative !important;
+  background-color: #323232 !important;
+  border-radius: 2px !important;
+}
+
+ytm-compact-playlist-renderer ytm-media-item,
+ytm-radio-renderer ytm-media-item {
+  display: flex !important;
+  flex-direction: column-reverse !important;
+}
+
+ytm-compact-playlist-renderer .video-thumbnail-container-large,
+ytm-compact-video-renderer .video-thumbnail-container-compact,
+ytm-radio-renderer .video-thumbnail-container-large,
+ytm-video-with-context-renderer .video-thumbnail-container-large {
+  display: flex !important;
+  justify-content: end !important;
+  padding: 0 !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+ytm-media-item .cover.video-thumbnail-img {
+  background-color: transparent !important;
+}
+
+/* Playlist */
+ytm-compact-playlist-renderer .video-thumbnail-container-large {
+  margin: 0 !important;
+}
+
+ytm-compact-playlist-renderer .video-thumbnail-overlay-side {
+  display: flex !important;
+  flex-direction: row !important;
+  width: auto !important;
+  padding: 2px 6px !important;
+}
+
+ytm-compact-playlist-renderer c3-icon {
+  margin-left: 5px !important;
+}
+
+ytm-compact-playlist-renderer .compact-media-item-image {
+  display: flex !important;
+  align-items: center !important;
+}
+
+ytm-radio-renderer {
+  margin-top: 0 !important;
+}
+
+/* Playlist videos */
+.video-thumbnail-container-compact {
+  height: auto !important;
+  width: auto !important;
+}
+
+.video-thumbnail-container-compact .video-thumbnail-overlay-bottom-group {
+  position: relative;
+}
+
+.compact-media-item {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+}
+
+ytm-playlist-panel-video-renderer .compact-media-item-image {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.compact-media-item-image .cover,
+ytm-playlist-panel-video-renderer .compact-media-item-image ytm-thumbnail-overlay-time-status-renderer,
+ytm-video-card-renderer .cover {
+  background-color: transparent !important;
+}
+
+/* library page */
+ytm-vertical-list-renderer ytm-compact-playlist-renderer {
+  margin-top: 12px !important;
+}
+
+/* Playlist page */
+ytm-playlist-video-renderer .compact-media-item {
+  flex-direction: column-reverse !important;
+}
+
+ytm-playlist-video-renderer .compact-media-item-image,
+ytm-playlist-video-renderer .compact-media-item-image .video-thumbnail-container-compact {
+  justify-content: end !important;
+  padding-bottom: 0 !important;
+}
+
+ytm-hero-playlist-thumbnail-renderer {
+  display: none !important;
+}
+
+/* Channel page */
+ytm-compact-video-renderer .compact-media-item {
+  flex-direction: column-reverse !important;
+}
+
+ytm-channel-featured-video-renderer {
+  display: none !important;
+}
+
+/* Shorts on channel page */
+ytm-reel-item-renderer img.video-thumbnail-img {
+  display: none !important;
+}
+
+ytm-reel-item-renderer .reel-item-metadata {
+  background: #323232 !important;
+}
+
+.video-thumbnail-container-compact-rounded {
+  border-radius: 0 !important;
+}
+
+.video-thumbnail-overlay-bottom-left-right-group {
+  width: auto !important;
+  position: relative !important;
+}
+
+ytm-horizontal-card-list-renderer .horizontal-card-list-cards {
+  display: flex !important;
+  flex-direction: row !important;
+}
+
+ytm-horizontal-card-list-renderer ytm-video-card-renderer {
+  display: flex !important;
+  flex-direction: column-reverse !important;
+}
+
+ytm-horizontal-card-list-renderer .video-thumbnail-container-compact {
+  padding-bottom: 0 !important;
+  display: flex !important;
+  justify-content: end !important;
+}

@@ -1,0 +1,250 @@
+:root {
+  --height-more-images-side-panel: 50px;
+}
+
+img {
+  visibility: hidden !important;
+}
+
+g-inner-card img {
+  visibility: hidden !important;
+}
+
+/*the logos of youtube spotify and others in side panel*/
+.scrt g-img img {
+  visibility: visible !important;
+}
+
+g-img img, img#uid_1 {
+  visibility: hidden !important;
+}
+
+.ifM9O .scrt g-img, .NFQFxe.xzPb7d g-img, .rlc__slider-page .h998We g-img {
+  background-image: none !important;
+  background-color: transparent !important;
+}
+
+.rg_r g-img, .ifM9O div g-img, .rlc__slider-page g-img {
+  background-image: url('../img/image_document.svg') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 50% 50% !important;
+  background-color: #323232 !important;
+}
+
+.XQ6p1d, #iur, .SoDukf .jKDyEf, .yWTIIb, .ox2nYd .jKDyEf {
+  display: none !important;
+}
+
+.LEsW6e {
+  background-image: url('../img/image_document.svg') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+  background-color: white !important;
+}
+
+.k8B8Pc {
+  width: 90% !important;
+  text-align: center !important;
+  background-color: transparent !important;
+}
+
+.Rd246b {
+  background-color: #323232 !important;
+}
+
+.i0PvJb {
+  background-color: #323232 !important;
+}
+
+.mWTy7c {
+  text-align: center !important;
+  width: 90% !important;
+  height: 60% !important;
+  font-size: 12px !important;
+  background-color: transparent !important;
+}
+
+.ox2nYd .TZNJBf {
+  margin-right: 0 !important;
+}
+
+.qV9w7d {
+  display: none !important;
+}
+
+.g .top .NQHJEb .dfhHve {
+  display: none !important;
+}
+
+.kno-mrg-hnm .kno-ibrg {
+  height: var(--height-more-images-side-panel) !important;
+}
+
+.j0joJb:nth-last-child(2) {
+  display: none !important;
+}
+
+.twQ0Be {
+  background-color: #323232 !important;
+  height: auto !important;
+  border-bottom-left-radius: 8px !important;
+  border-top-right-radius: 0 !important;
+  margin: 3px 0 3px 3px;
+  overflow: visible;
+}
+
+.twQ0Be img {
+  display: none !important;
+}
+
+/*for "more images" in the side panel*/
+.kp-blk .kp-header:first-child .img-brk {
+  display: none !important;
+}
+
+a.GvDr7c {
+  position: relative !important;
+}
+
+/*horizontal news*/
+.pP3ABc {
+  display: none !important;
+}
+
+/*news*/
+.C1Iii.tsUanb.FddHQd .NQHJEb {
+  display: none !important;
+}
+
+.NFQFxe.viOShc.yp1CPe.mod [data-hveid^="C"][data-hveid$="QAg"] {
+  display: flex !important;
+}
+
+.NFQFxe.viOShc.yp1CPe.mod {
+  padding-bottom: 0 !important;
+}
+
+/*The boxes when you search for a person, for a roster etc*/
+.mdFQt {
+  height: auto !important;
+}
+
+/*the time of card video results*/
+.LQFTgb {
+  background-color: transparent !important;
+  text-align: center !important;
+  width: 100% !important;
+  padding: 0 !important;
+  left: 0 !important;
+}
+
+/*the time of card video results*/
+.Woharf {
+  left: 0 !important;
+}
+
+/*preview of video*/
+.V1Ddwd {
+  display: none !important;
+}
+
+/*play icon when you play the video preview*/
+.ZL6cRd {
+  opacity: 0.999 !important;
+}
+
+/*The images when you search "grilling podcasts"*/
+.jD0Pye g-img {
+  background-image: url('../img/image_document.svg') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+  background-color: white !important;
+}
+
+/*video results in main search and in tab videos*/
+.IHSDrd, .rGhul {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background-color: #323232 !important;
+}
+
+/*time of video results*/
+.ij69rd, .UHe5G {
+  background-color: transparent !important;
+}
+
+/*video results in main google search page*/
+.VibNM img {
+  display: none !important;
+}
+
+.VibNM .orkam {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background-color: #323232 !important;
+}
+
+.VibNM .SmeuHe {
+  position: relative !important;
+}
+
+/*video time*/
+.VibNM .J2i9Hd {
+  background-color: transparent !important;
+  left: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+.xflDWd {
+  display: none !important;
+}
+
+.R4Cuhd {
+  bottom: 0 !important;
+  display: flex !important;
+  flex: none !important;
+  height: 16px !important;
+  left: 0 !important;
+  position: relative !important;
+}
+
+.pwxRSe .WM9LLd {
+  background-color: #323232 !important;
+}
+
+.lR1utd {
+  justify-content: center !important;
+  margin-bottom: 0 !important;
+}
+
+.J1mWY {
+  background-color: transparent !important;
+}
+
+.Y37F6d img {
+  display: none !important;
+  background-color: #323232 !important;
+}
+
+.Y37F6d {
+  background-color: #323232 !important;
+}
+
+/* videos in video tab */
+.NqpkQc {
+  background-color: #323232 !important;
+  opacity: 1 !important;
+}
+
+/* more songs of the same artist */
+.s2TyX.ueVdTc .Yyyymd, .s2TyX.ueVdTc .Yyyymd .LV5Kte {
+  display: none !important;
+}

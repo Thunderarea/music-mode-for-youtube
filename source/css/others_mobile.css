@@ -1,0 +1,16 @@
+/* Search for a person. eg Mozart */
+ytm-universal-watch-card-renderer .collage-image {
+  background-image: url('../img/youtube_logo.svg') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 50% 50% !important;
+  background-color: #323232 !important;
+}
+
+ytm-universal-watch-card-renderer .watch-card-rich-header-profile-icon,
+/* Cover art on channel */
+.c4-tabbed-header-banner-img,
+/* albums on search */
+.simple-card-thumbnail {
+  display: none !important;
+}

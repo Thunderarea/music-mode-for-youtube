@@ -1,0 +1,35 @@
+/*the channel images*/
+ytmusic-responsive-list-item-renderer:not([has-thumbnail-overlay_]) .left-items.ytmusic-responsive-list-item-renderer {
+  display: none !important;
+}
+
+/*switch accounts*/
+ytmusic-settings-button img,
+ytd-account-item-renderer img {
+  content: url("../img/photo.jpg") !important;
+}
+
+/*the users icon in the top-right corner*/
+ytmusic-settings-button tp-yt-iron-icon {
+  background-image: url('chrome-extension://__MSG_@@extension_id__/img/photo.jpg') !important;
+}
+
+/*the users icon when you click on your account in the top right corner*/
+ytd-active-account-header-renderer yt-img-shadow {
+  background-image: url('../img/avatar-chanell.svg') !important;
+}
+
+ytmusic-settings-button tp-yt-iron-icon,
+ytd-active-account-header-renderer yt-img-shadow {
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+}
+
+ytd-active-account-header-renderer img {
+  visibility: hidden !important;
+}
+
+ytmusic-player .iv-branding .branding-img-container img {
+  visibility: hidden !important;
+}

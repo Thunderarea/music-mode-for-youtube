@@ -1,0 +1,87 @@
+#section-right yt-img-shadow img {
+  visibility: hidden !important;
+}
+
+#section-left, #section-right yt-img-shadow {
+  background-image: url('../img/youtube_logo.svg') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 50% 50% !important;
+  background-color: #323232 !important;
+}
+
+ytd-search-refinement-card-renderer #card-thumbnail {
+  display: none !important;
+}
+
+div.banner-visible-area {
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+#links-holder.ytd-c4-tabbed-header-renderer {
+  top: 1px !important;
+}
+
+ytd-default-promo-panel-renderer {
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  display: none !important;
+}
+
+ytd-watch-card-hero-one-vs-one-event-renderer {
+  background-color: #0a0a0a !important;
+}
+
+ytd-secondary-search-container-renderer img {
+  visibility: hidden !important;
+}
+
+ytd-thumbnail-overlay-time-status-renderer[overlay-type=WATCH_CARD_HERO] {
+  position: absolute !important;
+}
+
+ytd-watch-card-one-vs-one-event-compact-video-renderer ytd-thumbnail-overlay-time-status-renderer {
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+}
+
+ytd-watch-card-one-vs-one-event-compact-video-renderer #overlays {
+  height: 100% !important;
+}
+
+ytd-watch-card-one-vs-one-event-compact-video-renderer span.ytd-thumbnail-overlay-time-status-renderer {
+  margin: 0 !important;
+  position: absolute !important;
+  top: 50% !important;
+  left: 50% !important;
+  transform: translate(-50%, -50%) !important;
+}
+
+ytd-secondary-search-container-renderer ytd-vertical-watch-card-list-renderer ytd-watch-card-compact-video-renderer ytd-thumbnail #overlays {
+  height: 100% !important;
+}
+
+ytd-secondary-search-container-renderer ytd-vertical-watch-card-list-renderer ytd-watch-card-compact-video-renderer ytd-thumbnail ytd-thumbnail-overlay-time-status-renderer {
+  height: 100% !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  justify-content: center !important;
+}
+
+#avatar img {
+  visibility: visible !important;
+}
+
+#hero #hero-image ytd-single-hero-image-renderer {
+  height: 0 !important;
+}
+
+.title-container.ytd-watch-card-hero-video-renderer {
+  position: relative !important;
+}

@@ -1,0 +1,84 @@
+/*YOUTUBE MUSIC*/
+/*playlists START*/
+ytmusic-item-thumbnail-overlay-renderer.ytmusic-two-row-item-renderer {
+  display: flex !important;
+  flex-direction: row-reverse !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+ytmusic-thumbnail-renderer img,
+.thumbnail img {
+  visibility: hidden !important;
+}
+
+ytmusic-add-to-playlist-renderer ytmusic-thumbnail-renderer {
+  background-color: black !important;
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="16" height="16" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"%3E%3Cg fill="white"%3E%3Cpath d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E') !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: 26px 26px !important;
+  border-radius: 8px !important;
+  left: 0 !important;
+}
+
+ytmusic-item-thumbnail-overlay-renderer.ytmusic-two-row-item-renderer ytmusic-menu-renderer {
+  opacity: 1 !important;
+  position: relative !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  top: 0 !important;
+}
+
+ytmusic-item-thumbnail-overlay-renderer.ytmusic-two-row-item-renderer ytmusic-play-button-renderer {
+  margin-right: 5px !important;
+}
+
+ytmusic-item-thumbnail-overlay-renderer.ytmusic-two-row-item-renderer div#content {
+  position: relative !important;
+}
+
+ytmusic-item-thumbnail-overlay-renderer.ytmusic-two-row-item-renderer div#content ytmusic-play-button-renderer {
+  opacity: 1 !important;
+  position: relative !important;
+  right: 0 !important;
+  bottom: 0 !important;
+}
+
+ul#items>ytmusic-two-row-item-renderer,
+div#items>ytmusic-two-row-item-renderer {
+  background-color: #212121 !important;
+  padding: 0 !important;
+}
+
+ul#items>ytmusic-two-row-item-renderer a:first-child.ytmusic-two-row-item-renderer,
+div#items>ytmusic-two-row-item-renderer a:first-child.ytmusic-two-row-item-renderer {
+  height: 40px !important;
+  padding: 5px !important;
+}
+
+ul#items>ytmusic-two-row-item-renderer div.details.ytmusic-two-row-item-renderer,
+div#items>ytmusic-two-row-item-renderer div.details.ytmusic-two-row-item-renderer {
+  padding: 5px !important;
+}
+
+/*playlists END*/
+/*the play icon on thumbnails of songs*/
+.thumbnail-overlay.ytmusic-responsive-list-item-renderer {
+  opacity: 1 !important;
+}
+
+/*the image of song in players bar*/
+ytmusic-player-bar img {
+  visibility: hidden !important;
+}
+
+/*the image of playlist in the playlist's page*/
+ytmusic-detail-header-renderer img {
+  visibility: hidden !important;
+}
+
+/*the play icon on recommended videos*/
+.thumbnail-overlay.ytmusic-player-queue-item {
+  opacity: 1 !important;
+}

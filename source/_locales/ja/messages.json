@@ -1,0 +1,305 @@
+{
+  "extDescription": {
+    "message": "YouTubeとYouTube Musicのオーディオのみを再生し動画をブロックします。"
+  },
+  "command1Description": {
+    "message": "現在のタブで拡張機能を有効/無効にする。"
+  },
+  "youtube": {
+    "message": "YouTube"
+  },
+  "youtube_music": {
+    "message": "YouTube Music"
+  },
+  "embedded": {
+    "message": "その他のサイト"
+  },
+  "options": {
+    "message": "オプション"
+  },
+  "about": {
+    "message": "概要"
+  },
+  "donation": {
+    "message": "寄付する"
+  },
+  "donate": {
+    "message": "寄付"
+  },
+  "contact": {
+    "message": "お問合せ"
+  },
+  "support": {
+    "message": "サポート"
+  },
+  "video": {
+    "message": "動画"
+  },
+  "thumbnails": {
+    "message": "サムネイル"
+  },
+  "avatars": {
+    "message": "プロフィール画像"
+  },
+  "google_search_full": {
+    "message": "Google検索"
+  },
+  "google_search": {
+    "message": "Google検索"
+  },
+  "other_images": {
+    "message": "その他の画像"
+  },
+  "adblocker": {
+    "message": "広告ブロック"
+  },
+  "embeddedDescription": {
+    "message": "サイトに埋め込まれたYouTube動画の拡張機能と対応するオプションを有効/無効にする。"
+  },
+  "google_searchDescription": {
+    "message": "Google検索で動画のサムネイル等の画像を非表示にする。"
+  },
+  "videoDescription": {
+    "message": "動画をブロックし、オーディオだけを残す。（ライブストリームの動画は非表示になりますが、ブロックされません。）"
+  },
+  "thumbnailsDescription": {
+    "message": "動画のサムネイルを非表示にする。"
+  },
+  "avatarsDescription": {
+    "message": "チャンネル／ユーザープロフィール画像を非表示にする。"
+  },
+  "other_imagesDescription": {
+    "message": "その他の様々な画像（チャンネル画像等）を非表示にする。"
+  },
+  "adBlockerDescription": {
+    "message": "YouTubeの広告をスキップする。"
+  },
+  "contactHeader": {
+    "message": "開発者 Nick Pantelidis"
+  },
+  "current_tab": {
+    "message": "現在のタブ"
+  },
+  "current_page": {
+    "message": "現在のページ"
+  },
+  "rate": {
+    "message": "レビュー"
+  },
+  "currentTabTooltip": {
+    "message": "このタブのみに拡張機能を設定する。"
+  },
+  "currentPageTooltip": {
+    "message": "このページに対してのみ拡張機能を設定する。ページが変更されると、これらの設定は削除されます。"
+  },
+  "google_searchTooltip": {
+    "message": "Google検索で様々な画像を非表示にする。"
+  },
+  "embeddedTooltip": {
+    "message": "他のサイトに埋め込まれたYouTube動画"
+  },
+  "videoTooltip": {
+    "message": "オーディオだけを残して動画をブロックする。"
+  },
+  "thumbnailsTooltip": {
+    "message": "動画のサムネイルを隠す。"
+  },
+  "avatarsTooltip": {
+    "message": "チャンネル/ユーザープロフィール画像を非表示にする。"
+  },
+  "other_imagesTooltip": {
+    "message": "その他の画像を非表示にする。"
+  },
+  "adblockerTooltip": {
+    "message": "広告をスキップする。"
+  },
+  "apply": {
+    "message": "OK"
+  },
+  "tempOptionTitle": {
+    "message": "ポップアップ*オプション"
+  },
+  "tempOption": {
+    "message": "１ページの設定"
+  },
+  "tempOptionDescription": {
+    "message": "ポップアップから1ページだけ拡張機能を有効/無効にする。"
+  },
+  "OptionsMenuOption": {
+    "message": "現在のタブ（およびページ）のオプション変更"
+  },
+  "OptionsMenuOptionDescription": {
+    "message": "現在のタブ (およびページ) の YouTube、YouTube Music、その他のサイトのオプションをポップアップから有効/無効にする。"
+  },
+  "PopupExplanation": {
+    "message": "*拡張機能のアイコンをクリックしたときに表示されるウィンドウ"
+  },
+  "AboutTitle": {
+    "message": "概要 - Music Mode for YouTube"
+  },
+  "ContactTitle": {
+    "message": "お問合せ - Music Mode for YouTube"
+  },
+  "DonateTitle": {
+    "message": "寄付 - Music Mode for YouTube"
+  },
+  "OptionsTitle": {
+    "message": "オプション - Music Mode for YouTube"
+  },
+  "ThumbnailsAppearanceTitle": {
+    "message": "サムネイル表示"
+  },
+  "ThumbnailsAppearance": {
+    "message": "サムネイルの表示方法を選択してください。(サムネイルオプションが有効な場合)"
+  },
+  "HideImages": {
+    "message": "画像を非表示にする"
+  },
+  "ShowImages": {
+    "message": "画像を表示する"
+  },
+  "liveVideoTitle": {
+    "message": "ライブ動画"
+  },
+  "quickAccessButtons": {
+    "message": "クイックアクセスボタン"
+  },
+  "quickAccessButtonsImages": {
+    "message": "画像のクイックアクセスボタン"
+  },
+  "quickAccessButtonsVideo": {
+    "message": "動画のクイックアクセスボタン"
+  },
+  "quickAccessButtonsImagesDescription": {
+    "message": "YouTubeのトップバーにボタンを追加し、そこからページの画像を非表示/表示する。（これらの設定は現在のページにのみ適用されます）。"
+  },
+  "quickAccessButtonsVideoDescription": {
+    "message": "YouTubeの動画ツールバーにボタンを追加し、そこから動画を非表示/表示する。"
+  },
+  "VideoButtonTooltipEnabled": {
+    "message": "動画を表示する"
+  },
+  "VideoButtonTooltipDisabled": {
+    "message": "動画を非表示にする"
+  },
+  "themeVideoTitle": {
+    "message": "動画タイトル"
+  },
+  "themeChannel": {
+    "message": "Channel <svg viewBox='0 0 24 24' preserveAspectRatio='xMidYMid meet' focusable='false' style='pointer-events: none; display: block; width: 10px; height: 15px; margin-left: 3px; fill: #606060'><g viewBox='0 0 24 24' class='style-scope yt-icon'><path fill='none' d='M0 0h24v24H0z' class='style-scope yt-icon'></path><path d='M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z' class='style-scope yt-icon'></path></g></svg>"
+  },
+  "themeViews": {
+    "message": "5.1M&nbsp;views"
+  },
+  "onTooltip": {
+    "message": "すべてのタブの拡張機能を有効にする"
+  },
+  "offTooltip": {
+    "message": "すべてのタブの拡張機能を無効にする"
+  },
+  "tabOnTooltip": {
+    "message": "このタブの拡張機能を有効にする"
+  },
+  "tabOffTooltip": {
+    "message": "このタブの拡張機能を無効にする"
+  },
+  "tabXTooltip": {
+    "message": "このタブの設定を削除する"
+  },
+  "pageOnTooltip": {
+    "message": "このページの拡張機能を有効にする"
+  },
+  "pageOffTooltip": {
+    "message": "このページの拡張機能を無効にする"
+  },
+  "pageXTooltip": {
+    "message": "このページの設定を削除する"
+  },
+  "pressEnter": {
+    "message": "または'Enter'を押す"
+  },
+  "beAPatronButton": {
+    "message": "パトロンになる!"
+  },
+  "translatePrompt": {
+    "message": "<a class='links' data-i18n='translatePrompt' href='https://thunderarea.github.io/translate/''>Translate the extension</a>"
+  },
+  "followTwitter": {
+    "message": "フォローする"
+  },
+  "privacy_policy": {
+    "message": "プライバシーポリシー"
+  },
+  "privacy_policy_text": {
+    "message": "この拡張機能はいかなる種類のユーザーデータも収集しません。ユーザーオプションはユーザーのブラウザにローカルに保存されます。"
+  },
+  "date_of_release": {
+    "message": "リリース日"
+  },
+  "date_of_release_text": {
+    "message": "2019年10月2日"
+  },
+  "progress_bar_title": {
+    "message": "常に表示されるプログレスバーとコントロールボタン"
+  },
+  "progress_bar": {
+    "message": "常に表示されるプログレスバー"
+  },
+  "progress_bar_text": {
+    "message": "YouTubeの動画オプションが有効な場合、YouTubeの動画にプログレスバーが常に表示されます。"
+  },
+  "control_buttons": {
+    "message": "常に表示されるコントロールボタン"
+  },
+  "control_buttons_text": {
+    "message": "コントロールボタン（再生、音量など）はプログレスバーとともに常に表示されます。"
+  },
+  "advanced_options": {
+    "message": "高度なオプション"
+  },
+  "live_144": {
+    "message": "ライブ動画の画質を144pに"
+  },
+  "live_144_text": {
+    "message": "YouTubeで「動画」オプションが有効になっている場合、ライブ動画の画質を自動的に144pに設定します（YouTubeのライブ動画はブロックされず、非表示になるだけです）。"
+  },
+  "enabledByDefault": {
+    "message": "デフォルトで有効"
+  },
+  "enabledByDefault_text": {
+    "message": "新しいタブを開くと、拡張機能はデフォルトで有効になります。"
+  },
+  "videoPlayer": {
+    "message": "動画プレーヤー"
+  },
+  "hideLogo": {
+    "message": "動画から拡張機能のロゴを削除"
+  },
+  "hideLogo_text": {
+    "message": "動画に追加された Music Mode for YouTube™ のロゴを削除する。"
+  },
+  "showVideoThumbnail": {
+    "message": "動画プレーヤに動画のサムネイルを表示する"
+  },
+  "showVideoThumbnail_text": {
+    "message": "動画がブロックされている場合、動画プレーヤに動画のサムネイルを表示する。"
+  },
+  "continueWatchingPrompt_title": {
+    "message": "「視聴を続けますか？」を表示する。"
+  },
+  "continueWatchingPrompt_option": {
+    "message": "「視聴を続けますか？」を非表示にする。"
+  },
+  "continueWatchingPrompt_text": {
+    "message": "オプションの「動画」が有効になっている場合、「動画が一時停止されています。視聴を続けますか？」というメッセージが表示されません。"
+  },
+  "tips": {
+    "message": "ヒント"
+  },
+  "tip_1": {
+    "message": "オプションの「サムネイル」「広告ブロック」「アバター」（さらにYouTube上のその他の画像）を有効にしている場合、画像が非表示だけでなくブロックされます。データ転送量が少なくなり、ページの読み込みが速くなります。"
+  },
+  "tip_2": {
+    "message": "キーボードショートカット Ctrl + M を使用すると、オプションページで選択したオプションで、現在のタブの拡張機能を有効にできます。(このショートカットは他の拡張機能から使用した場合は機能しません。)"
+  }
+}

@@ -1,0 +1,356 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap");
+
+:root {
+  --header-height: 50px;
+  --header-padding-top: 15px;
+  --header-padding-bottom: 10px;
+  --body-padding: 20px;
+  --settingsItems-height: 44px;
+  --menu-line-height: calc(var(--header-height) + 20px);
+  --text-padding: 25px;
+  --round-size: 16px;
+  --optionsGroupTitle-font-size: 15px;
+}
+
+body,
+div,
+hr {
+  padding: 0;
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+}
+
+body {
+  font-family: "Google Sans", -apple-system, "BlinkMacSystemFont", "Segoe UI",
+    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol";
+  font-size: 14px;
+  background-color: #f8f9fa;
+}
+
+#container {
+  max-width: 680px;
+  margin: auto;
+}
+
+@media screen and (max-width: 550px) {
+  .flexStyle {
+    flex-wrap: wrap;
+  }
+}
+
+@media screen and (max-width: 360px) {
+  #container {
+    width: fit-content;
+  }
+}
+
+#header {
+  background-color: white;
+  height: auto;
+  max-width: 680px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.12), inset 0 -1px 0 0 #dadce0;
+  padding-top: var(--header-padding-top);
+  padding-bottom: var(--header-padding-bottom);
+  border-radius: 0 0 4px 4px;
+}
+
+#bodyContainer {
+  height: auto;
+  margin-bottom: 100px;
+}
+
+#logo {
+  margin: auto;
+  height: var(--header-height);
+}
+
+#menuContainer {
+  margin: auto;
+  height: var(--header-height);
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+}
+
+.menuLinks {
+  text-decoration: none;
+  color: #5f6368;
+  padding: 0 15px;
+}
+
+.menuLinks:hover {
+  color: black;
+}
+
+.pageBody {
+  margin-top: var(--body-padding);
+  text-align: left;
+  box-shadow: 0px 1px 3px 0px #d2d2d2;
+  background-color: white;
+  border-radius: 4px;
+}
+
+.text {
+  padding: var(--text-padding);
+}
+
+.short_text {
+  padding: 12px 25px;
+}
+
+#title {
+  margin: var(--body-padding) 0 20px 0;
+  text-align: left;
+  padding-left: var(--text-padding);
+  font-size: 20px;
+}
+
+.settings {
+  padding: 12px 25px 12px 25px;
+}
+
+.setbord {
+  border-bottom: 0.5px solid #e7e7e8;
+}
+
+.descr_toggle {
+  display: flex;
+  justify-content: space-between;
+}
+
+.optionsGroupTitle {
+  font-size: var(--optionsGroupTitle-font-size);
+  font-weight: 500;
+}
+
+.optionsGroupTitle .descr_toggle {
+  justify-content: space-between;
+}
+
+.optionsContainer {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.5s cubic-bezier(0.1, 0.3, 0.5, 0.6) max-height;
+}
+
+.visibleOptions {
+  max-height: 1000px;
+  transition: 2s ease max-height;
+}
+
+.settingsText {
+  margin-right: 20px;
+}
+
+.settingsTextIcon {
+  display: flex;
+  flex-direction: row;
+}
+
+#logo img {
+  height: 100%;
+  top: 50%;
+}
+
+#sp {
+  font-size: large;
+  line-height: var(--header-height);
+  height: 100%;
+  margin-left: 10px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 28px;
+  height: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #bdc1c6;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: var(--round-size);
+  width: var(--round-size);
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  top: -2px;
+  left: -3px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
+}
+
+input:checked+.slider {
+  background-color: #8db9f4;
+}
+
+input:checked+.slider:before {
+  transform: translateX(18px);
+  background-color: #1a73e8;
+}
+
+.slider.round {
+  border-radius: 8px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+select {
+  display: inline-block;
+  width: 100px;
+  transform: translateY(-10%);
+  border: none;
+  background-color: #f1f3f4;
+  padding: 5px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.settingsDescription {
+  font-size: 12px;
+  color: grey;
+}
+
+.title2 {
+  font-size: 15px;
+  text-align: left;
+  margin: 15px 0;
+  padding-left: var(--text-padding);
+  font-weight: 500;
+  color: grey;
+}
+
+.popupExplanation {
+  text-align: left;
+  margin-top: 10px;
+}
+
+.popupExplanation::before {
+  font-size: 10px;
+  padding-left: var(--text-padding);
+}
+
+.flexStyle {
+  display: flex;
+}
+
+/* Advanced options */
+#advanced_options {
+  margin-top: 30px;
+}
+
+#advanced_options>.optionsContainer {
+  padding-bottom: 5px;
+}
+
+.advanced {
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  color: #626262;
+  padding-left: 15px;
+}
+
+/* Arrow on Advanced options */
+.checkbox-container {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkbox-container:hover,
+.checkbox-container input:checked~span {
+  color: black;
+}
+
+.checkbox-container:hover .arrow-up {
+  border-top-color: black;
+}
+
+/* Hide the browser's default checkbox */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Show the checkmark when checked */
+.checkbox-container input:checked~.checkmark {
+  transform: rotate(180deg);
+  border-top-color: black;
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #626262;
+  margin: 2px 0 0 10px;
+}
+
+#youtube .optionsGroupTitle,
+#youtube_music .optionsGroupTitle {
+  padding: 16px 25px;
+}
+
+.settingsHead {
+  display: flex;
+}
+
+.beta_feature {
+  color: white;
+  background-color: red;
+  border-radius: 4px;
+  padding: 1px 7px;
+  margin-left: 5px;
+  font-weight: 500;
+  line-height: 100%;
+}
+
+#donation_menu_link {
+  background-color: hsl(1 100% 50% / 1);
+  padding: 5px;
+  border-radius: 4px;
+  color: white;
+}

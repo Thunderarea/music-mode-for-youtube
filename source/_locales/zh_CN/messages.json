@@ -1,0 +1,305 @@
+{
+    "extDescription": {
+      "message": "屏蔽视频，只保留YouTube和YouTube Music的音频。"
+    },
+    "command1Description": {
+      "message": "Enable/Disable the extension on the current tab"
+    },
+    "youtube": {
+      "message": "YouTube"
+    },
+    "youtube_music": {
+      "message": "YouTube Music"
+    },
+    "embedded": {
+      "message": "其他站点"
+    },
+    "options": {
+      "message": "选项"
+    },
+    "about": {
+      "message": "关于"
+    },
+    "donation": {
+      "message": "捐赠"
+    },
+    "donate": {
+      "message": "捐赠"
+    },
+    "contact": {
+      "message": "联系"
+    },
+    "support": {
+      "message": "技术支持"
+    },
+    "video": {
+      "message": "视频"
+    },
+    "thumbnails": {
+      "message": "缩略图"
+    },
+    "avatars": {
+      "message": "头像"
+    },
+    "google_search_full": {
+      "message": "Google 搜索"
+    },
+    "google_search": {
+      "message": "Google 搜索"
+    },
+    "other_images": {
+      "message": "其他图片"
+    },
+    "adblocker": {
+      "message": "跳过广告"
+    },
+    "embeddedDescription": {
+      "message": "在网页内嵌 YouTube 视频上启用或禁用此扩展和相应选项"
+    },
+    "google_searchDescription": {
+      "message": "隐藏 Google 搜索的缩略图等其他图片"
+    },
+    "videoDescription": {
+      "message": "屏蔽视频，只保留音频（在 Live 直播中隐藏而非屏蔽视频流）"
+    },
+    "thumbnailsDescription": {
+      "message": "隐藏视频缩略图"
+    },
+    "avatarsDescription": {
+      "message": "隐藏频道/用户头像"
+    },
+    "other_imagesDescription": {
+      "message": "隐藏其他各种图片（如频道封面）"
+    },
+    "adBlockerDescription": {
+      "message": "跳过 YouTube 的广告"
+    },
+    "contactHeader": {
+      "message": "开发者：Nick Pantelidis"
+    },
+    "current_tab": {
+      "message": "当前标签页"
+    },
+    "current_page": {
+      "message": "当前页面"
+    },
+    "rate": {
+      "message": "评论"
+    },
+    "currentTabTooltip": {
+      "message": "仅为当前标签页配置插件功能"
+    },
+    "currentPageTooltip": {
+      "message": "仅为当前页面配置插件功能，页面改变时会移除设置"
+    },
+    "google_searchTooltip": {
+      "message": "隐藏 Google 搜索中的各种图片"
+    },
+    "embeddedTooltip": {
+      "message": "其他站点内嵌的 YouTube 视频"
+    },
+    "videoTooltip": {
+      "message": "屏蔽视频，只保留音频"
+    },
+    "thumbnailsTooltip": {
+      "message": "隐藏视频缩略图"
+    },
+    "avatarsTooltip": {
+      "message": "隐藏频道/用户头像"
+    },
+    "other_imagesTooltip": {
+      "message": "隐藏其他各种图片"
+    },
+    "adblockerTooltip": {
+      "message": "跳过 YouTube 的广告"
+    },
+    "apply": {
+      "message": "好的"
+    },
+    "tempOptionTitle": {
+      "message": "弹窗选项*"
+    },
+    "tempOption": {
+      "message": "页面单独配置"
+    },
+    "tempOptionDescription": {
+      "message": "在弹窗单独为此页面启/禁用插件"
+    },
+    "OptionsMenuOption": {
+      "message": "改变当前标签页的设置"
+    },
+    "OptionsMenuOptionDescription": {
+      "message": "在弹窗为当前页面的 Youtube、Youtube Music 和其他网站启/禁用"
+    },
+    "PopupExplanation": {
+      "message": "*插件弹窗可通过点击插件图标唤出"
+    },
+    "AboutTitle": {
+      "message": "关于 - Music Mode for YouTube"
+    },
+    "ContactTitle": {
+      "message": "联系 - Music Mode for YouTube"
+    },
+    "DonateTitle": {
+      "message": "捐赠 - Music Mode for YouTube"
+    },
+    "OptionsTitle": {
+      "message": "选项 - Music Mode for YouTube"
+    },
+    "ThumbnailsAppearanceTitle": {
+      "message": "缩略图外观"
+    },
+    "ThumbnailsAppearance": {
+      "message": "选择您想要的 YouTube 缩略图外观（需启用“缩略图”选项）"
+    },
+    "HideImages": {
+      "message": "隐藏图片"
+    },
+    "ShowImages": {
+      "message": "显示图片"
+    },
+    "liveVideoTitle": {
+      "message": "Live 视频"
+    },
+    "quickAccessButtons": {
+      "message": "快速访问键"
+    },
+    "quickAccessButtonsImages": {
+      "message": "图片快捷访问按键"
+    },
+    "quickAccessButtonsVideo": {
+      "message": "视频快捷访问按键"
+    },
+    "quickAccessButtonsImagesDescription": {
+      "message": "在 Youtube 顶栏添加隐藏/显示当前页面图片的按键（设置仅对当前页面有效）"
+    },
+    "quickAccessButtonsVideoDescription": {
+      "message": "在 Youtube 视频工具栏添加隐藏/显示视频的按键（设置仅对当前页面有效）"
+    },
+    "VideoButtonTooltipEnabled": {
+      "message": "显示视频"
+    },
+    "VideoButtonTooltipDisabled": {
+      "message": "隐藏视频"
+    },
+    "themeVideoTitle": {
+      "message": "视频标题"
+    },
+    "themeChannel": {
+      "message": "频道 <svg viewBox='0 0 24 24' preserveAspectRatio='xMidYMid meet' focusable='false' style='pointer-events: none; display: block; width: 10px; height: 15px; margin-left: 3px; fill: #606060'><g viewBox='0 0 24 24' class='style-scope yt-icon'><path fill='none' d='M0 0h24v24H0z' class='style-scope yt-icon'></path><path d='M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z' class='style-scope yt-icon'></path></g></svg>"
+    },
+    "themeViews": {
+      "message": "5.1M&nbsp;次观看"
+    },
+    "onTooltip": {
+      "message": "在所有标签页上启用此插件"
+    },
+    "offTooltip": {
+      "message": "在所有标签页上停用此插件"
+    },
+    "tabOnTooltip": {
+      "message": "在当前标签页上启用此插件"
+    },
+    "tabOffTooltip": {
+      "message": "在当前标签页上停用此插件"
+    },
+    "tabXTooltip": {
+      "message": "移除当前标签页的插件设置"
+    },
+    "pageOnTooltip": {
+      "message": "在当前页面上启用此插件"
+    },
+    "pageOffTooltip": {
+      "message": "在当前页面上停用此插件"
+    },
+    "pageXTooltip": {
+      "message": "移除当前页面的插件设置"
+    },
+    "pressEnter": {
+      "message": "或者按下“回车键”"
+    },
+    "beAPatronButton": {
+      "message": "成为赞助人！"
+    },
+    "translatePrompt": {
+      "message": "<a class='links' data-i18n='translatePrompt' href='https://thunderarea.github.io/translate/''>Translate the extension</a>"
+    },
+    "followTwitter": {
+      "message": "关注"
+    },
+    "privacy_policy": {
+      "message": "隐私政策"
+    },
+    "privacy_policy_text": {
+      "message": "此扩展不收集任何形式的用户数据。用户选项是在用户的浏览器中本地存储的。"
+    },
+    "date_of_release": {
+      "message": "发布日期"
+    },
+    "date_of_release_text": {
+      "message": "2 October 2019"
+    },
+    "progress_bar_title": {
+      "message": "始终显示进度条、控制按键"
+    },
+    "progress_bar": {
+      "message": "始终显示进度条"
+    },
+    "progress_bar_text": {
+      "message": "当 Youtube 的视频启用时，在视频上始终显示（而非嵌入）进度条"
+    },
+    "control_buttons": {
+      "message": "始终显示控制按键"
+    },
+    "control_buttons_text": {
+      "message": "始终和进度条一起显示控制按钮（播放、音量等）"
+    },
+    "advanced_options": {
+      "message": "高级选项"
+    },
+    "live_144": {
+      "message": "Live 视频质量 144p"
+    },
+    "live_144_text": {
+      "message": "当视频选项启用时，自动设置 Live 视频质量为 144p（Youtube Live 视频仅隐藏而非屏蔽）"
+    },
+    "enabledByDefault": {
+      "message": "Enabled by default"
+    },
+    "enabledByDefault_text": {
+      "message": "When you open a new tab the extension will be enabled by default"
+    },
+    "videoPlayer": {
+      "message": "Video player"
+    },
+    "hideLogo": {
+      "message": "从视频中移除插件 logo"
+    },
+    "hideLogo_text": {
+      "message": "移除视频上添加的 Youtube 音乐模式 logo"
+    },
+    "showVideoThumbnail": {
+      "message": "Show video thumbnail in video player"
+    },
+    "showVideoThumbnail_text": {
+      "message": "Display the video thumbnail in the video player when the video is blocked"
+    },
+    "continueWatchingPrompt_title": {
+      "message": "Continue watching prompt"
+    },
+    "continueWatchingPrompt_option": {
+      "message": "Disable continue watching prompt"
+    },
+    "continueWatchingPrompt_text": {
+      "message": "Disable the 'Video Paused. Continue Watching?' prompt when the option Video is enabled"
+    },
+    "tips": {
+      "message": "提示"
+    },
+    "tip_1": {
+      "message": "如果你启用了“缩略图”、“跳过广告”、“头像”（以及 Youtube 上的其他图片）选项，这些图片被隐藏且屏蔽。因此可以节省更多网络流量并加速页面加载。"
+    },
+    "tip_2": {
+      "message": "使用“ctrl+M”快捷键为当前页面启用插件里开启的选项（快捷键被其他插件占用时将失效）"
+    }
+  }

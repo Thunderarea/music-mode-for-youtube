@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="popup.css" type="text/css">
+  <link rel="stylesheet" href="tooltip.css" type="text/css">
+</head>
+
+<body>
+  <div id="container">
+    <header>
+      <div id="logo">
+        <img src="../img/logo/logo_only.svg">
+      </div>
+      <div class="button s2 trigger_apply">
+        <input type="radio" name="endis" class="checkbox on" value="on" data-title="onTooltip">
+        <input type="radio" name="endis" class="checkbox off" value="off" data-title="offTooltip">
+        <div class="knobs">
+          <span class="on">ON</span>
+          <span class="off">OFF</span>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div id="perTab">
+        <div class="tab_page_header">
+          <div>
+            <span data-i18n="current_tab" data-title="currentTabTooltip">Current tab</span>
+          </div>
+          <div class="button s3 trigger_apply">
+            <input type="radio" name="tab_endis" class="checkbox no" value="no" data-title="tabXTooltip" checked>
+            <input type="radio" name="tab_endis" class="checkbox on" value="on" data-title="tabOnTooltip">
+            <input type="radio" name="tab_endis" class="checkbox off" value="off" data-title="tabOffTooltip">
+            <div class="knobs">
+              <span class="no">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                </svg>
+              </span>
+              <span class="on">ON</span>
+              <span class="off">OFF</span>
+            </div>
+          </div>
+        </div>
+        <div class="site_options_list hidden_options_list" id="tab_options">
+
+        </div>
+      </div>
+      <div id="perPage">
+        <div class="tab_page_header">
+          <div>
+            <span data-i18n="current_page" data-title="currentPageTooltip">Current page</span>
+          </div>
+          <div class="button s3 trigger_apply">
+            <input type="radio" name="page_endis" class="checkbox no" value="no" data-title="pageXTooltip" checked>
+            <input type="radio" name="page_endis" class="checkbox on" value="on" data-title="pageOnTooltip">
+            <input type="radio" name="page_endis" class="checkbox off" value="off" data-title="pageOffTooltip">
+            <div class="knobs">
+              <span class="no">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-x"
+                  viewBox="0 0 16 16">
+                  <path
+                    d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+                </svg>
+              </span>
+              <span class="on">ON</span>
+              <span class="off">OFF</span>
+            </div>
+          </div>
+        </div>
+        <div class="site_options_list hidden_options_list" id="page_options">
+
+        </div>
+      </div>
+
+      <div id="apply" data-must-update="false">
+        <div>OK</div>
+        <div id="pressEnter" data-i18n="pressEnter"></div>
+      </div>
+    </main>
+    
+    <div id="more">
+      <a id="support_button" class="links" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-wrench"
+          viewBox="0 0 16 16">
+          <path
+            d="M.102 2.223A3.004 3.004 0 0 0 3.78 5.897l6.341 6.252A3.003 3.003 0 0 0 13 16a3 3 0 1 0-.851-5.878L5.897 3.781A3.004 3.004 0 0 0 2.223.1l2.141 2.142L4 4l-1.757.364L.102 2.223zm13.37 9.019l.528.026.287.445.445.287.026.529L15 13l-.242.471-.026.529-.445.287-.287.445-.529.026L13 15l-.471-.242-.529-.026-.287-.445-.445-.287-.026-.529L11 13l.242-.471.026-.529.445-.287.287-.445.529-.026L13 11l.471.242z" />
+        </svg>
+        <span data-i18n="support">Support</span>
+      </a>
+      <a href="../pages/options.html" class="links" target="_blank">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear-fill"
+          viewBox="0 0 16 16">
+          <path
+            d="M9.405 1.05c-.413-1.4-2.397-1.4-2.81 0l-.1.34a1.464 1.464 0 0 1-2.105.872l-.31-.17c-1.283-.698-2.686.705-1.987 1.987l.169.311c.446.82.023 1.841-.872 2.105l-.34.1c-1.4.413-1.4 2.397 0 2.81l.34.1a1.464 1.464 0 0 1 .872 2.105l-.17.31c-.698 1.283.705 2.686 1.987 1.987l.311-.169a1.464 1.464 0 0 1 2.105.872l.1.34c.413 1.4 2.397 1.4 2.81 0l.1-.34a1.464 1.464 0 0 1 2.105-.872l.31.17c1.283.698 2.686-.705 1.987-1.987l-.169-.311a1.464 1.464 0 0 1 .872-2.105l.34-.1c1.4-.413 1.4-2.397 0-2.81l-.34-.1a1.464 1.464 0 0 1-.872-2.105l.17-.31c.698-1.283-.705-2.686-1.987-1.987l-.311.169a1.464 1.464 0 0 1-2.105-.872l-.1-.34zM8 10.93a2.929 2.929 0 1 1 0-5.86 2.929 2.929 0 0 1 0 5.858z" />
+        </svg>
+        <span data-i18n="options">Options</span>
+      </a>
+    </div>
+
+    <div id="promoteBox">
+      <div id="donation">
+        <a class="links" href="https://www.paypal.com/donate?hosted_button_id=V2EHRNX8RBTX2" target="_blank"><svg class="heart"
+            viewBox="0 0 32 29.6">
+            <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
+  	c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />
+          </svg>
+          <span data-i18n="donate">Donate</span>
+        </a>
+      </div>
+      <div id="rate">
+        <a class="links" target="_blank">
+          <svg class="star-icon" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.283.95l-3.523 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z" />
+          </svg>
+          <span data-i18n="rate">Rate</span>
+        </a>
+      </div>
+    </div>
+
+  </div>
+  <script src="popup.js" type="module"></script>
+</body>
+
+</html>

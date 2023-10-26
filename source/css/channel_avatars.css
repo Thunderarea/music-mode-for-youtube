@@ -1,0 +1,71 @@
+yt-img-shadow#author-thumbnail img,
+button#avatar-btn img,
+ytd-account-item-renderer img {
+  content: url("../img/photo.jpg");
+}
+
+#author-thumbnail.ytd-comment-renderer yt-img-shadow.ytd-comment-renderer img,
+#author-thumbnail.ytd-backstage-post-renderer yt-img-shadow.ytd-backstage-post-renderer img,
+#creator-thumbnail.ytd-comment-replies-renderer yt-img-shadow img,
+#author-thumbnail.ytd-post-renderer yt-img-shadow.ytd-post-renderer img,
+#author-photo img,
+#hearted-thumbnail img,
+#hearted-thumbnail img {
+  content: url("../img/photoCom.jpg");
+}
+
+#channel-info img,
+ytd-profile-column-user-info-renderer img,
+ytd-channel-avatar-editor img,
+.branding-img-container img,
+#avatar img#img,
+ytd-grid-channel-renderer img {
+  visibility: hidden !important;
+}
+
+#channel-info yt-img-shadow,
+ytd-profile-column-user-info-renderer yt-img-shadow,
+ytd-channel-avatar-editor yt-img-shadow {
+  background-image: url('../img/avatar-chanell.svg') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
+}
+
+.ytp-ce-expanding-image {
+  background-image: none !important;
+  background-image: url('../img/avatar-chanell.svg') !important;
+}
+
+.branding-img-container, yt-img-shadow#avatar, #avatar yt-img-shadow,
+.ytp-title-channel-logo {
+  background-image: url('../img/avatar-chanell.svg') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+}
+
+ytd-grid-channel-renderer yt-img-shadow {
+  background-image: url('../img/youtube_logo.svg') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 50% 50% !important;
+  background-color: #323232 !important;
+}
+
+#items ytd-guide-entry-renderer yt-img-shadow {
+  background-color: #323232 !important;
+  background-image: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="16" height="16" preserveAspectRatio="xMidYMid meet" viewBox="0 0 16 16"%3E%3Cg fill="white"%3E%3Cpath d="M11.596 8.697l-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z"%2F%3E%3C%2Fg%3E%3C%2Fsvg%3E') !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: 16px 16px !important;
+}
+
+#items ytd-guide-entry-renderer img {
+  height: 0 !important;
+  width: 0 !important;
+}
+
+yt-live-chat-author-chip #chat-badges {
+  display: none !important;
+}

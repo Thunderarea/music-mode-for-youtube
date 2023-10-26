@@ -1,0 +1,308 @@
+{
+    "extDescription": {
+      "message": "Blocca il video mantenendo solo l'audio su YouTube e YouTube Music."
+    },
+    "command1Description": {
+      "message": "Enable/Disable the extension on the current tab"
+    },
+    "youtube": {
+      "message": "YouTube"
+    },
+    "youtube_music": {
+      "message": "YouTube Music"
+    },
+    "embedded": {
+      "message": "Altri siti"
+    },
+    "options": {
+      "message": "Opzioni"
+    },
+    "about": {
+      "message": "Info"
+    },
+    "donation": {
+      "message": "Dona"
+    },
+    "donate": {
+      "message": "Donazione"
+    },
+    "contact": {
+      "message": "Contatta"
+    },
+    "support": {
+      "message": "Supporto"
+    },
+    "video": {
+      "message": "Video"
+    },
+    "thumbnails": {
+      "message": "Copertine Video"
+    },
+    "avatars": {
+      "message": "Avatars"
+    },
+    "google_search_full": {
+      "message": "Ricerca Google"
+    },
+    "google_search": {
+      "message": "Ricerca Google"
+    },
+    "other_images": {
+      "message": "Altre immagini"
+    },
+    "adblocker": {
+      "message": "Salta pubblicità"
+    },
+    "embeddedDescription": {
+      "message": "Attiva o disattiva l'estenzione e le opzioni corrispondenti per i video YouTube implementati in altri siti"
+    },
+    "google_searchDescription": {
+      "message": "Nasconde varie immagini nella ricerca Google come le copertine dei video"
+    },
+    "videoDescription": {
+      "message": "Blocks the video keeping only the audio (the video in live stream is hidden but not blocked)"
+    },
+    "thumbnailsDescription": {
+      "message": "Nasconde le copertine dei video"
+    },
+    "avatarsDescription": {
+      "message": "Nasconde le immagini dei canali/avatar utente"
+    },
+    "other_imagesDescription": {
+      "message": "Hides various other images (channel art etc)"
+    },
+    "adBlockerDescription": {
+      "message": "Salta le pubblicità di YouTube"
+    },
+    "contactHeader": {
+      "message": "Sviluppatore: Nick Pantelidis"
+    },
+    "current_tab": {
+      "message": "Scheda attuale"
+    },
+    "current_page": {
+      "message": "Pagina attuale"
+    },
+    "rate": {
+      "message": "Recenzisci"
+    },
+    "currentTabTooltip": {
+      "message": "Configura le funzioni dall'estenzione\nsolo per questa scheda"
+    },
+    "currentPageTooltip": {
+      "message": "Configura le funzioni dall'estenzione\nsolo per questa pagina. Quando la\npagina cambia, queste impostazioni\nsono rimosse"
+    },
+    "google_searchTooltip": {
+      "message": "Nascondi varie immagini\ndalla ricerca Google"
+    },
+    "embeddedTooltip": {
+      "message": "Video YouTube implementati\nin altri siti"
+    },
+    "videoTooltip": {
+      "message": "Blocca il video mantenendo\nsolo l'audio"
+    },
+    "thumbnailsTooltip": {
+      "message": "Nasconde le copertine dei video"
+    },
+    "avatarsTooltip": {
+      "message": "Nasconde le immagini\ndei canali/avatar utente"
+    },
+    "other_imagesTooltip": {
+      "message": "Nasconde varie altre immagini"
+    },
+    "adblockerTooltip": {
+      "message": "Salta le pubblicità"
+    },
+    "apply": {
+      "message": "OK"
+    },
+    "tempOptionTitle": {
+      "message": "Opzioni finestrella popup*"
+    },
+    "tempOption": {
+      "message": "Configurazione per una pagina"
+    },
+    "tempOptionDescription": {
+      "message": "Enable/Disable the extension for only one page from the popup"
+    },
+    "OptionsMenuOption": {
+      "message": "Cambio delle impostazioni per la scheda e pagina attuale"
+    },
+    "OptionsMenuOptionDescription": {
+      "message": "Enable/Disable the options of YouTube, YouTube Music, and Other Sites for the current tab (and page) from the popup"
+    },
+    "PopupExplanation": {
+      "message": "*la finestra che appare quando clicchi l'icona dell'estenzione"
+    },
+    "AboutTitle": {
+      "message": "About - Music Mode for YouTube"
+    },
+    "ContactTitle": {
+      "message": "Contatta - Music Mode for YouTube"
+    },
+    "DonateTitle": {
+      "message": "Dona - Music Mode for YouTube"
+    },
+    "OptionsTitle": {
+      "message": "Opzioni - Music Mode for YouTube"
+    },
+    "ThumbnailsAppearanceTitle": {
+      "message": "Aspetto delle copertine dei video"
+    },
+    "ThumbnailsAppearance": {
+      "message": "Seleziona come vuoi che le copertine video su YouTube appaiano (se l'opzione 'Copertine Video' è attiva):"
+    },
+    "HideImages": {
+      "message": "Nascondi immagini"
+    },
+    "ShowImages": {
+      "message": "Mostra immagini"
+    },
+    "liveVideoTitle": {
+      "message": "Live videos"
+    },
+    "quickAccessButtons": {
+      "message": "Tasti di accesso rapido"
+    },
+    "quickAccessButtonsImages": {
+      "message": "Images quick access button"
+    },
+    "quickAccessButtonsVideo": {
+      "message": "Video quick access button"
+    },
+    "quickAccessButtonsImagesDescription": {
+      "message": "Adds a button on YouTube topbar, from which you can hide/show the images of the page (these settings will only apply to the current page)"
+    },
+    "quickAccessButtonsVideoDescription": {
+      "message": "Adds a button on YouTube video toolbar from which you can hide/show the video (these settings will only apply to the current page)"
+    },
+    "VideoButtonTooltipEnabled": {
+      "message": "Mostra i video"
+    },
+    "VideoButtonTooltipDisabled": {
+      "message": "Nascondi i video"
+    },
+    "themeVideoTitle": {
+      "message": "Titolo Video"
+    },
+    "themeChannel": {
+      "message": "Canale <svg viewBox='0 0 24 24' preserveAspectRatio='xMidYMid meet' focusable='false' style='pointer-events: none; display: block; width: 10px; height: 15px; margin-left: 3px; fill: #606060'><g viewBox='0 0 24 24' class='style-scope yt-icon'><path fill='none' d='M0 0h24v24H0z' class='style-scope yt-icon'></path><path d='M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z' class='style-scope yt-icon'></path></g></svg>"
+    },
+    "themeViews": {
+      "message": "5.1M&nbsp;visualizzazioni"
+    },
+    "onTooltip": {
+      "message": "Attiva l'estenzione per tutte le schede"
+    },
+    "offTooltip": {
+      "message": "Disattiva l'estenzione per tutte le schede"
+    },
+    "tabOnTooltip": {
+      "message": "Attiva l'estenzione per questa scheda"
+    },
+    "tabOffTooltip": {
+      "message": "Disattiva l'estenzione per questa scheda"
+    },
+    "tabXTooltip": {
+      "message": "Rimuovi le impostazioni per questa scheda"
+    },
+    "pageOnTooltip": {
+      "message": "Attiva l'estenzione per questa pagina"
+    },
+    "pageOffTooltip": {
+      "message": "Disattiva l'estenzione per questa pagina"
+    },
+    "pageXTooltip": {
+      "message": "Rimuovi le impostazioni per questa pagina"
+    },
+    "pressEnter": {
+      "message": "o premi 'Invio'"
+    },
+    "beAPatronButton": {
+      "message": "Diventa un Patron!"
+    },
+    "translatePrompt": {
+      "message": "<a class='links' data-i18n='translatePrompt' href='https://thunderarea.github.io/translate/'>Traduci l'estenzione</a>"
+    },
+    "followTwitter": {
+      "message": "Segui"
+    },
+    "privacy_policy": {
+      "message": "Privacy Policy"
+    },
+    "privacy_policy_text": {
+      "message": "The extension does not collect any kind of user data. The user options are stored locally in the user's browser"
+    },
+    "date_of_release": {
+      "message": "Date of release"
+    },
+    "date_of_release_text": {
+      "message": "2 October 2019"
+    },
+    "progress_bar_title": {
+      "message": "Always visible progress bar & control buttons"
+    },
+    "progress_bar": {
+      "message": "Always visible progress bar"
+    },
+    "progress_bar_text": {
+      "message": "The progress bar will always be visible on YouTube videos (not emebedded) when the option Video is enabled for YouTube"
+    },
+    "control_buttons": {
+      "message": "Always visible control buttons"
+    },
+    "control_buttons_text": {
+      "message": "Control buttons (play, volume etc) will be always visible along with progress bar"
+    },
+    "advanced_options": {
+      "message": "Advanced options"
+    },
+    "live_144": {
+      "message": "Live video quality to 144p"
+    },
+    "live_144_text": {
+      "message": "Set automatically the quality of live videos to 144p when the option Video is enabled on YouTube (since YouTube live videos are not blocked but only hidden)"
+    },
+    "enabledByDefault": {
+      "message": "Enabled by default"
+    },
+    "enabledByDefault_text": {
+      "message": "When you open a new tab the extension will be enabled by default"
+    },
+    "videoPlayer": {
+      "message": "Video player"
+    },
+    "hideLogo": {
+      "message": "Remove extension's logo from videos"
+    },
+    "hideLogo_text": {
+      "message": "Remove Music Mode for YouTube™ logo that it is added on the videos"
+    },
+    "showVideoThumbnail": {
+      "message": "Show video thumbnail in video player"
+    },
+    "showVideoThumbnail_text": {
+      "message": "Display the video thumbnail in the video player when the video is blocked"
+    },
+    "continueWatchingPrompt_title": {
+      "message": "Continue watching prompt"
+    },
+    "continueWatchingPrompt_option": {
+      "message": "Disable continue watching prompt"
+    },
+    "continueWatchingPrompt_text": {
+      "message": "Disable the 'Video Paused. Continue Watching?' prompt when the option Video is enabled"
+    },
+    "tips": {
+      "message": "Tips"
+    },
+    "tip_1": {
+      "message": "If you have enabled the options Thumbnails, Ad Skipper and Avatars (plus, Other Images on YouTube) the images are not only hidden but also blocked. As a result, more bandwidth is saved and the page loads faster."
+    },
+    "tip_2": {
+      "message": "Use the keyboard shortcut <b>Ctrl + M</b> to enable the extension for the current tab with the options that you have selected on the options page. (the shortcut it will not work if it is used from another extension)"
+    },
+    "translatedBy": {
+      "message": "Tradotto da <a href='https://www.reddit.com/user/mauryguid05' class='links'>MG-05</a>"
+    }
+  }

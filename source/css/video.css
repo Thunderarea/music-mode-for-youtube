@@ -1,0 +1,37 @@
+.html5-video-player,
+ytmusic-player {
+  background-color: black !important;
+  border-radius: 10px !important;
+  background-image: url("../img/logo/full_logo.svg") !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 55% !important;
+}
+
+.html5-video-player video {
+  opacity: 0 !important;
+}
+
+.ytp-tooltip.ytp-preview {
+  background-color: #00000000 !important;
+  border: none !important;
+}
+
+.ytp-tooltip.ytp-preview:not(.ytp-text-detail) .ytp-tooltip-bg {
+  background-image: none !important;
+  outline: 0 !important;
+}
+
+.ytp-storyboard-framepreview-img {
+  background: none !important;
+}
+
+/*graphics for VR*/
+.html5-video-player .html5-video-container .webgl,
+.html5-video-player .ytp-webgl-spherical-control {
+  display: none !important;
+}
+
+.html5-video-player video[disableremoteplayback=""] {
+  display: block !important;
+}

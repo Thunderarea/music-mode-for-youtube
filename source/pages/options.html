@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="optionsPageStyle.css">
+</head>
+
+<body id="OptionsTitle">
+  <div id="container">
+    <div id="header">
+      <div id="logo">
+        <img src="../img/logo/full_logo.svg" alt="Logo">
+      </div>
+      <div id="menuContainer">
+        <a href="about.html" class="menuLinks" data-i18n="about"></a>
+        <a href="options.html" class="menuLinks" data-i18n="options"></a>
+        <a href="contact.html" class="menuLinks" data-i18n="contact"></a>
+        <a href="https://www.paypal.com/donate?hosted_button_id=V2EHRNX8RBTX2" target="_blank" class="menuLinks"><span id="donation_menu_link" data-i18n="donation"></span></a>
+      </div>
+    </div>
+    <div id="bodyContainer">
+      <div id="title" data-i18n="options">Options</div>
+
+      <div class="pageBody">
+        <div class="settings setbord">
+          <div class="descr_toggle">
+            <div class="settingsText optionsGroupTitle">
+              <div class="settingsHead"><span data-i18n="enabledByDefault"></span></div>
+              <div class="settingsDescription" data-i18n="enabledByDefault_text"></div>
+            </div>
+            <div class="toggleButton">
+              <label class="switch">
+                <input type="checkbox" name="enabled" class="moreOptionsCheckboxes">
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="addOptions">
+
+      </div>
+
+      <div class="title2" data-i18n="videoPlayer"></div>
+      <div class="pageBody">
+        <div class="settings setbord">
+          <div class="descr_toggle">
+            <div class="settingsText">
+              <div class="settingsHead"><span data-i18n="hideLogo"></span></div>
+              <div class="settingsDescription" data-i18n="hideLogo_text"></div>
+            </div>
+            <div class="toggleButton">
+              <label class="switch">
+                <input type="checkbox" name="hide_logo" class="moreOptionsCheckboxes">
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="settings setbord">
+          <div class="descr_toggle">
+            <div class="settingsText">
+              <div class="settingsHead"><span data-i18n="showVideoThumbnail"></span></div>
+              <div class="settingsDescription" data-i18n="showVideoThumbnail_text"></div>
+            </div>
+            <div class="toggleButton">
+              <label class="switch">
+                <input type="checkbox" name="show_thumbnail" class="moreOptionsCheckboxes">
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="title2" data-i18n="continueWatchingPrompt_title"></div>
+      <div class="pageBody">
+        <div class="settings setbord">
+          <div class="descr_toggle">
+            <div class="settingsText">
+              <div class="settingsHead"><span data-i18n="continueWatchingPrompt_option"></span></div>
+              <div class="settingsDescription" data-i18n="continueWatchingPrompt_text"></div>
+            </div>
+            <div class="toggleButton">
+              <label class="switch">
+                <input type="checkbox" name="continue_watching_prompt" class="moreOptionsCheckboxes">
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="advanced_options">
+
+        <div class="title2 advanced">
+          <label class="checkbox-container">
+            <input type="checkbox" class="groupCheckboxes" name="advanced_options">
+            <span data-i18n="advanced_options"></span>
+            <span class="checkmark arrow-up"></span>
+          </label>
+        </div>
+
+        <div class="optionsContainer">
+
+          <div class="title2" data-i18n="progress_bar_title"></div>
+          <div class="pageBody" id="progress_bar">
+            <div class="settings setbord">
+              <div class="descr_toggle">
+                <div class="settingsText">
+                  <div class="settingsHead"><span data-i18n="progress_bar"></span></div>
+                  <div class="settingsDescription" data-i18n="progress_bar_text"></div>
+                </div>
+                <div class="toggleButton">
+                  <label class="switch">
+                    <input type="checkbox" name="progress_bar" class="groupCheckboxes">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="optionsContainer">
+              <div class="settings setbord">
+                <div class="descr_toggle">
+                  <ul class="settingsTextIcon">
+                    <li class="settingsText">
+                      <div class="settingsHead"><span data-i18n="control_buttons"></span></div>
+                      <div class="settingsDescription" data-i18n="control_buttons_text"></div>
+                    </li>
+                  </ul>
+                  <div class="toggleButton">
+                    <label class="switch">
+                      <input type="checkbox" name="control_buttons" class="optionsCheckboxes">
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title2" data-i18n="tempOptionTitle"></div>
+          <div class="pageBody">
+            <div class="settings setbord">
+              <div class="descr_toggle">
+                <div class="settingsText">
+                  <div class="settingsHead"><span data-i18n="tempOption"></span></div>
+                  <div class="settingsDescription" data-i18n="tempOptionDescription"></div>
+                </div>
+                <div class="toggleButton">
+                  <label class="switch">
+                    <input type="checkbox" name="popup_current_page" class="moreOptionsCheckboxes">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="settings setbord">
+              <div class="descr_toggle">
+                <div class="settingsText">
+                  <div class="settingsHead"><span data-i18n="optionsMenuOption"></span></div>
+                  <div class="settingsDescription" data-i18n="optionsMenuOptionDescription"></div>
+                </div>
+                <div class="toggleButton">
+                  <label class="switch">
+                    <input type="checkbox" name="popup_specific_options" class="moreOptionsCheckboxes">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div data-i18n="popupExplanation" class="popupExplanation"></div>
+
+          <div class="title2" data-i18n="quickAccessButtons"></div>
+          <div class="pageBody">
+            <div class="settings setbord">
+              <div class="descr_toggle">
+                <div class="settingsText">
+                  <div class="settingsHead"><span data-i18n="quickAccessButtonsVideo"></span></div>
+                  <div class="settingsDescription" data-i18n="quickAccessButtonsVideoDescription"></div>
+                </div>
+                <div class="toggleButton">
+                  <label class="switch">
+                    <input type="checkbox" name="quick_access_buttons_video" class="moreOptionsCheckboxes">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+            <div class="settings setbord">
+              <div class="descr_toggle">
+                <div class="settingsText">
+                  <div class="settingsHead"><span data-i18n="quickAccessButtonsImages"></span></div>
+                  <div class="settingsDescription" data-i18n="quickAccessButtonsImagesDescription"></div>
+                </div>
+                <div class="toggleButton">
+                  <label class="switch">
+                    <input type="checkbox" name="quick_access_buttons_images" class="moreOptionsCheckboxes">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="title2" data-i18n="liveVideoTitle"></div>
+          <div class="pageBody">
+            <div class="settings setbord">
+              <div class="descr_toggle">
+                <div class="settingsText">
+                  <div class="settingsHead"><span data-i18n="live_144"></span><span class="beta_feature">BETA</span>
+                  </div>
+                  <div class="settingsDescription" data-i18n="live_144_text"></div>
+                </div>
+                <div class="toggleButton">
+                  <label class="switch">
+                    <input type="checkbox" name="live_144" class="moreOptionsCheckboxes">
+                    <span class="slider round"></span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script type="text/javascript" src="options_code.js"></script>
+  <script type="text/javascript" src="setTheTitles.js"></script>
+</body>
+
+</html>

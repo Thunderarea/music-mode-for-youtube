@@ -1,0 +1,305 @@
+{
+  "extDescription": {
+    "message": "Μπλοκάρει το βίντεο διατηρώντας μόνο τον ήχο στο YouTube και YouTube Music."
+  },
+  "command1Description": {
+    "message": "Ενεργοποίησε/Απενεργοποίησε την επέκταση στην τρέχουσα καρτέλα"
+  },
+  "youtube": {
+    "message": "YouTube"
+  },
+  "youtube_music": {
+    "message": "YouTube Music"
+  },
+  "embedded": {
+    "message": "Άλλα sites"
+  },
+  "options": {
+    "message": "Επιλογές"
+  },
+  "about": {
+    "message": "Σχετικά"
+  },
+  "donation": {
+    "message": "Δωρεά"
+  },
+  "donate": {
+    "message": "Κάντε δωρεά"
+  },
+  "contact": {
+    "message": "Επικοινωνία"
+  },
+  "support": {
+    "message": "Υποστήριξη"
+  },
+  "video": {
+    "message": "Βίντεο"
+  },
+  "thumbnails": {
+    "message": "Μικρογραφίες"
+  },
+  "avatars": {
+    "message": "Άβαταρ"
+  },
+  "google_search_full": {
+    "message": "Αναζήτηση Google"
+  },
+  "google_search": {
+    "message": "Αναζητ. Google"
+  },
+  "other_images": {
+    "message": "Άλλες εικόνες"
+  },
+  "adblocker": {
+    "message": "Ad Skipper"
+  },
+  "embeddedDescription": {
+    "message": "Ενεργοποιήστε/Απενεργοποιήστε την επέκταση και τις αντίστοιχες επιλογές για τα YouTube βίντεο που είναι ενσωματωμένα σε άλλα sites"
+  },
+  "google_searchDescription": {
+    "message": "Αποκρύπτει διάφορες εικόνες στην αναζήτηση Google όπως τις εικόνες των μικρογραφιών των βίντεο"
+  },
+  "videoDescription": {
+    "message": "Μπλοκάρει το βίντεο διατηρώντας μόνο τον ήχο (το βίντεο στα live stream αποκρύπτεται αλλά δεν μπλοκάρεται)"
+  },
+  "thumbnailsDescription": {
+    "message": "Αποκρύπτει τις εικόνες των μικρογραφιών των βίντεο"
+  },
+  "avatarsDescription": {
+    "message": "Αποκρύπτει τις εικόνες των άβαταρ των καναλιών/χρηστών"
+  },
+  "other_imagesDescription": {
+    "message": "Αποκρύπτει διάφορες άλλες εικόνες"
+  },
+  "adBlockerDescription": {
+    "message": "Κάνει skip τις YouTube διαφημίσεις"
+  },
+  "contactHeader": {
+    "message": "Προγραμματιστής: Νικόλαος Παντελίδης"
+  },
+  "current_tab": {
+    "message": "Τρέχουσα καρτέλα"
+  },
+  "current_page": {
+    "message": "Τρέχουσα σελίδα"
+  },
+  "rate": {
+    "message": "Αξιολόγηση"
+  },
+  "currentTabTooltip": {
+    "message": "Ρυθμίστε την λειτουργία της επέκτασης\nμόνο για αυτήν την καρτέλα"
+  },
+  "currentPageTooltip": {
+    "message": "Ρυθμίστε την λειτουργία της επέκτασης μόνο\nγια αυτήν την σελίδα. Όταν η σελίδα αλλάζει\nοι ρυθμίσεις αυτές διαγράφονται"
+  },
+  "google_searchTooltip": {
+    "message": "Αποκρύπτει διάφορες εικόνες\nστην αναζήτηση Google"
+  },
+  "embeddedTooltip": {
+    "message": "Για YouTube βίντεο ενσωματωμένα\nσε άλλα sites"
+  },
+  "videoTooltip": {
+    "message": "Μπλοκάρει το βίντεο και\nδιατηρεί μόνο τον ήχο"
+  },
+  "thumbnailsTooltip": {
+    "message": "Αποκρύπτει τις εικόνες των\nμικρογραφιών των βίντεο"
+  },
+  "avatarsTooltip": {
+    "message": "Αποκρύπτει τις εικόνες των άβαταρ\nτων καναλιών/χρηστών"
+  },
+  "other_imagesTooltip": {
+    "message": "Αποκρύπτει διάφορες\nάλλες εικόνες"
+  },
+  "adblockerTooltip": {
+    "message": "Κάνει skip τις διαφημίσεις"
+  },
+  "apply": {
+    "message": "OK"
+  },
+  "tempOptionTitle": {
+    "message": "Επιλογές popup*"
+  },
+  "tempOption": {
+    "message": "Ρύθμιση για μία σελίδα"
+  },
+  "tempOptionDescription": {
+    "message": "Επιτρέπει την ενεργοποίηση/απενεργοποίηση της λειτουργίας της επέκτασης μόνο για μία σελίδα από το popup"
+  },
+  "OptionsMenuOption": {
+    "message": "Αλλαγή επιλογών για τρέχουσα καρτέλα και σελίδα"
+  },
+  "OptionsMenuOptionDescription": {
+    "message": "Ενεργοποιήστε/Απενεργοποιήστε τις επιλογές για YouTube, YouTube Music και Άλλα sites για την τρέχουσα καρτέλα (και σελίδα) από το popup"
+  },
+  "PopupExplanation": {
+    "message": "*το παράθυρο που εμφανίζεται όταν κάνετε κλικ στο εικονίδιο της επέκτασης"
+  },
+  "AboutTitle": {
+    "message": "Σχετικά - Music Mode for YouTube"
+  },
+  "ContactTitle": {
+    "message": "Επικοινωνία - Music Mode for YouTube"
+  },
+  "DonateTitle": {
+    "message": "Δωρεά - Music Mode for YouTube"
+  },
+  "OptionsTitle": {
+    "message": "Επιλογές - Music Mode for YouTube"
+  },
+  "ThumbnailsAppearanceTitle": {
+    "message": "Εμφάνιση μικρογραφιών βίντεο"
+  },
+  "ThumbnailsAppearance": {
+    "message": "Επιλέξτε πως θέλετε να εμφανίζονται οι μικρογραφίες βίντεο στο YouTube (αν η επιλογή 'Μικρογραφίες' είναι ενεργοποιημένη):"
+  },
+  "HideImages": {
+    "message": "Απέκρυψε τις εικόνες"
+  },
+  "ShowImages": {
+    "message": "Εμφάνισε τις εικόνες"
+  },
+  "liveVideoTitle": {
+    "message": "Live βίντεο"
+  },
+  "quickAccessButtons": {
+    "message": "Κουμπιά γρήγορης πρόσβασης"
+  },
+  "quickAccessButtonsImages": {
+    "message": "Κουμπί γρήγορης πρόσβασης για εικόνες"
+  },
+  "quickAccessButtonsVideo": {
+    "message": "Κουμπί γρήγορης πρόσβασης για βίντεο"
+  },
+  "quickAccessButtonsImagesDescription": {
+    "message": "Προσθέτει ένα κουμπί στην μπάρα του YouTube, από το οποίο μπορείς να αποκρύψεις/εμφανίσεις τις εικόνες της σελίδας (αυτές οι ρυθμίσεις θα ισχύουν μόνο για την τρέχουσα σελίδα)"
+  },
+  "quickAccessButtonsVideoDescription": {
+    "message": "Προσθέτει ένα εικονίδιο στο Youtube βίντεο από το οποίο μπορείς να αποκρύψεις/εμφανίσεις το βίντεο (αυτές οι ρυθμίσεις θα ισχύουν μόνο για την τρέχουσα σελίδα)"
+  },
+  "VideoButtonTooltipEnabled": {
+    "message": "Εμφάνισε το βίντεο"
+  },
+  "VideoButtonTooltipDisabled": {
+    "message": "Απέκρυψε το βίντεο"
+  },
+  "themeVideoTitle": {
+    "message": "Τίτλος Βίντεο"
+  },
+  "themeChannel": {
+    "message": "Κανάλι <svg viewBox='0 0 24 24' preserveAspectRatio='xMidYMid meet' focusable='false' style='pointer-events: none; display: block; width: 10px; height: 15px; margin-left: 3px; fill: #606060'><g viewBox='0 0 24 24' class='style-scope yt-icon'><path fill='none' d='M0 0h24v24H0z' class='style-scope yt-icon'></path><path d='M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z' class='style-scope yt-icon'></path></g></svg>"
+  },
+  "themeViews": {
+    "message": "5.1M&nbsp;προβολές"
+  },
+  "onTooltip": {
+    "message": "Ενεργοποιήστε την επέκταση για όλες τις καρτέλες"
+  },
+  "offTooltip": {
+    "message": "Απενεργοποιήστε την επέκταση για όλες τις καρτέλες"
+  },
+  "tabOnTooltip": {
+    "message": "Ενεργοποιήστε την επέκταση για αυτήν την καρτέλα"
+  },
+  "tabOffTooltip": {
+    "message": "Απενεργοποιήστε την επέκταση για αυτήν την καρτέλα"
+  },
+  "tabXTooltip": {
+    "message": "Διαγράψτε τις ρυθμίσεις για αυτήν την καρτέλα"
+  },
+  "pageOnTooltip": {
+    "message": "Ενεργοποιήστε την επέκταση για αυτήν την σελίδα"
+  },
+  "pageOffTooltip": {
+    "message": "Απενεργοποιήστεε την επέκταση για αυτήν την σελίδα"
+  },
+  "pageXTooltip": {
+    "message": "Διαγράψτε τις ρυθμίσεις για αυτήν την σελίδα"
+  },
+  "pressEnter": {
+    "message": "ή πάτα 'Enter'"
+  },
+  "beAPatronButton": {
+    "message": "Γίνε υποστηρικτής!"
+  },
+  "translatePrompt": {
+    "message": "<a class='links' data-i18n='translatePrompt' href='https://thunderarea.github.io/translate/'>Μετέφρασε την επέκταση</a>"
+  },
+  "followTwitter": {
+    "message": "Ακολουθήστε"
+  },
+  "privacy_policy": {
+    "message": "Πολιτική Απορρήτου"
+  },
+  "privacy_policy_text": {
+    "message": "Η επέκταση δεν συλλέγει κανενός είδους δεδομένα του χρήστη. Οι ρυθμίσεις του χρήστη αποθηκεύονται μόνο τοπικά στον browser του"
+  },
+  "date_of_release": {
+    "message": "Ημερομηνία κυκλοφορίας"
+  },
+  "date_of_release_text": {
+    "message": "2 Οκτωβρίου 2019"
+  },
+  "progress_bar_title": {
+    "message": "Πάντα εμφανής γραμμή προόδου και κουμπιά ελέγχου του βίντεο"
+  },
+  "progress_bar": {
+    "message": "Πάντα εμφανής γραμμή προόδου του βίντεο"
+  },
+  "progress_bar_text": {
+    "message": "Η γραμμή προόδου του βίντεο θα είναι πάντα εμφανής στα YouTube βίντεο (όχι στα ενσωματωμένα) όταν η επιλογή Βίντεο είναι ενεργοποιημένη στο YouTube"
+  },
+  "control_buttons": {
+    "message": "Πάντα εμφανή κουμπιά ελέγχου του βίντεο"
+  },
+  "control_buttons_text": {
+    "message": "Τα κουμπιά ελέγχου του βίντεο (play, ήχος κτλ) θα είναι πάντα εμφανή μαζί με την γραμμή προόδου του βίντεο"
+  },
+  "advanced_options": {
+    "message": "Προχωρημένες επιλογές"
+  },
+  "live_144": {
+    "message": "Live βίντεο ποιότητα στα 144p"
+  },
+  "live_144_text": {
+    "message": "Θέτει αυτόματα την ποιότητα των live βίντεο στα 144p όταν η επιλογή Βίντεο είναι ενεργοποιημένη στο YouTube (καθώς τα YouTube live βίντεο δεν μπλοκάρονται αλλά μόνο αποκρύπτονται)"
+  },
+  "enabledByDefault": {
+    "message": "Ενεργοποιημένη από προεπιλογή"
+  },
+  "enabledByDefault_text": {
+    "message": "Όταν ανοίγετε μία νέα καρτέλα η επέκταση θα είναι ενεργοποιημένη από προεπιλογή"
+  },
+  "videoPlayer": {
+    "message": "Βίντεο"
+  },
+  "hideLogo": {
+    "message": "Αφαιρέστε το σήμα της επέκτασης από τα βίντεο"
+  },
+  "hideLogo_text": {
+    "message": "Αφαιρεί το σήμα της επέκτασης που προστίθεται στα βίντεο"
+  },
+  "showVideoThumbnail": {
+    "message": "Εμφανίστε το εικονίδιο του βίντεο στον βίντεο player"
+  },
+  "showVideoThumbnail_text": {
+    "message": "Εμφανίστε το εικονίδιο του βίντεο στον βίντεο player όταν το βίντεο μπλοκάρεται"
+  },
+  "continueWatchingPrompt_title": {
+    "message": "Μήνυμα συνέχισης παρακολούθησης"
+  },
+  "continueWatchingPrompt_option": {
+    "message": "Καταργήστε το μήνυμα συνέχισης παρακολούθησης"
+  },
+  "continueWatchingPrompt_text": {
+    "message": "Καταργήστε το μήνυμα 'Το βίντεο διακόπηκε. Συνέχιση παρακολούθησης;' όταν η επιλογή Βίντεο είναι ενεργοποιημένη"
+  },
+  "tips": {
+    "message": "Συμβουλές"
+  },
+  "tip_1": {
+    "message": "Αν έχετε ενεργοποιημένες τις επιλογές Μικρογραφίες, Ad Skipper και Άβαταρ (συν, Άλλες εικόνες στο YouTube) οι εικόνες όχι μόνο θα αποκρύπτονται αλλά επιπλέον θα μπλοκάρονται. Σαν αποτέλεσμα, θα γλιτώνεται περισσότερο bandwidth και η σελίδα θα φορτώνει ταχύτερα."
+  },
+  "tip_2": {
+    "message": "Χρησιμοποιήστε την συντόμευση πληκτρολογίου <b>Ctrl + M</b> για να ενεργοποιήσετε την επέκταση στην τρέχουσα καρτέλα με τις επιλογές που έχετε ορίσει στην σελίδα Επιλογές. (η συντόμευση αυτή μπορεί να μην λειτουργεί σε περίπτωση που χρησιμοποιείται από κάποια άλλη επέκταση)"
+  } 
+}

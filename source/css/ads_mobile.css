@@ -1,0 +1,8 @@
+/* ads below the video */
+ytm-companion-ad-renderer,
+/* Ads in recommended videos */
+ytm-promoted-sparkles-web-renderer,
+/* Ads in search */
+ytm-promoted-sparkles-text-search-renderer {
+  display: none !important;
+}
