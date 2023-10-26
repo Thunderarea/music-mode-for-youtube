@@ -1,1 +1,1 @@
-# music-mode-for-youtube
+# Music Mode for YouTube
