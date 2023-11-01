@@ -141,6 +141,15 @@ ytd-playlist-thumbnail.ytd-playlist-sidebar-primary-info-renderer {
   height: 45px !important;
 }
 
+/* playlist's page. Playlist thumbnail */
+ytd-playlist-thumbnail.ytd-playlist-sidebar-primary-info-renderer:before {
+  padding: 0 !important;
+}
+
+ytd-playlist-thumbnail {
+  margin-top: 0 !important;
+}
+
 ytd-playlist-sidebar-primary-info-renderer img {
   display: none !important;
 }
@@ -242,18 +251,12 @@ ytd-movie-renderer ytd-thumbnail {
 }
 
 ytd-thumbnail-overlay-bottom-panel-renderer {
-  background-color: transparent !important;
-}
-
-ytd-thumbnail-overlay-bottom-panel-renderer {
   height: 100% !important;
+  width: 100%;
+  margin-right: 0 !important;
+  margin-bottom: 0 !important;
   background-color: #323232 !important;
   justify-content: center !important;
-}
-
-/* playlist's page. Playlist thumbnail */
-ytd-playlist-thumbnail.ytd-playlist-sidebar-primary-info-renderer:before {
-  padding: 0 !important;
 }
 
 /* The various parts of the video in the video's decription */

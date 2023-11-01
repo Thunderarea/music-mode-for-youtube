@@ -21,6 +21,10 @@ div.banner-visible-area {
   display: none !important;
 }
 
+.page-header-banner {
+  display: none !important;
+}
+
 #links-holder.ytd-c4-tabbed-header-renderer {
   top: 1px !important;
 }
