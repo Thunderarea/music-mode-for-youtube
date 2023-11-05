@@ -483,3 +483,22 @@ input.off:not(:checked):hover~.knobs .off {
 #more a svg {
   margin-right: 5px;
 }
+
+/* Translate button */
+#translateButton {
+  padding: 3px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid lightgrey;
+  font-style: italic;
+}
+
+#translateButton svg {
+  margin-right: 5px;
+  color: #5291f5;
+  height: 14px;
+  width: 14px;
+}

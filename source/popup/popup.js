@@ -118,14 +118,13 @@ function adaptDisplay() {
 }
 
 function addTranslatedBy() {
-  let locale = chrome.i18n.getMessage("@@ui_locale");
-  let translateByCode = `
-  <div id="translateButton">
-    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M242.7 210.6l-56-112a12 12 0 0 0-21.4 0l-20.5 41a84.2 84.2 0 0 1-38.8-13.4A107.3 107.3 0 0 0 131.3 68H152a12 12 0 0 0 0-24h-52V32a12 12 0 0 0-24 0v12H24a12 12 0 0 0 0 24h83.1A83.3 83.3 0 0 1 88 110.3A83.8 83.8 0 0 1 75.6 91a12 12 0 1 0-21.8 10A103.4 103.4 0 0 0 70 126.2A83.3 83.3 0 0 1 24 140a12 12 0 0 0 0 24a107 107 0 0 0 64-21.1a108.3 108.3 0 0 0 45.4 19.4l-24.1 48.3a12 12 0 1 0 21.4 10.8l12.7-25.4h65.2l12.7 25.4a12 12 0 0 0 21.4-10.8zM155.4 172l20.6-41.2l20.6 41.2z" fill="currentColor"/></svg>
-    <div data-i18n="translatedBy"></div>
-  </div>
-  `;
-  if (locale === "it") {
+  if (chrome.i18n.getMessage("translatedBy") != "") {
+    let translateByCode = `
+    <div id="translateButton">
+      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="1em" height="1em" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 256"><path d="M242.7 210.6l-56-112a12 12 0 0 0-21.4 0l-20.5 41a84.2 84.2 0 0 1-38.8-13.4A107.3 107.3 0 0 0 131.3 68H152a12 12 0 0 0 0-24h-52V32a12 12 0 0 0-24 0v12H24a12 12 0 0 0 0 24h83.1A83.3 83.3 0 0 1 88 110.3A83.8 83.8 0 0 1 75.6 91a12 12 0 1 0-21.8 10A103.4 103.4 0 0 0 70 126.2A83.3 83.3 0 0 1 24 140a12 12 0 0 0 0 24a107 107 0 0 0 64-21.1a108.3 108.3 0 0 0 45.4 19.4l-24.1 48.3a12 12 0 1 0 21.4 10.8l12.7-25.4h65.2l12.7 25.4a12 12 0 0 0 21.4-10.8zM155.4 172l20.6-41.2l20.6 41.2z" fill="currentColor"/></svg>
+      <div data-i18n="translatedBy"></div>
+    </div>
+    `;
     document.getElementById("container").appendChild(new DOMParser().parseFromString(translateByCode, "text/html").body.firstElementChild);
   }
 }

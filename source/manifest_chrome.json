@@ -2,12 +2,12 @@
   "manifest_version": 3,
   "name": "Music Mode for YouTube™",
   "short_name": "Music Mode",
-  "version": "1.0.1",
+  "version": "6.1.11",
   "default_locale": "en",
   "incognito":"spanning",
   
   "description": "__MSG_extDescription__",
-
+  "offline_enabled": true,
   "icons": {
     "19": "img/logo/icon19.png",
     "38": "img/logo/icon38.png",
@@ -17,16 +17,14 @@
   "commands": {
     "run_extension_tab": {
       "suggested_key": {
-        "default": "Ctrl+Up",
-        "mac": "Command+Up"
+        "default": "Ctrl+M",
+        "mac": "Command+M"
       },
       "description": "__MSG_command1Description__"
     }
   },
   "background": {
-    "scripts": [
-      "js/background.js"
-    ]
+    "service_worker": "js/background.js"
   },
   "permissions": [
     "declarativeNetRequest",
@@ -315,5 +313,6 @@
       "run_at": "document_start",
       "all_frames": true
     }
-  ]
+  ],
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnvYzctu7Kvs3frHXL+nu59GeGgSYwUhja+ICRKonmyUnePV/S8cECyxXeVvLGMy3fIuvvTg/AkN7iAhBGvSDqlQEy7IFlGgwlfuzTLE9/4oN/TEuAy+nyCojKlofATsWFCfrKesjtLP3HnydMRBmBA00mk03Hz4+kRSUqteILDOW26pXM8scYJlQSuy1yCR71HS4FpfuXvKhgEOzRoy44lXcTUcIH6FuxX0gJXIe7E0dNBkW5P4IX02dxPB5Bq0BywU6aLCTHR4U+Su0kYAKxwXCigvZaLThyM3JQ8/RM+eoHa6ZVmHXkbY/bgRCABs5Fnay8eTOOKEu18PaHi6BJwIDAQAB"
 }

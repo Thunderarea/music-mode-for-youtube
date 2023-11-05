@@ -303,6 +303,6 @@
       "message": "Use the keyboard shortcut <b>Ctrl + M</b> to enable the extension for the current tab with the options that you have selected on the options page. (the shortcut it will not work if it is used from another extension)"
     },
     "translatedBy": {
-      "message": "Tradotto da <a href='https://www.reddit.com/user/mauryguid05' class='links'>MG-05</a>"
+      "message": "<a href='https://www.reddit.com/user/mauryguid05' class='links' target='_blank'>Tradotto da MG-05</a>"
     }
   }
