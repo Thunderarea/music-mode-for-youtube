@@ -10,7 +10,7 @@ function addMMFYTButtonMobile() {
     if (existElement == null || existElement == undefined) {
       let topbar = document.querySelector(".mobile-topbar-header div.mobile-topbar-header-content");
       if (topbar && topbar.firstElementChild) {
-        topBarObserver.observe(topbar, {
+        new MutationObserver(detectRemovalOfMMFYTButton).observe(topbar, {
           subtree: true,
           childList: true
         });
@@ -35,8 +35,6 @@ function addMMFYTButtonMobile() {
 chrome.runtime.onMessage.addListener((request) => {
   if (request.data === 2) addMMFYTButtonMobile();
 });
-
-let topBarObserver = new MutationObserver(detectRemovalOfMMFYTButton);
 
 function detectRemovalOfMMFYTButton(mutations) {
   for (let mutation of mutations) {
