@@ -14,6 +14,7 @@
 /* Inner container of video time */
 ytm-thumbnail-overlay-time-status-renderer {
   position: relative !important;
+  background-color: #323232 !important;
 }
 
 /* Mixes */
@@ -46,9 +47,19 @@ ytm-thumbnail-overlay-time-status-renderer,
 /* Playlists in the description of a video */
 .video-thumbnail-overlay-side {
   width: 100% !important;
+  background-color: #323232 !important;
 }
 
 /* Videos in the description of a video */
 .yt-video-attribute-view-model__hero-section {
   display: none !important;
+}
+
+/* Collections in YouTube's Music channel */
+.video-thumbnail-container-compact {
+  background-image: url('../img/youtube_logo.svg') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 30% 30% !important;
+  background-color: #323232 !important;
 }

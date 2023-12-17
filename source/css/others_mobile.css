@@ -7,10 +7,13 @@ ytm-universal-watch-card-renderer .collage-image {
   background-color: #323232 !important;
 }
 
-ytm-universal-watch-card-renderer .watch-card-rich-header-profile-icon,
 /* Cover art on channel */
 .c4-tabbed-header-banner-img,
 /* albums on search */
-.simple-card-thumbnail {
+.simple-card-thumbnail,
+/* Image of playlist in the playlist's page */
+ytm-hero-playlist-thumbnail-renderer,
+/* Channel art */
+.c4-tabbed-header-page-header-banner {
   display: none !important;
 }

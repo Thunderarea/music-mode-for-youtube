@@ -1,12 +1,21 @@
+/* User account icon in topbar */
 .topbar-menu-button-avatar img,
 .active-account-icon img {
-  content: url("../img/photo.jpg");
+  content: url("../img/photo.jpg") !important;
 }
 
-ytm-profile-icon:not(.topbar-menu-button-avatar):not(.active-account-icon) {
-    display: none !important;
+/* Almost all the avatar images */
+ytm-profile-icon:not(.topbar-menu-button-avatar):not(.active-account-icon) img,
+/* teaser comment's avatar */
+img.ytm-comments-entry-point-teaser-avatar,
+/* Channel avatar in video description */
+img.ytm-infocards-channel-details-thumbnail {
+  content: url("../img/avatar-chanell.svg") !important;
 }
 
-.channel-list-sub-menu-avatars {
-    opacity: 0 !important;
+ytm-profile-icon {
+  background-image: url('../img/avatar-chanell.svg') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: cover !important;
 }
