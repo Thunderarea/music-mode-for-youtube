@@ -301,5 +301,8 @@
   },
   "tip_2": {
     "message": "キーボードショートカット Ctrl + M を使用すると、オプションページで選択したオプションで、現在のタブの拡張機能を有効にできます。(このショートカットは他の拡張機能から使用した場合は機能しません。)"
+  },
+  "translatedBy": {
+    "message": "<a href='https://apieceofsushi.com/' class='links' target='_blank'>翻訳者Tomo</a>"
   }
 }

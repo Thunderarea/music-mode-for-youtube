@@ -89,3 +89,8 @@ ytd-secondary-search-container-renderer ytd-vertical-watch-card-list-renderer yt
 .title-container.ytd-watch-card-hero-video-renderer {
   position: relative !important;
 }
+
+/* Store of a channel. Hides the image of the products */
+#product-image {
+  display: none !important;
+}
