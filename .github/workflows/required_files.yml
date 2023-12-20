@@ -1,0 +1,49 @@
+name: Check for required and prohibited files
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  enforce-required-files:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Check for Required Files
+        id: required-files
+        run: |
+          set -e
+          required_files=(
+            "source/config_chrome.js"
+            "source/config_firefox.js"
+            "source/manifest_chrome.json"
+            "source/manifest_firefox.json"
+          )
+
+          for file in "${required_files[@]}"; do
+            if [ ! -f "$file" ]; then
+              echo "Missing required file: $file"
+              exit 1
+            fi
+          done
+      - name: Check for Prohibited Files
+        id: prohibited-files
+        run: |
+          set -e
+          prohibited_files=(
+            "source/config.js"
+            "source/manifest.json"
+          )
+
+          for file in "${prohibited_files[@]}"; do
+            if [ -f "$file" ]; then
+              echo "Prohibited file name: $file"
+              exit 1
+            fi
+          done
+      - name: Complete Workflow
+        if: steps.required-files.outcome == 'success' && steps.prohibited-files.outcome == 'success'
+        run: echo "All configuration files are ok."
