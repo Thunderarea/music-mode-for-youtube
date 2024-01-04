@@ -1,0 +1,42 @@
+# This is a workflow that is manually triggered when you want to publish a new version of the extension
+
+name: Publish extension
+
+on:
+  workflow_dispatch:
+    inputs:
+      browser:
+        description: 'Browser in which you will publish'
+        required: true
+        type: choice
+        options:
+        - chrome
+        - firefox
+        default: chrome
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v4
+    - name: Rename
+      run: |
+        cd source
+        if [ "${{ inputs.browser }}" == "firefox" ]; then 
+          rm -f manifest_chrome.json
+          mv manifest_firefox.json manifest.json
+          rm -f config_chrome.js
+          mv config_firefox.js config.js
+        else
+          rm -f manifest_firefox.json
+          mv manifest_chrome.json manifest.json
+          rm -f config_firefox.js
+          mv config_chrome.js config.js
+        fi
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: ${{ inputs.browser }}-extension
+        path: source
