@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Music Mode for YouTube™",
   "short_name": "Music Mode",
-  "version": "1.0.2",
+  "version": "1.2.0",
   "default_locale": "en",
   "incognito":"spanning",
   
@@ -64,7 +64,8 @@
       "matches": [ 
         "*://www.youtube.com/*",
         "*://music.youtube.com/*",
-        "*://m.youtube.com/*"
+        "*://m.youtube.com/*",
+        "*://www.youtube-nocookie.com/*"
        ]
     }, {
       "resources": [ 
@@ -97,7 +98,8 @@
       "matches": [
         "*://www.youtube.com/*",
         "*://music.youtube.com/*",
-        "*://m.youtube.com/*"
+        "*://m.youtube.com/*",
+        "*://www.youtube-nocookie.com/*"
       ],
       "css":[
         "css/content.css"

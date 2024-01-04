@@ -274,12 +274,12 @@ function applySettings() {
 function applyTabPageSettings(name, parentId, storedValues, storageId) {
   let currentRecord = storedValues[tabId];
   let buttonValue = document.querySelector("[name='" + name + "']:checked").value;
+  let siteObject;
   if (buttonValue == "on") {
     let object = {
       "enabled": true
     };
     let generalOptions = {};
-    let siteObject;
     let siteOptions;
     sitesIDs.forEach(siteName => {
       let button = document.querySelector("#" + parentId + " #" + siteName + " input");

@@ -428,7 +428,7 @@ function isMobileYouTube() {
 }
 
 function isEmbed() {
-  return (window.location.href.indexOf("www.youtube.com/embed/") !== -1);
+  return (window.location.href.indexOf("www.youtube.com/embed/") !== -1 || window.location.href.indexOf("www.youtube-nocookie.com/embed/") !== -1);
 }
 
 function isYoutubeMusic() {

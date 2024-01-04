@@ -124,27 +124,20 @@ async function getThumbnailImage(videoPlayer) {
           .videoDetails.thumbnail.thumbnails.slice(-1)[0].url +
         "?noblockingmmfytb=true";
       return thumbnailUrl;
-    } catch (error) {}
+    } catch (error) { }
   }
   let url_string = new URL(window.location.href);
   let videoId = isEmbed()
     ? window.location.pathname.replace("/embed/", "")
     : url_string.searchParams.get("v");
   if (videoId) {
-    if (getSiteName() === "youtube_music")
-      thumbnailUrl =
-        "https://i1.ytimg.com/vi/" +
-        videoId +
-        "/maxresdefault.jpg?noblockingmmfytb=true";
-    else
-      thumbnailUrl =
-        "https://img.youtube.com/vi/" +
-        videoId +
-        "/maxresdefault.jpg?noblockingmmfytb=true";
+    if (getSiteName() === "youtube_music") {
+      thumbnailUrl = `https://i1.ytimg.com/vi/${videoId}/maxresdefault.jpg?noblockingmmfytb=true`;
+    }
+    else thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg?noblockingmmfytb=true`;
     return fetch(thumbnailUrl, {
       method: "HEAD",
-    })
-      .then((response) => response)
+    }).then((response) => response)
       .then((data) => {
         return thumbnailUrl;
       })
@@ -162,7 +155,7 @@ function youtubeActivation(videoPlayer) {
     if (player) {
       try {
         player.updateLastActiveTime(); // setUserEngagement()
-      } catch (error) {}
+      } catch (error) { }
     }
   } else {
     clearInterval(intervalId);
@@ -182,7 +175,7 @@ try {
   if (typeof HXRopen === "undefined") {
     var HXRopen = XMLHttpRequest.prototype.open;
   }
-} catch (e) {}
+} catch (e) { }
 
 XMLHttpRequest.prototype.open = function (method, url) {
   if (blockVideo && url.indexOf("mime=audio") !== -1) {
@@ -212,7 +205,7 @@ try {
     }
     return await origFetch(...args);
   };
-} catch (error) {}
+} catch (error) { }
 
 function musicModeForYouTube(url, isLive, firstCall) {
   let video = findVideoEl("video");
@@ -223,21 +216,13 @@ function musicModeForYouTube(url, isLive, firstCall) {
       videoWithListener = video;
     } else video.removeEventListener("timeupdate", timeUpdate);
     if (isLive != -1) {
-      if (
-        video.src.indexOf("www.youtube.com") !== -1 ||
-        video.src.indexOf("music.youtube.com") !== -1 ||
-        video.src.indexOf("m.youtube.com") !== -1
-      ) {
+      if (isNotMusicUrl(video.src)) {
         video.dataset.originalurl = video.src;
         video.dataset.musicurl = 1;
         setResolutionTo144p(video);
       }
     } else {
-      if (
-        video.src.indexOf("www.youtube.com") !== -1 ||
-        video.src.indexOf("music.youtube.com") !== -1 ||
-        video.src.indexOf("m.youtube.com") !== -1
-      ) {
+      if (isNotMusicUrl(video.src)) {
         if (!firstCall) {
           try {
             const params = new URLSearchParams(url);
@@ -247,7 +232,7 @@ function musicModeForYouTube(url, isLive, firstCall) {
             ) {
               setNewURL(video, url);
             }
-          } catch (error) {}
+          } catch (error) { }
         } else setNewURL(video, url);
       } else {
         if (firstCall) {
@@ -261,11 +246,7 @@ function musicModeForYouTube(url, isLive, firstCall) {
 }
 
 function setResolutionTo144p(video) {
-  if (
-    getValue("mmfytb_live_144") &&
-    (video.src.indexOf("www.youtube.com") !== -1 ||
-      video.src.indexOf("m.youtube.com") !== -1)
-  ) {
+  if (getValue("mmfytb_live_144")) {
     try {
       let ytb_player = video.parentNode.parentNode;
       let qualityLevels = ytb_player.getAvailableQualityLevels();
@@ -273,7 +254,7 @@ function setResolutionTo144p(video) {
       if (lastLevel) {
         ytb_player.setPlaybackQualityRange(lastLevel, lastLevel);
       }
-    } catch (error) {}
+    } catch (error) { }
   }
 }
 
@@ -348,15 +329,15 @@ function reloadVideo(currentTime, reSearchVideo) {
     }
   } else {
     if (newVideoEl.offsetTop < 0 && !isVideoPreview(newVideoEl)) {
-      setTimeout(() => {
-        let newVideoEl = findVideoEl("video");
-        if (
-          newVideoEl &&
-          (!newVideoEl.hasAttribute("src") || newVideoEl.src === "")
-        ) {
-          newVideoEl.parentNode.parentNode.playVideo();
-        }
-      }, 1000);
+      // prevents this code from running in embedded videos in last.fm. It caused the video to re-open after closing it
+      if (!isEmbed() || !(new URLSearchParams(window.location.search)).get("origin").includes("www.last.fm")) {
+        setTimeout(() => {
+          let newVideoEl = findVideoEl("video");
+          if (newVideoEl && (!newVideoEl.hasAttribute("src") || newVideoEl.src === "")) {
+            newVideoEl.parentNode.parentNode.playVideo();
+          }
+        }, 1000);
+      }
     }
   }
 }
@@ -375,13 +356,13 @@ function setPlaybackRateAgain(video) {
     let rate = player.getPlaybackRate();
     player.setPlaybackRate(1);
     player.setPlaybackRate(rate);
-  } catch (err) {}
+  } catch (err) { }
 }
 
 function timeUpdate(event) {
   try {
     event.composedPath()[2].wakeUpControls();
-  } catch (err) {}
+  } catch (err) { }
 }
 
 function findVideoEl(searchTerm) {
@@ -418,9 +399,13 @@ function getSiteName() {
 }
 
 function isEmbed() {
-  return window.location.href.indexOf("www.youtube.com/embed/") !== -1;
+  return (window.location.href.indexOf("www.youtube.com/embed/") !== -1 || window.location.href.indexOf("www.youtube-nocookie.com/embed/") !== -1);
 }
 
 function getValue(option) {
   return sessionStorage.getItem(option) === "true";
+}
+
+function isNotMusicUrl(url) {
+  return (url.indexOf("www.youtube.com") !== -1 || url.indexOf("music.youtube.com") !== -1 || url.indexOf("m.youtube.com") !== -1 || url.indexOf("www.youtube-nocookie.com") !== -1);
 }

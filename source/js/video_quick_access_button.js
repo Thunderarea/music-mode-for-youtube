@@ -1,5 +1,5 @@
 var timerIDPlayerButton;
-let youtubeURLpattern = /(www.youtube.com|music.youtube.com|m.youtube.com)/;
+let youtubeURLpattern = /(www.youtube.com|music.youtube.com|m.youtube.com|www.youtube-nocookie.com)/;
 
 document.addEventListener("vqab", e => {
     e.detail.enabled ? enableAudio() : enableVideo();
@@ -36,14 +36,7 @@ function enableVideo() {
                 videoElements[i].pause();
                 let currentTime = 0;
                 currentTime = videoElements[i].currentTime;
-                if (isEmbed()) {
-                    let searchParams = new URLSearchParams(window.location.search);
-                    searchParams.set("start", parseInt(currentTime));
-                    searchParams.set("autoplay", paused ? "0" : "1");
-                    window.location.search = searchParams.toString();
-                } else {
-                    changeVideoURL(videoElements[i], videoElements[i].dataset.originalurl, paused, currentTime);
-                }
+                changeVideoURL(videoElements[i], videoElements[i].dataset.originalurl, paused, currentTime);
             }
         }
     }
@@ -105,10 +98,6 @@ function findVideoElements() {
         }
     }
     return videoElementsArray;
-}
-
-function isEmbed() {
-    return (window.location.href.indexOf("www.youtube.com/embed/") !== -1);
 }
 
 function isYoutubeMusic() {
