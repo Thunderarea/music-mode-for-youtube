@@ -7,7 +7,7 @@ Music Mode for YouTube™ is a browser extension that **blocks** the video and p
 - Hides the user avatars 
 - Disables the "Video paused. Continue watching?" message
 
-Music Mode for YouTube is highly customizable since all the features are optional and can be turned on/off separately for YouTube, YouTube Music and embedded YouTube videos.
+Music Mode for YouTube™ is highly customizable since all the features are optional and can be turned on/off separately for YouTube, YouTube Music and embedded YouTube videos.
 Moreover, the extension can be enabled globally, for specific tabs, or temporarily for just a single video.
 
 > [!NOTE]
