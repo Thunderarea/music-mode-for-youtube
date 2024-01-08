@@ -1,11 +1,12 @@
 # Music Mode for YouTube™
+![Music Mode for YouTube™ logo](./source/img/logo/full_logo.svg)
 ## Overview
-Music Mode for YouTube™ is a browser extension that **blocks** the video and plays only the audio on **YouTube**, **YouTube Music** and embedded YouTube videos in third-party sites. It is compatible with **Chrome**, **Firefox** and most of the modern Chromium browsers. The main features of the extension are the following:
-- Blocks the video, playing only the audio
-- Hides the thumbnails of the videos
-- Skips the ads 
-- Hides the user avatars 
-- Disables the "Video paused. Continue watching?" message
+Music Mode for YouTube™ is a browser extension that **blocks** the video and plays only the audio on **YouTube**, **YouTube Music** and embedded YouTube videos in third-party sites. It is compatible with **Chrome**, **Firefox** and most of the modern Chromium browsers. The extension:
+- Block the video, playing only the audio
+- Hide the thumbnails of the videos
+- Skip the ads 
+- Hide the user avatars 
+- Disable the "Video paused. Continue watching?" message
 
 Music Mode for YouTube™ is highly customizable since all the features are optional and can be turned on/off separately for YouTube, YouTube Music and embedded YouTube videos.
 Moreover, the extension can be enabled globally, for specific tabs, or temporarily for just a single video.
@@ -16,7 +17,7 @@ Moreover, the extension can be enabled globally, for specific tabs, or temporari
 ### Mobile support
 The extension is fully compatible with YouTube for mobiles offering an extra feature that allows music and videos to play in the background. The extension can be installed in a smartphone using **[Kiwi](https://play.google.com/store/apps/details?id=com.kiwibrowser.browser)**, a Chromium browser for mobiles that supports extensions from the Chrome Web Store.
 
-### Why to use Music Mode for YouTube™?
+### Reasons to use Music Mode for YouTube™
 - Hide NSFW content while listening to music (e.g. in workplace)
 - Reduce distractions on YouTube. Stay focused 
 - Save bandwidth
@@ -27,10 +28,10 @@ The extension is fully compatible with YouTube for mobiles offering an extra fea
 - Firefox 109 or later
 - Edge 91 or later
 
-For compatibility with other Chromium browsers, a required version is one that supports manifest version 3 or later.
+For compatibility with other Chromium browsers, a version that supports Manifest V3 is required.
 
 ## Installation
-For all the Chromium browsers that support extensions from the Chrome Web Store the extension can be installed from the [Chrome Web Store](https://chromewebstore.google.com/detail/music-mode-for-youtube/abbpaepbpakcpipajigmlpnhlnbennna). These browsers include:
+For all the Chromium browsers that support extensions from the Chrome Web Store the extension can be installed from the [Chrome Web Store](https://chromewebstore.google.com/detail/music-mode-for-youtube/abbpaepbpakcpipajigmlpnhlnbennna). These browsers are:
 - Google Chrome
 - Microsoft Edge 
 - Brave
@@ -39,10 +40,10 @@ For all the Chromium browsers that support extensions from the Chrome Web Store 
 - Kiwi (for mobiles)
 - etc
 
-For the Firefox browser the extension can be installed from the [Firefox Add-ons Store](https://addons.mozilla.org/en/firefox/addon/music-mode-for-youtube/).
+For the Firefox browser the extension can be installed from the [Firefox Browser Add-ons](https://addons.mozilla.org/en/firefox/addon/music-mode-for-youtube/).
 
 ## Contribution
-Any kind of contribution is welcome (refactoring, fix of bugs, addition of new features, etc).
+Any kind of contribution is welcome (refactoring, bug fixing, addition of new features, etc).
 
 ## Privacy Policy
 The extension does not collect any kind of data. The user options are stored locally in the user's browser.
