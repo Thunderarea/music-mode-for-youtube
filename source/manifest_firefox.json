@@ -8,6 +8,13 @@
   
   "description": "__MSG_extDescription__",
 
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{e960c19a-b3ce-477c-8a0d-d82959225dee}",
+      "strict_min_version": "113.0"
+    }
+  },
+
   "icons": {
     "19": "img/logo/icon19.png",
     "38": "img/logo/icon38.png",
@@ -35,7 +42,6 @@
     "unlimitedStorage"
   ],
   "options_ui": {
-    "browser_style": true,
     "open_in_tab": true,
     "page": "pages/options.html"
   },
