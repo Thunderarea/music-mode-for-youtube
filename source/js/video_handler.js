@@ -11,7 +11,7 @@ document.addEventListener("injection_script_communication", () => {
 
 function initialization() {
   blockVideo = getValue("mmfytb_block_video");
-  let videoPlayer = getPlayer("video");
+  let videoPlayer = getPlayer();
   applyVideoPlayerOptions(videoPlayer);
 
   if (getValue("mmfytb_continue_watching_prompt")) {
@@ -151,7 +151,7 @@ async function getThumbnailImage(videoPlayer) {
 // Continue watching prompt
 function youtubeActivation(videoPlayer) {
   if (getValue("mmfytb_continue_watching_prompt")) {
-    let player = videoPlayer ? videoPlayer : getPlayer("video");
+    let player = videoPlayer ? videoPlayer : getPlayer();
     if (player) {
       try {
         player.updateLastActiveTime(); // setUserEngagement()
@@ -163,9 +163,9 @@ function youtubeActivation(videoPlayer) {
   }
 }
 
-function getPlayer(searchTerm) {
+function getPlayer() {
   let player;
-  let video = findVideoEl(searchTerm);
+  let video = findVideoEl();
   if (video && video.parentNode && video.parentNode.parentNode)
     player = video.parentNode.parentNode;
   return player;
@@ -208,7 +208,7 @@ try {
 } catch (error) { }
 
 function musicModeForYouTube(url, isLive, firstCall) {
-  let video = findVideoEl("video");
+  let video = findVideoEl();
   if (video) {
     setPlaybackRateAgain(video);
     if (getValue("mmfytb_progress_bar")) {
@@ -320,7 +320,7 @@ function findChangesInSource(mutations) {
 }
 
 function reloadVideo(currentTime, reSearchVideo) {
-  let newVideoEl = findVideoEl("video");
+  let newVideoEl = findVideoEl();
   if (!newVideoEl) {
     if (reSearchVideo) {
       setTimeout(() => {
@@ -329,10 +329,11 @@ function reloadVideo(currentTime, reSearchVideo) {
     }
   } else {
     if (newVideoEl.offsetTop < 0 && !isVideoPreview(newVideoEl)) {
-      // prevents this code from running in embedded videos in last.fm. It caused the video to re-open after closing it
-      if (!isEmbed() || !(new URLSearchParams(window.location.search)).get("origin").includes("www.last.fm")) {
+      // It prevents this code from running in embedded videos in last.fm. It caused the video to re-open after closing it
+      let originParam = (new URLSearchParams(window.location.search)).get("origin");
+      if (!(isEmbed() && originParam && originParam.includes("www.last.fm"))) {
         setTimeout(() => {
-          let newVideoEl = findVideoEl("video");
+          let newVideoEl = findVideoEl();
           if (newVideoEl && (!newVideoEl.hasAttribute("src") || newVideoEl.src === "")) {
             newVideoEl.parentNode.parentNode.playVideo();
           }
@@ -365,9 +366,9 @@ function timeUpdate(event) {
   } catch (err) { }
 }
 
-function findVideoEl(searchTerm) {
+function findVideoEl() {
   let video;
-  let videoElements = document.querySelectorAll(searchTerm);
+  let videoElements = document.querySelectorAll("video");
   if (videoElements && videoElements.length) {
     let videoRect = 0;
     for (var i = 0; i < videoElements.length; i++) {
