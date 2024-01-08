@@ -47,6 +47,10 @@ For the Firefox browser the extension can be installed from the [Firefox Browser
 ## Contribution
 Any kind of contribution is welcome (refactoring, bug fixing, addition of new features, etc).
 
+After downloading the source code: 
+- For Chromium-based browsers, rename `manifest_chrome.json` and `config_chrome.js` to `manifest.json` and `config.js`
+- For Firefox, rename the corresponding files
+
 ## Privacy Policy
 The extension does not collect any kind of data. The user options are stored locally in the user's browser.
 
