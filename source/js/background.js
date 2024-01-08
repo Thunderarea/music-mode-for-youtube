@@ -130,11 +130,12 @@ function initialization(initializationReason) {
           chrome.tabs.create({
             url: "pages/options.html"
           });
-        } else if (initializationReason === "update") {
-          chrome.tabs.create({
-            url: "pages/about.html"
-          });
-        }
+        } 
+        // else if (initializationReason === "update") {
+        //   chrome.tabs.create({
+        //     url: "pages/about.html"
+        //   });
+        // }
       });
     });
   });
