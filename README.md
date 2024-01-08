@@ -1,5 +1,7 @@
 # Music Mode for YouTube™
-![Music Mode for YouTube™ logo](./source/img/logo/full_logo.svg)
+![Music Mode for YouTube™ logo](./source/img/logo/full_logo.svg) 
+
+[![Available in the Chrome Web Store](./chrome_badge.png)](https://chromewebstore.google.com/detail/music-mode-for-youtube/abbpaepbpakcpipajigmlpnhlnbennna) [![Get the Add-on](./firefox_badge.webp)](https://addons.mozilla.org/en/firefox/addon/music-mode-for-youtube/)
 ## Overview
 Music Mode for YouTube™ is a browser extension that **blocks** the video and plays only the audio on **YouTube**, **YouTube Music** and embedded YouTube videos in third-party sites. It is compatible with **Chrome**, **Firefox** and most of the modern Chromium browsers. The extension:
 - Block the video, playing only the audio
