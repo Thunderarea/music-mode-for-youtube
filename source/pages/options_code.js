@@ -107,10 +107,32 @@ function detectChange(isGroupCheckbox, optionName, checked) {
     if (storedValues[optionName] != undefined) {
       let newValues = {};
       newValues[optionName] = checked;
-      if (optionName == "popup_current_page") newValues["sspages"] = [];
+      if (!checked) {
+        switch (optionName) {
+          case "popup_current_page":
+            newValues["sspages"] = [];
+            break;
+          case "quick_access_buttons_images":
+            newValues.qapages = removeQAPagesRecords(storedValues.qapages, "images");
+            break;
+          case "quick_access_buttons_video":
+            newValues.qapages = removeQAPagesRecords(storedValues.qapages, "video");
+            break;
+          default:
+            break;
+        } 
+      }
       chrome.storage.local.set(newValues);
     }
   });
+}
+
+function removeQAPagesRecords(qapages, field) {
+  for (const key in qapages) {
+    delete qapages[key][field];
+    if (Object.keys(qapages[key]).length === 0) delete qapages[key];
+  }
+  return qapages;
 }
 
 function groupCheckboxChange(optionName, checked) {
