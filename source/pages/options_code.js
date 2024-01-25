@@ -19,26 +19,11 @@ let sitesInfo = {
   }
 };
 
-adaptDisplay();
+init();
 
-let checkboxes = document.querySelectorAll("input[type='checkbox']");
-checkboxes.forEach(checkbox => {
-  checkbox.addEventListener("change", detectChange);
-});
-
-const event = new Event('JSchange');
-let optionsCheckboxes = document.querySelectorAll(".groupCheckboxes");
-optionsCheckboxes.forEach(checkbox => {
-  checkbox.addEventListener("JSchange", detectJSChange);
-});
-
-// let radioButtons = document.querySelectorAll("input[type='radio']");
-// radioButtons.forEach(button => {
-//   button.addEventListener("change", detectThemeChange);
-// });
-
-function adaptDisplay() {
+function init() {
   addTemplates();
+  initializeListeners();
   initializeOptions();
 }
 
@@ -70,9 +55,8 @@ function getSiteHTML(id, item) {
       </div>
     </div>
     <div class="optionsContainer">
-    ${
-      item.options.map(option => {
-        return `
+    ${item.options.map(option => {
+    return `
           <div class="settings setbord">
             <div class="descr_toggle">
               <ul class="settingsTextIcon">
@@ -90,10 +74,21 @@ function getSiteHTML(id, item) {
             </div>
           </div>
         `;
-      }).join("")
+  }).join("")
     }
     </div>
   </div>`
+}
+
+function initializeListeners() {
+  document.querySelectorAll("input[type='checkbox']").forEach(checkbox => {
+    let isGroupCheckbox = checkbox.classList.contains("groupCheckboxes");
+    let optionName = checkbox.name;
+
+    checkbox.addEventListener("change", function () {
+      detectChange(isGroupCheckbox, optionName, this.checked);
+    });
+  });
 }
 
 function initializeOptions() {
@@ -101,32 +96,25 @@ function initializeOptions() {
     let checkboxes = document.querySelectorAll("input[type='checkbox']");
     checkboxes.forEach(checkbox => {
       checkbox.checked = storedValues[checkbox.name];
-      checkbox.dispatchEvent(new Event("JSchange"));
+      checkbox.dispatchEvent(new Event("change"));
     });
-    // document.getElementById(`thumb${storedValues.theme}`).checked = true;
   });
 }
 
-function detectChange(event) {
-  if (event.target.classList.contains("groupCheckboxes")) detectJSChange(event);
+function detectChange(isGroupCheckbox, optionName, checked) {
+  if (isGroupCheckbox) groupCheckboxChange(optionName, checked);
   chrome.storage.local.get(null, storedValues => {
-    if (storedValues[event.target.name] != undefined) {
+    if (storedValues[optionName] != undefined) {
       let newValues = {};
-      newValues[event.target.name] = event.target.checked;
-      if (event.target.name == "popup_current_page") newValues["sspages"] = [];
+      newValues[optionName] = checked;
+      if (optionName == "popup_current_page") newValues["sspages"] = [];
       chrome.storage.local.set(newValues);
     }
   });
 }
 
-function detectJSChange(event) {
-  let optionsContainer = document.querySelector("#" + event.target.name + " .optionsContainer");
-  if (event.target.checked) optionsContainer.classList.add("visibleOptions");
+function groupCheckboxChange(optionName, checked) {
+  let optionsContainer = document.querySelector("#" + optionName + " .optionsContainer");
+  if (checked) optionsContainer.classList.add("visibleOptions");
   else optionsContainer.classList.remove("visibleOptions");
 }
-
-// function detectThemeChange(event) {
-//   chrome.storage.local.set({
-//     "theme": event.target.dataset.id_number
-//   });
-// }
