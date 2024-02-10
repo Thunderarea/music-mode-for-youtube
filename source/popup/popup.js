@@ -277,7 +277,8 @@ function applyTabPageSettings(name, parentId, storedValues, storageId) {
   let siteObject;
   if (buttonValue == "on") {
     let object = {
-      "enabled": true
+      "enabled": true,
+      "url": tabUrl,
     };
     let generalOptions = {};
     let siteOptions;
@@ -330,8 +331,9 @@ function isEqual(object1, object2) {
   let equal = true;
   for (let key in object1) {
     if (object2[key] != undefined) {
-      if (Object.keys(object1[key]).length != 0) equal &&= isEqual(object1[key], object2[key]);
-      else equal &&= object1[key] === object2[key];
+      if (typeof object1[key] === "object" && !Array.isArray(object1[key]) && object1[key] !== null) {
+        equal &&= isEqual(object1[key], object2[key]);
+      } else equal &&= object1[key] === object2[key];
     } else return false;
   }
   return equal;
