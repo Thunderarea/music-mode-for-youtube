@@ -311,6 +311,7 @@ ytd-compact-station-renderer .flex-container.ytd-compact-station-renderer {
   display: none !important;
 }
 
-#time-status.ytd-thumbnail-overlay-time-status-renderer {
+#time-status.ytd-thumbnail-overlay-time-status-renderer,
+ytd-thumbnail-overlay-time-status-renderer badge-shape {
   background-color: transparent !important;
 }
