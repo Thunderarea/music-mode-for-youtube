@@ -99,7 +99,7 @@ ytd-movie-offer-module-renderer yt-img-shadow {
 }
 
 .ytp-show-tiles .ytp-videowall-still .ytp-videowall-still-image {
-  background-image: url('../img/youtube_logo.svg') !important;
+  background-image: url("../img/youtube_logo.svg") !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: 30% 30% !important;
@@ -165,7 +165,8 @@ ytd-playlist-renderer img,
 ytd-radio-renderer img,
 ytd-video-renderer img,
 ytd-playlist-panel-supported-items img,
-ytd-playlist-panel-video-renderer img {
+ytd-playlist-panel-video-renderer img,
+ytd-rich-item-renderer img {
   display: none !important;
 }
 
@@ -178,8 +179,10 @@ ytd-rich-movie-renderer ytd-thumbnail {
   height: 118px !important;
 }
 
-ytd-thumbnail #overlays, ytd-grid-movie-renderer yt-img-shadow, ytd-rich-movie-renderer yt-img-shadow {
-  background-image: url('../img/youtube_logo.svg') !important;
+ytd-thumbnail #overlays,
+ytd-grid-movie-renderer yt-img-shadow,
+ytd-rich-movie-renderer yt-img-shadow {
+  background-image: url("../img/youtube_logo.svg") !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: 40% 40% !important;
@@ -314,4 +317,29 @@ ytd-compact-station-renderer .flex-container.ytd-compact-station-renderer {
 #time-status.ytd-thumbnail-overlay-time-status-renderer,
 ytd-thumbnail-overlay-time-status-renderer badge-shape {
   background-color: transparent !important;
+}
+
+/* Playlists in Playlists page */
+yt-thumbnail-overlay-badge-view-model {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+}
+
+yt-thumbnail-overlay-badge-view-model yt-thumbnail-badge-view-model {
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 !important;
+}
+
+yt-thumbnail-overlay-badge-view-model yt-thumbnail-badge-view-model badge-shape {
+  height: 100% !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  padding: 0 !important;
 }
