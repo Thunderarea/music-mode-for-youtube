@@ -1,3 +1,7 @@
+:root {
+  --yt-primary-color: #323232;
+}
+
 /*thumbnail*/
 ytd-thumbnail-overlay-time-status-renderer {
   height: 100% !important;
@@ -7,7 +11,7 @@ ytd-thumbnail-overlay-time-status-renderer {
   align-items: center !important;
   padding: 0 !important;
   margin: 0 !important;
-  background-color: #323232 !important;
+  background-color: var(--yt-primary-color) !important;
 }
 
 ytd-thumbnail img {
@@ -17,7 +21,7 @@ ytd-thumbnail img {
 /*playlist-mix*/
 ytd-thumbnail-overlay-side-panel-renderer {
   width: 100% !important;
-  background-color: #323232 !important;
+  background-color: var(--yt-primary-color) !important;
 }
 
 .iv-card-image {
@@ -32,7 +36,7 @@ ytd-thumbnail-overlay-side-panel-renderer {
   right: 0 !important;
   text-align: center !important;
   padding: 5px 0 !important;
-  background-color: #323232 !important;
+  background-color: var(--yt-primary-color) !important;
 }
 
 .iv-card-image-text {
@@ -40,7 +44,7 @@ ytd-thumbnail-overlay-side-panel-renderer {
   display: block !important;
   padding: 5px !important;
   background-image: none !important;
-  background-color: #323232 !important;
+  background-color: var(--yt-primary-color) !important;
 }
 
 .iv-card-playlist .iv-card-image-overlay {
@@ -103,7 +107,7 @@ ytd-movie-offer-module-renderer yt-img-shadow {
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: 30% 30% !important;
-  background-color: #323232 !important;
+  background-color: var(--yt-primary-color) !important;
 }
 
 .ytp-tooltip.ytp-text-detail.ytp-preview .ytp-tooltip-bg {
@@ -186,7 +190,7 @@ ytd-rich-movie-renderer yt-img-shadow {
   background-repeat: no-repeat !important;
   background-position: center !important;
   background-size: 40% 40% !important;
-  background-color: #323232 !important;
+  background-color: var(--yt-primary-color) !important;
   height: 100% !important;
   width: 100% !important;
 }
@@ -258,7 +262,7 @@ ytd-thumbnail-overlay-bottom-panel-renderer {
   width: 100%;
   margin-right: 0 !important;
   margin-bottom: 0 !important;
-  background-color: #323232 !important;
+  background-color: var(--yt-primary-color) !important;
   justify-content: center !important;
 }
 
@@ -306,7 +310,7 @@ ytd-compact-station-renderer .flex-container.ytd-compact-station-renderer {
 
 .ytp-autonav-endscreen-upnext-thumbnail,
 .ytp-autonav-endscreen-upnext-button {
-  background-color: #323232 !important;
+  background-color: var(--yt-primary-color) !important;
 }
 
 /* Delete the video thumbnail when you hover over the video */
@@ -336,6 +340,7 @@ yt-thumbnail-overlay-badge-view-model yt-thumbnail-badge-view-model {
 }
 
 yt-thumbnail-overlay-badge-view-model yt-thumbnail-badge-view-model badge-shape {
+  background-color: var(--yt-primary-color) !important;
   height: 100% !important;
   width: 100% !important;
   display: flex !important;
