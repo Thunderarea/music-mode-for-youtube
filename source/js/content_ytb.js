@@ -12,23 +12,15 @@ let videoButtonState = false;
 let imageButtonState = false;
 
 let svgImageEnabled = `
-<svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon icon icon-imageEnabled" style="pointer-events: none; display: block; width: 100%; height: 100%;">
-  <use xlink:href="#icon-imageEnabled">
-    <symbol id="icon-imageEnabled" viewBox="0 0 32 32">
-      <path d="M3.727 0.407c-0.113 0.003-0.226 0.043-0.319 0.124l-0.672 0.58c-0.212 0.183-0.235 0.502-0.052 0.714l25.735 29.792c0.183 0.212 0.502 0.236 0.714 0.052l0.672-0.58c0.212-0.183 0.235-0.502 0.052-0.714l-2.608-3.019c0.264-0.002 0.528-0.003 0.793-0.005 0.526-0.003 0.953-0.433 0.953-0.964v-20.72c0-0.532-0.428-0.964-0.953-0.964h-20.361l-3.559-4.12c-0.103-0.119-0.249-0.179-0.395-0.176zM3.758 4.707c-0.487 0.042-0.871 0.456-0.871 0.96v20.72c0 0.532 0.428 0.96 0.953 0.964 6.326 0.054 12.853 0.055 19.5 0.026l-7.236-8.377-1.315 1.315-4.144-4.144c-0.145-0.145-0.338-0.225-0.543-0.225s-0.398 0.080-0.542 0.225l-4.101 4.071v-12.884h0.588l-2.289-2.65zM9.973 7.356h16.515v10.575l-4.125-4.106c-0.299-0.299-0.786-0.298-1.084 0.001l-3.067 3.067-8.238-9.536zM16.825 8.523c-1.445 0-2.62 1.175-2.62 2.621s1.176 2.62 2.62 2.62 2.621-1.176 2.621-2.62c0-1.445-1.176-2.621-2.621-2.621zM23.999 14.981c-0.005 0.021-0.008 0.030-0.013 0.048 0.012-0.009 0.024-0.016 0.036-0.024l-0.023-0.023zM6.765 18.587l-0.117 0.117c0.048-0.002 0.096-0.004 0.145-0.003-0.012-0.032-0.025-0.063-0.027-0.097-0-0.006-0-0.012-0-0.018zM6.162 19.304c-0-0-0 0.002-0 0.002-0 0.003-0 0.004-0 0.006 0.004 0.018 0.021 0.061 0.045 0.097-0.025-0.070-0.040-0.102-0.044-0.106z"></path>
-    </symbol>
-  </use>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path fill="currentColor" d="m20 17.15l-1-1V5H7.85l-1-1H20zm.492 4.758L18.585 20H4V5.416L2.092 3.508L2.8 2.8l18.4 18.4zM7.5 16.5l1.962-2.577l1.75 2.116l1.517-1.889L5 6.421V19h12.579l-2.5-2.5zm3.792-3.792"/>
 </svg>
 `;
 let svgImageEnabledEl = new DOMParser().parseFromString(svgImageEnabled, "text/html").body.firstElementChild;
 
 let svgImageDisabled = `
-<svg viewBox="0 0 24 24" preserveAspectRatio="xMidYMid meet" focusable="false" class="style-scope yt-icon icon icon-imageDisabled" style="pointer-events: none; display: block; width: 100%; height: 100%;">
-  <use xlink:href="#icon-imageDisabled">
-    <symbol id="icon-imageDisabled" viewBox="0 0 32 32">
-      <path d="M3.84 4.702c-0.526 0-0.953 0.432-0.953 0.964v20.72c0 0.532 0.428 0.96 0.953 0.964 7.812 0.067 15.928 0.054 24.202 0 0.526-0.003 0.953-0.433 0.953-0.964v-20.72c0-0.532-0.428-0.964-0.953-0.964h-24.202zM5.459 7.356h21.028v10.575l-4.125-4.106c-0.299-0.299-0.786-0.298-1.084 0.001l-6.488 6.488-4.144-4.144c-0.145-0.145-0.338-0.225-0.543-0.225s-0.398 0.080-0.542 0.225l-4.101 4.071v-12.884zM16.825 8.523c-1.445 0-2.62 1.175-2.62 2.621s1.176 2.62 2.62 2.62 2.621-1.176 2.621-2.62c0-1.445-1.176-2.621-2.621-2.621zM23.999 14.981c-0.005 0.021-0.008 0.030-0.013 0.048 0.012-0.009 0.024-0.016 0.036-0.024l-0.023-0.023zM6.765 18.587l-0.117 0.117c0.048-0.002 0.096-0.004 0.145-0.003-0.012-0.032-0.025-0.063-0.027-0.097-0-0.006-0-0.012-0-0.018zM6.162 19.304c-0-0-0 0.002-0 0.002-0 0.003-0 0.004-0 0.006 0.004 0.018 0.021 0.061 0.045 0.097-0.025-0.070-0.040-0.102-0.044-0.106z"></path>
-    </symbol>
-  </use>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+  <path fill="currentColor" d="M7.5 16.5h9.154l-2.827-3.77l-2.615 3.308l-1.75-2.115zM4 20V4h16v16zm1-1h14V5H5zm0 0V5z"/>
 </svg>
 `;
 let svgImageDisabledEl = new DOMParser().parseFromString(svgImageDisabled, "text/html").body.firstElementChild;
@@ -41,9 +33,6 @@ if (document.getElementById("video_quick_access_button_JS_mmfytb_thunderarea") =
   document.documentElement.appendChild(script);
 }
 
-let videoElement = undefined;
-var timerIDPlayerButton = undefined;
-
 function addVideoButton() {
   let iterations = 0;
   let timerId = setInterval(findVideoButton, 500);
@@ -52,7 +41,7 @@ function addVideoButton() {
     iterations++;
     if (iterations >= 120) clearInterval(timerId);
     let container = document.querySelector(".ytp-chrome-controls .ytp-right-controls");
-    if (container && container.firstElementChild) {
+    if (container?.firstElementChild) {
       let existEl = document.getElementById("video_button_mmfytb_thunderarea");
       if (!existEl) {
         let el_1 = document.createElement("BUTTON");
@@ -158,39 +147,29 @@ function addImagesButton() {
   function findImagesButton() {
     iterations++;
     if (iterations >= 60) clearInterval(timerId);
-    var headElement = document.querySelector("#container.ytd-masthead #end.ytd-masthead");
-    if (headElement && headElement.firstElementChild) {
+    let headElement = document.querySelector("#container.ytd-masthead #end.ytd-masthead");
+    if (headElement?.firstElementChild) {
       let existElement = headElement.querySelector("#topbar_button_mmfytb_thunderarea");
       if (!existElement) {
-        var endElement = headElement.querySelector("#buttons");
+        let endElement = headElement.querySelector("#buttons");
         if (!endElement) return;
         topBarObserver.observe(endElement, options);
-        let el_1 = `<ytd-topbar-menu-button-renderer id="topbar_button_mmfytb_thunderarea" class="style-scope ytd-masthead style-default" is-icon-button="" has-no-text="" use-keyboard-focused="" style="width: 40px; margin-right: 8px;"></ytd-topbar-menu-button-renderer>
-        </ytd-topbar-menu-button-renderer>`;
-        el_1 = new DOMParser().parseFromString(el_1, "text/html").body.firstElementChild;
-        headElement.insertBefore(el_1, endElement);
-        let el_2 = `<a id="topbar_button_mmfytb_thunderarea" class="yt-simple-endpoint style-scope ytd-topbar-menu-button-renderer" tabindex="-1"></a>`;
-        el_2 = new DOMParser().parseFromString(el_2, "text/html").body.firstElementChild;
-        el_1.querySelector("div#button").appendChild(el_2);
 
-        let el_3 = `<yt-icon-button id="button" class="style-scope ytd-topbar-menu-button-renderer style-default"></yt-icon-button>`;
-        el_3 = new DOMParser().parseFromString(el_3, "text/html").body.firstElementChild;
-        el_2.appendChild(el_3);
-        let el_4 = el_3.querySelector("button#button");
-        el_4.setAttribute("aria-label", "Hide images");
+        let customButton = `
+        <div id="topbar_button_mmfytb_thunderarea">
+          <div class="icon-container"></div>
+          <tp-yt-paper-tooltip class="style-scope ytd-topbar-menu-button-renderer" id="tooltip_text_mmfytb_thunderarea" role="tooltip" tabindex="-1">
+          </tp-yt-paper-tooltip>
+        </div>`;
+        let newButton = new DOMParser().parseFromString(customButton, "text/html").body.firstElementChild;
 
-        let el_5 = `<yt-icon class="style-scope ytd-topbar-menu-button-renderer" id="icon_mmfytb_thunderarea"></yt-icon>`;
-        el_5 = new DOMParser().parseFromString(el_5, "text/html").body.firstElementChild;
-        el_4.appendChild(el_5);
-
-        el_6 = `<tp-yt-paper-tooltip class="style-scope ytd-topbar-menu-button-renderer" id="tooltip_text_mmfytb_thunderarea" role="tooltip" tabindex="-1"></tp-yt-paper-tooltip>`;
-        el_6 = new DOMParser().parseFromString(el_6, "text/html").body.firstElementChild;
-        el_2.appendChild(el_6);
-        el_2.addEventListener("mouseenter", showTooltip);
-        el_2.addEventListener("mouseleave", hideTooltip);
-        el_2.onmouseup = function () {
+        newButton.addEventListener("mouseenter", showTooltip);
+        newButton.addEventListener("mouseleave", hideTooltip);
+        newButton.onmouseup = function () {
           clickButton(false);
         };
+
+        headElement.insertBefore(newButton, endElement);
       }
       setImagesButtonState();
       clearInterval(timerId);
@@ -198,40 +177,33 @@ function addImagesButton() {
   }
 
   function setImagesButtonState() {
+    empty(document.querySelector("#topbar_button_mmfytb_thunderarea .icon-container"));
     if (imageButtonState) {
-      empty(document.getElementById("icon_mmfytb_thunderarea"));
-      document.getElementById("icon_mmfytb_thunderarea").appendChild(svgImageEnabledEl);
-      document.getElementById("tooltip_text_mmfytb_thunderarea").querySelector("#tooltip").dataset.gray = "0";
+      document.querySelector("#topbar_button_mmfytb_thunderarea .icon-container").appendChild(svgImageEnabledEl);
+      document.querySelector("#tooltip_text_mmfytb_thunderarea #tooltip").dataset.gray = "0";
     } else {
-      empty(document.getElementById("icon_mmfytb_thunderarea"));
-      document.getElementById("icon_mmfytb_thunderarea").appendChild(svgImageDisabledEl);
-      document.getElementById("tooltip_text_mmfytb_thunderarea").querySelector("#tooltip").dataset.gray = "1";
+      document.querySelector("#topbar_button_mmfytb_thunderarea .icon-container").appendChild(svgImageDisabledEl);
+      document.querySelector("#tooltip_text_mmfytb_thunderarea #tooltip").dataset.gray = "1";
     }
   }
 
   function showTooltip() {
-    var tooltipEl = document.getElementById("tooltip_text_mmfytb_thunderarea");
+    let tooltipEl = document.querySelector("#tooltip_text_mmfytb_thunderarea #tooltip");
     if (tooltipEl) {
-      tooltipEl = tooltipEl.querySelector("#tooltip");
-      if (tooltipEl) {
-        tooltipEl.classList.add("fade-in-animation");
-        tooltipEl.classList.remove("hidden");
-        el_6.style.top = document.querySelector("#end.ytd-masthead div#buttons").offsetHeight + document.querySelector("#end.ytd-masthead div#buttons").offsetTop + 8 + "px";
-        tooltipEl.style.setProperty("display", "block", "important");
-      }
+      tooltipEl.classList.add("fade-in-animation");
+      tooltipEl.classList.remove("hidden");
+      tooltipEl.style.top = document.querySelector("#end.ytd-masthead div#buttons").offsetHeight + document.querySelector("#end.ytd-masthead div#buttons").offsetTop + 8 + "px";
+      tooltipEl.style.setProperty("display", "block", "important");
     }
   }
 
   function hideTooltip() {
-    var tooltipEl = document.getElementById("tooltip_text_mmfytb_thunderarea");
+    let tooltipEl = document.querySelector("#tooltip_text_mmfytb_thunderarea #tooltip");
     if (tooltipEl) {
-      tooltipEl = tooltipEl.querySelector("#tooltip");
-      if (tooltipEl) {
-        tooltipEl.classList.add("hidden");
-        tooltipEl.classList.remove("fade-in-animation");
-        tooltipEl.style.setProperty("display", "none", "important");
-        tooltipEl.textContent = "";
-      }
+      tooltipEl.classList.add("hidden");
+      tooltipEl.classList.remove("fade-in-animation");
+      tooltipEl.style.setProperty("display", "none", "important");
+      tooltipEl.textContent = "";
     }
   }
 }
@@ -245,8 +217,8 @@ function addFeature(optionName, theme, mustReload, videoOptions) {
       if (mustReload === 1) {
         let clonedDetail = { enabled: true };
         if (typeof cloneInto != 'undefined') clonedDetail = cloneInto({ enabled: true }, document.defaultView);
-        let customEvent = new CustomEvent('vqab', { 
-          detail: clonedDetail 
+        let customEvent = new CustomEvent('vqab', {
+          detail: clonedDetail
         });
         document.dispatchEvent(customEvent);
       }
@@ -344,7 +316,7 @@ function reloadImages() {
             break;
           }
         }
-      } catch (error) {}
+      } catch (error) { }
     } else {
       source = images[j].src;
       images[j].src = source;
@@ -365,9 +337,9 @@ function removeFeature(optionName, mustReload) {
       if (mustReload === 1) {
         let clonedDetail = { enabled: false };
         if (typeof cloneInto != 'undefined') clonedDetail = cloneInto({ enabled: false }, document.defaultView);
-        let customEvent = new CustomEvent('vqab', { 
+        let customEvent = new CustomEvent('vqab', {
           bubbles: true,
-          detail: clonedDetail 
+          detail: clonedDetail
         });
         document.dispatchEvent(customEvent);
       }
@@ -418,8 +390,10 @@ function removeButtons(video, images) {
 }
 
 function empty(node) {
-  while (node.hasChildNodes()) {
-    node.removeChild(node.firstChild);
+  if (node) {
+    while (node.hasChildNodes()) {
+      node.removeChild(node.firstChild);
+    }
   }
 }
 
@@ -450,7 +424,7 @@ let SITES = {
 
 function featuresHandler(options, theme, mustReload, videoOptions) {
   for (let name in options) {
-    (options[name]) ? addFeature(name, theme, mustReload, videoOptions): removeFeature(name, mustReload);
+    (options[name]) ? addFeature(name, theme, mustReload, videoOptions) : removeFeature(name, mustReload);
   }
 }
 
@@ -533,8 +507,8 @@ function applyOptions(mustReload) {
       };
       featuresHandler(options, values.theme, mustReload, videoOptions);
       if (!isMobileYouTube() && (siteName == "youtube" || siteName == "embedded")) {
-        (values.quick_access_buttons_images) ? addImagesButton(): removeButtons(false, true);
-        (values.quick_access_buttons_video) ? addVideoButton(): removeButtons(true, false);
+        (values.quick_access_buttons_images) ? addImagesButton() : removeButtons(false, true);
+        (values.quick_access_buttons_video) ? addVideoButton() : removeButtons(true, false);
       }
     });
   });
