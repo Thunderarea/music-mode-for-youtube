@@ -53,7 +53,7 @@ function changeVideoURL(videoEl, newURL, paused, currentTime) {
             videoEl.parentNode.parentNode.playVideo();
         } catch (error) {}
     } else if (paused && isMobileYouTube()) {
-        videoElement = videoEl;
+        let videoElement = videoEl;
         let promise = videoEl.play();
         if (promise !== undefined) {
             promise.then(_ => {

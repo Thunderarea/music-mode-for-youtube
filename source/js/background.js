@@ -109,7 +109,7 @@ function initialization(initializationReason) {
 
     let enabled = initializeExtensionOptions(storedValues);
     initializeBlockingInfo();
-    chrome.storage.local.set({"blocking_info": blockingInfo});
+    chrome.storage.local.set({ "blocking_info": blockingInfo });
 
     for (let blockingInfoName in blockingInfo) declareRules(createRules(blockingInfo, blockingInfoName));
 
@@ -130,7 +130,7 @@ function initialization(initializationReason) {
           chrome.tabs.create({
             url: "pages/options.html"
           });
-        } 
+        }
         // else if (initializationReason === "update") {
         //   chrome.tabs.create({
         //     url: "pages/about.html"
@@ -172,31 +172,30 @@ chrome.tabs.onRemoved.addListener(tabId => {
   removeYouTubeTab(tabId);
   chrome.storage.local.get(null, storedValues => {
     let ssvalues = storedValues.sstabs;
-    ssvalues = removeTabFromOptions(ssvalues, tabId, true);
+    ssvalues = removeTabFromOptions(ssvalues, tabId).list;
     chrome.storage.local.set({
       'sstabs': ssvalues
     });
     ssvalues = storedValues.sspages;
-    ssvalues = removeTabFromOptions(ssvalues, tabId, true);
+    ssvalues = removeTabFromOptions(ssvalues, tabId).list;
     chrome.storage.local.set({
       'sspages': ssvalues
     });
     ssvalues = storedValues.qapages;
-    ssvalues = removeTabFromOptions(ssvalues, tabId, true);
+    ssvalues = removeTabFromOptions(ssvalues, tabId).list;
     chrome.storage.local.set({
       'qapages': ssvalues
     });
   });
 });
 
-function removeTabFromOptions(list, id, getOnlyList) {
+function removeTabFromOptions(list, id) {
   let found = false;
-  if (list && list.hasOwnProperty(id)) {
+  if (list && (id in list)) {
     delete list[id];
     found = true;
   }
-  if (getOnlyList) return list;
-  else return {
+  return {
     list: list,
     found: found
   };
@@ -230,25 +229,19 @@ function getTabOptions(storedValues, qapage, ssvalue, siteName) {
   if (ssvalue != undefined) {
     if (!ssvalue.enabled) {
       options = getOptionsValues(qapage, true);
-    } else {
-      if (ssvalue.options[siteName] != undefined) {
-        if (!ssvalue.options[siteName].enabled) {
-          options = getOptionsValues(qapage, true);
-        } else {
-          if (ssvalue.options[siteName].options != undefined) {
-            options = getOptionsValues(qapage, false, ssvalue.options[siteName].options, "");
-          } else {
-            options = getOptionsValues(qapage, !storedValues[siteName], storedValues, (siteName + "_"));
-          }
-        }
+    } else if (ssvalue.options[siteName] != undefined) {
+      if (!ssvalue.options[siteName].enabled) {
+        options = getOptionsValues(qapage, true);
+      } else if (ssvalue.options[siteName].options != undefined) {
+        options = getOptionsValues(qapage, false, ssvalue.options[siteName].options, "");
+      } else {
+        options = getOptionsValues(qapage, !storedValues[siteName], storedValues, (siteName + "_"));
       }
     }
+  } else if (!storedValues.enabled) {
+    options = getOptionsValues(qapage, true);
   } else {
-    if (!storedValues.enabled) {
-      options = getOptionsValues(qapage, true);
-    } else {
-      options = getOptionsValues(qapage, !storedValues[siteName], storedValues, (siteName + "_"));
-    }
+    options = getOptionsValues(qapage, !storedValues[siteName], storedValues, (siteName + "_"));
   }
   return options;
 }
@@ -292,7 +285,7 @@ function rulesHandler(info, infoName, tabId, tabOptions) {
 
 function createRules(info, infoName) {
   let addRulesList = [],
-  removeRuleIds = [],
+    removeRuleIds = [],
     addedRule = {},
     id = info[infoName].first_id;
   info[infoName].rules.forEach(rule => {
@@ -334,14 +327,14 @@ function detectURLChange(tabId, changeInfo, tab) {
     if (typeof changeInfo.url !== "undefined" || changeInfo.status === "complete") {
       // the url has changed
       chrome.storage.local.get('sspages', storedValues => {
-        let response = removeTabFromOptions(storedValues.sspages, tabId, false);
+        let response = removeTabFromOptions(storedValues.sspages, tabId);
         if (response.found) {
           chrome.storage.local.set({
             'sspages': response.list
           });
         }
         chrome.storage.local.get('qapages', val => {
-          response = removeTabFromOptions(val.qapages, tabId, false);
+          response = removeTabFromOptions(val.qapages, tabId);
           if (response.found) {
             chrome.storage.local.set({
               'qapages': response.list

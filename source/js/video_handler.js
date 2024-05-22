@@ -97,7 +97,8 @@ async function setPlayerBackground(videoPlayer) {
     `;
     } else if (getValue("mmfytb_hide_logo")) {
       stylesheetContent += `
-      #player .html5-video-player {
+      .html5-video-player,
+      ytmusic-player {
         background-image: none !important;
       }
     `;
