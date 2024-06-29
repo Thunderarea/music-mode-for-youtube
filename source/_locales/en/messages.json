@@ -131,6 +131,12 @@
   "OptionsMenuOptionDescription": {
     "message": "Enable/Disable the options of YouTube, YouTube Music, and Other Sites for the current tab (and page) from the popup"
   },
+  "controlFromPopup": {
+    "message": "Control the extension from the popup"
+  },
+  "controlFromPopupDescription": {
+    "message": "Allow enabling/disabling the extension from the popup (and the shortcuts)"
+  },
   "PopupExplanation": {
     "message": "*the window that appears when you click the extension's icon"
   },

@@ -81,21 +81,27 @@ chrome.tabs.query({
 
 function adaptDisplay() {
   chrome.storage.local.get(null, storedValues => {
-    SPECIFIC_OPTIONS = storedValues.popup_specific_options;
-    if (SPECIFIC_OPTIONS) document.body.classList.add("specific_options");
-    enableDisableButton(storedValues.enabled);
+    if (storedValues.control_from_popup) {
+      SPECIFIC_OPTIONS = storedValues.popup_specific_options;
+      if (SPECIFIC_OPTIONS) document.body.classList.add("specific_options");
+      enableDisableButton(storedValues.enabled);
 
-    getFullOptions(storedValues, sitesIDs, "sstabs");
-    if (storedValues.sstabs[tabId] != undefined) adaptButtonDisplay(storedValues.sstabs[tabId].enabled, "perTab");
-    addSites(sitesIDs, "#tab_options", FULL_OPTIONS.sstabs);
+      getFullOptions(storedValues, sitesIDs, "sstabs");
+      if (storedValues.sstabs[tabId] != undefined) adaptButtonDisplay(storedValues.sstabs[tabId].enabled, "perTab");
+      addSites(sitesIDs, "#tab_options", FULL_OPTIONS.sstabs);
 
-    if (storedValues.popup_current_page) {
-      if (SITE_ID != "") { 
-        document.querySelector("#perPage").style.display = "block";
-        getFullOptions(storedValues, [SITE_ID], "sspages");
-        if (storedValues.sspages[tabId] != undefined) adaptButtonDisplay(storedValues.sspages[tabId].enabled, "perPage");
-        addSites([SITE_ID] ,"#page_options", FULL_OPTIONS.sspages);
+      if (storedValues.popup_current_page) {
+        if (SITE_ID != "") {
+          document.querySelector("#perPage").style.display = "block";
+          getFullOptions(storedValues, [SITE_ID], "sspages");
+          if (storedValues.sspages[tabId] != undefined) adaptButtonDisplay(storedValues.sspages[tabId].enabled, "perPage");
+          addSites([SITE_ID], "#page_options", FULL_OPTIONS.sspages);
+        }
       }
+    } else {
+      document.body.classList.add("no_controls");
+      document.querySelector("#global_switch").remove();
+      document.querySelector("main").remove();
     }
 
     addListenersToButtons();
@@ -166,18 +172,17 @@ function getSiteHTML(item, storedValues, id) {
       <span>${item.name}</span>
     </div>
     <div class="options">
-      ${
-        (SPECIFIC_OPTIONS) ? 
-        item.options.map(option => {
-          return `
+      ${(SPECIFIC_OPTIONS) ?
+      item.options.map(option => {
+        return `
             <div class="option tooltip" title="${chrome.i18n.getMessage(option + "Tooltip")}">
               <input type="checkbox" id="${option}" class="trigger_apply" ${(storedValues.options[option]) ? "checked" : ""}>
               <span class="tooltiptext">${chrome.i18n.getMessage(option)}</span>
               ${optionsTemplates[option]}
             </div>
           `;
-        }).join(""): ""
-      }
+      }).join("") : ""
+    }
     </div>
   </div>`
 }

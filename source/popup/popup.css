@@ -502,3 +502,11 @@ input.off:not(:checked):hover~.knobs .off {
   height: 14px;
   width: 14px;
 }
+
+body.no_controls header {
+  justify-content: center;
+}
+
+body.no_controls #more {
+  padding: 10px;
+}

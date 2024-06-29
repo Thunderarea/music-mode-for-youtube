@@ -131,6 +131,12 @@
   "OptionsMenuOptionDescription": {
     "message": "Ενεργοποιήστε/Απενεργοποιήστε τις επιλογές για YouTube, YouTube Music και Άλλα sites για την τρέχουσα καρτέλα (και σελίδα) από το popup"
   },
+  "controlFromPopup": {
+    "message": "Ρύθμιση της επέκτασης από το popup"
+  },
+  "controlFromPopupDescription": {
+    "message": "Επιτρέπει την ενεργοποίηση/απενεργοποίηση της λειτουργίας της επέκτασης από το popup (και τις συντομεύσεις πληκτρολογίου)"
+  },
   "PopupExplanation": {
     "message": "*το παράθυρο που εμφανίζεται όταν κάνετε κλικ στο εικονίδιο της επέκτασης"
   },

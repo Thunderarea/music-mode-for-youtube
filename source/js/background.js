@@ -24,6 +24,7 @@ let extensionOptions = {
   "google_search": false,
 
   "theme": 2,
+  "control_from_popup": true,
   "popup_current_page": false,
   "popup_specific_options": false,
 
@@ -422,14 +423,18 @@ chrome.commands.onCommand.addListener(command => runOnCurrentTab(command));
 
 function runOnCurrentTab(command, currentTabId = -1) {
   if (command == "run_extension_tab") {
-    if (currentTabId === -1) {
-      chrome.tabs.query({
-        active: true,
-        currentWindow: true
-      }, tabs => {
-        if (tabs.length > 0) toglleStatusForTab(tabs[0].id);
-      });
-    } else toglleStatusForTab(currentTabId);
+    chrome.storage.local.get("control_from_popup", value => {
+      if (value.control_from_popup) {
+        if (currentTabId === -1) {
+          chrome.tabs.query({
+            active: true,
+            currentWindow: true
+          }, tabs => {
+            if (tabs.length > 0) toglleStatusForTab(tabs[0].id);
+          });
+        } else toglleStatusForTab(currentTabId);
+      } 
+    });
   }
 }
 
