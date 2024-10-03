@@ -4,17 +4,18 @@
 [![Available in the Chrome Web Store](./chrome_badge.png)](https://chromewebstore.google.com/detail/music-mode-for-youtube/abbpaepbpakcpipajigmlpnhlnbennna) [![Get the Add-on](./firefox_badge.webp)](https://addons.mozilla.org/en/firefox/addon/music-mode-for-youtube/)
 ## Overview
 Music Mode for YouTube™ is a browser extension that **blocks** the video and plays only the audio on **YouTube**, **YouTube Music** and embedded YouTube videos in third-party sites. It is compatible with **Chrome**, **Firefox** and most of the modern Chromium browsers. The extension:
-- Block the video, playing only the audio
-- Hide the thumbnails of the videos
-- Skip the ads 
-- Hide the user avatars 
-- Disable the "Video paused. Continue watching?" message
+- Blocks the video, playing only the audio
+- Hides the thumbnails of the videos
+- Skips the ads 
+- Hides the user avatars 
+- Disables the "Video paused. Continue watching?" message
 
 Music Mode for YouTube™ is highly customizable since all the features are optional and can be turned on/off separately for YouTube, YouTube Music and embedded YouTube videos.
 Moreover, the extension can be enabled globally, for specific tabs, or temporarily for just a single video.
 
 > [!NOTE]
 > Live videos are not blocked, just hidden.
+> Due to recent changes on YouTube, it's no longer possible to separate audio from video, so the video cannot be blocked anymore. However, the extension still works on YouTube Music and YouTube for mobile, allowing you to block video and save bandwidth. We are trying to find ways to block the video again. Any help is appreciated!
 
 ### Mobile support
 The extension is fully compatible with YouTube for mobiles offering an extra feature that allows music and videos to play in the background. The extension can be installed in a smartphone using **[Kiwi](https://play.google.com/store/apps/details?id=com.kiwibrowser.browser)**, a Chromium browser for mobiles that supports extensions from the Chrome Web Store.
