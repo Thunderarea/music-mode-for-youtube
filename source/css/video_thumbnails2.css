@@ -170,7 +170,8 @@ ytd-radio-renderer img,
 ytd-video-renderer img,
 ytd-playlist-panel-supported-items img,
 ytd-playlist-panel-video-renderer img,
-ytd-rich-item-renderer img {
+ytd-rich-item-renderer img,
+ytd-reel-shelf-renderer img {
   display: none !important;
 }
 
@@ -185,7 +186,8 @@ ytd-rich-movie-renderer ytd-thumbnail {
 
 ytd-thumbnail #overlays,
 ytd-grid-movie-renderer yt-img-shadow,
-ytd-rich-movie-renderer yt-img-shadow {
+ytd-rich-movie-renderer yt-img-shadow,
+ytm-shorts-lockup-view-model > a > div  {
   background-image: url("../img/youtube_logo.svg") !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
