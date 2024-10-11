@@ -20,7 +20,8 @@ ytd-profile-column-user-info-renderer img,
 ytd-channel-avatar-editor img,
 .branding-img-container img,
 #avatar img#img,
-ytd-grid-channel-renderer img {
+ytd-grid-channel-renderer img,
+yt-avatar-shape img {
   visibility: hidden !important;
 }
 
@@ -68,5 +69,16 @@ ytd-grid-channel-renderer yt-img-shadow {
 }
 
 yt-live-chat-author-chip #chat-badges {
+  display: none !important;
+}
+
+yt-avatar-shape .yt-spec-avatar-shape--avatar-size-medium {
+  background-image: url('../img/avatar-chanell.svg') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+}
+
+#avatar-container {
   display: none !important;
 }
