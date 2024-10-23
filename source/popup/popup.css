@@ -57,12 +57,13 @@ input {
 }
 
 body {
-  font-family: "Open Sans", "Roboto", -apple-system, "BlinkMacSystemFont", "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  font-family: "Open Sans", "Roboto", -apple-system, "BlinkMacSystemFont", "Segoe UI", Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 13px;
 }
 
 #container {
-  width: 295px;
+  min-width: 295px;
   height: auto;
 }
 
@@ -161,7 +162,7 @@ main {
   position: relative;
 }
 
-.option input:hover~svg {
+.option input:hover ~ svg {
   color: #bdbdbd;
 }
 
@@ -171,11 +172,11 @@ main {
   transition: opacity 1s ease;
 }
 
-.option input:checked:hover~svg {
+.option input:checked:hover ~ svg {
   color: #6ee96e;
 }
 
-.option input:checked~svg {
+.option input:checked ~ svg {
   color: var(--on-color);
 }
 
@@ -219,27 +220,27 @@ main {
   transition: color 0.8s ease;
 }
 
-.ptpCheckbox:checked~.title svg {
+.ptpCheckbox:checked ~ .title svg {
   color: var(--on-color);
 }
 
-.ptpCheckbox:hover~.title {
+.ptpCheckbox:hover ~ .title {
   color: black;
 }
 
-.specific_options .ptpCheckbox:checked~.title {
+.specific_options .ptpCheckbox:checked ~ .title {
   padding-left: 0;
 }
 
-.ptpCheckbox:checked~.options {
+.ptpCheckbox:checked ~ .options {
   width: initial;
 }
 
-.ptpCheckbox:checked~.options .option {
+.ptpCheckbox:checked ~ .options .option {
   padding: 0 2px;
 }
 
-.ptpCheckbox:checked~.options svg {
+.ptpCheckbox:checked ~ .options svg {
   width: initial;
   opacity: 1;
 }
@@ -432,33 +433,33 @@ main {
   color: #9e9e9e;
 }
 
-.button .on:checked~.knobs .on {
+.button .on:checked ~ .knobs .on {
   background-color: var(--on-color);
   box-shadow: 2px 0px 4px #3a3a3a7a;
 }
 
-.button .no:checked~.knobs span.no {
+.button .no:checked ~ .knobs span.no {
   background-color: white;
   border-radius: 0;
 }
 
-.button .no:checked~.knobs span.no svg {
+.button .no:checked ~ .knobs span.no svg {
   display: none;
 }
 
-.button .off:checked~.knobs .off {
+.button .off:checked ~ .knobs .off {
   background-color: var(--off-color);
   box-shadow: -2px 0px 4px #3a3a3a7a;
 }
 
-.button .off:checked~.knobs .off,
-.button .on:checked~.knobs .on {
+.button .off:checked ~ .knobs .off,
+.button .on:checked ~ .knobs .on {
   color: white;
 }
 
-input.on:not(:checked):hover~.knobs .on,
-input.no:not(:checked):hover~.knobs .no,
-input.off:not(:checked):hover~.knobs .off {
+input.on:not(:checked):hover ~ .knobs .on,
+input.no:not(:checked):hover ~ .knobs .no,
+input.off:not(:checked):hover ~ .knobs .off {
   color: black;
 }
 
@@ -548,4 +549,11 @@ body.no_controls #more {
 
 #bePatronButton svg {
   fill: white;
+}
+
+@media only screen and (min-width: 300px) {
+  #container > * {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
 }
