@@ -72,7 +72,9 @@ yt-live-chat-author-chip #chat-badges {
   display: none !important;
 }
 
-yt-avatar-shape .yt-spec-avatar-shape--avatar-size-medium {
+/* The first is probably not used now */
+yt-avatar-shape .yt-spec-avatar-shape--avatar-size-medium,
+yt-avatar-shape .yt-spec-avatar-shape {
   background-image: url('../img/avatar-chanell.svg') !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
