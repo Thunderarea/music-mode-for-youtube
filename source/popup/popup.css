@@ -512,43 +512,16 @@ body.no_controls #more {
   padding: 10px;
 }
 
-/* Be a patron button */
-#bePatronButton {
+/* Buy me a coffee button */
+#buymeacoffeeButton {
   background-color: var(--paper-grey-100);
   display: flex;
   justify-content: center;
   padding-bottom: 3px;
 }
 
-#bePatronButton a {
-  align-items: center;
-  background-color: rgb(255, 66, 77);
-  border-radius: 9999px;
-  border: 1px solid rgb(255, 66, 77);
-  box-sizing: border-box;
-  cursor: pointer;
-  display: inline-flex;
-  font-weight: 500;
-  justify-content: center;
-  padding: 7px 17px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  color: rgb(255, 255, 255) !important;
-}
-
-#bePatronButton a:hover {
-  background-color: #ff303c;
-}
-
-#bePatronButton .svgWrapper {
-  height: 14px;
-  width: 14px;
-  margin-right: 6px;
-}
-
-#bePatronButton svg {
-  fill: white;
+#buymeacoffeeButton img:hover {
+  filter: brightness(0.9);
 }
 
 @media only screen and (min-width: 300px) {
