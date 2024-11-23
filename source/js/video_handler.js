@@ -202,6 +202,17 @@ try {
         ) {
           return 0;
         }
+        if (getValue("mmfytb_progress_bar")) {
+          if (url.indexOf("videoplayback") !== -1) {
+            let video = findVideoEl();
+            if (video) {
+              video.addEventListener("timeupdate", timeUpdate);
+              videoWithListener = video;
+            }
+          }
+        } else if (videoWithListener) {
+          videoWithListener.removeEventListener("timeupdate", timeUpdate);
+        }
       }
     }
     return await origFetch(...args);
@@ -212,10 +223,6 @@ function musicModeForYouTube(url, isLive, firstCall) {
   let video = findVideoEl();
   if (video) {
     setPlaybackRateAgain(video);
-    if (getValue("mmfytb_progress_bar")) {
-      video.addEventListener("timeupdate", timeUpdate);
-      videoWithListener = video;
-    } else video.removeEventListener("timeupdate", timeUpdate);
     if (isLive != -1) {
       if (isNotMusicUrl(video.src)) {
         video.dataset.originalurl = video.src;
