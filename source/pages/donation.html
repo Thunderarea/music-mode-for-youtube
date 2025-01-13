@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="optionsPageStyle.css" />
+    <link rel="stylesheet" href="donation.css" />
+  </head>
+
+  <body id="ContactTitle">
+    <div id="container">
+      <div id="header">
+        <div id="logo">
+          <img src="../img/logo/full_logo.svg" alt="Logo" />
+        </div>
+        <div id="menuContainer">
+          <a href="about.html" class="menuLinks" data-i18n="about"></a>
+          <a href="options.html" class="menuLinks" data-i18n="options"></a>
+          <a href="contact.html" class="menuLinks" data-i18n="contact"></a>
+          <a href="donation.html" class="menuLinks"><span id="donation_menu_link" data-i18n="donation"></span></a>
+        </div>
+      </div>
+      <div id="bodyContainer">
+        <div id="title" data-i18n="contact">Donation</div>
+        <div class="pageBody">
+          <div class="text">
+            <p>Thank you for using <strong>Music Mode for YouTube™</strong>!</p>
+            <p>
+              Developing and maintaining this extension takes time and effort. If you find it helpful,
+              <strong>please consider supporting us with a donation</strong>. Every contribution helps keep the project
+              going.
+            </p>
+            <p>Thank you for your support!</p>
+
+            <div id="payment_methods_container">
+              <div id="buymeacoffeeButton">
+                <a href="https://www.buymeacoffee.com/thunderarea" target="_blank"
+                  ><img
+                    src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png"
+                    alt="Buy Me A Coffee"
+                    style="width: 150px !important"
+                /></a>
+              </div>
+              or
+              <div id="bePatronButton">
+                <a class="links" href="https://www.patreon.com/bePatron?u=67620554" target="_blank">
+                  <div class="svgWrapper">
+                    <span class="sc-iqHYGH hKKQNb">
+                      <svg viewBox="0 0 569 546" xmlns="http://www.w3.org/2000/svg">
+                        <g>
+                          <circle cx="362.589996" cy="204.589996" data-fill="1" id="Oval" r="204.589996"></circle>
+                          <rect data-fill="2" height="545.799988" id="Rectangle" width="100" x="0" y="0"></rect>
+                        </g>
+                      </svg>
+                    </span>
+                  </div>
+                  <span data-i18n="beAPatronButton">Become a Patron!</span>
+                </a>
+              </div>
+              or
+              <form id="paypalButton" action="https://www.paypal.com/donate" method="post" target="_blank">
+                <input type="hidden" name="hosted_button_id" value="V2EHRNX8RBTX2" />
+                <input
+                  type="image"
+                  src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif"
+                  border="0"
+                  name="submit"
+                  title="PayPal - The safer, easier way to pay online!"
+                  alt="Donate with PayPal button"
+                />
+                <img alt="" border="0" src="https://www.paypal.com/en_GR/i/scr/pixel.gif" width="1" height="1" />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="setTheTitles.js"></script>
+  </body>
+</html>

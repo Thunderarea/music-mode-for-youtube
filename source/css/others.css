@@ -21,7 +21,9 @@ div.banner-visible-area {
   display: none !important;
 }
 
-.page-header-banner {
+/* The one with the classname it is probably not used now */
+.page-header-banner,
+#page-header-banner {
   display: none !important;
 }
 

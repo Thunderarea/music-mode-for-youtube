@@ -2,7 +2,8 @@
 <html lang="en" dir="ltr">
 
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="popup.css" type="text/css">
   <link rel="stylesheet" href="tooltip.css" type="text/css">
 </head>
@@ -13,7 +14,7 @@
       <div id="logo">
         <img src="../img/logo/logo_only.svg">
       </div>
-      <div class="button s2 trigger_apply">
+      <div id="global_switch" class="button s2 trigger_apply">
         <input type="radio" name="endis" class="checkbox on" value="on" data-title="onTooltip">
         <input type="radio" name="endis" class="checkbox off" value="off" data-title="offTooltip">
         <div class="knobs">
@@ -82,6 +83,10 @@
         <div id="pressEnter" data-i18n="pressEnter"></div>
       </div>
     </main>
+
+    <div id="buymeacoffeeButton">
+      <a href="https://www.buymeacoffee.com/thunderarea" class="links" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="width: 150px !important;" ></a>
+    </div>
     
     <div id="more">
       <a id="support_button" class="links" target="_blank">
@@ -104,7 +109,7 @@
 
     <div id="promoteBox">
       <div id="donation">
-        <a class="links" href="https://www.paypal.com/donate?hosted_button_id=V2EHRNX8RBTX2" target="_blank"><svg class="heart"
+        <a class="links" href="../pages/donation.html" target="_blank"><svg class="heart"
             viewBox="0 0 32 29.6">
             <path d="M23.6,0c-3.4,0-6.3,2.7-7.6,5.6C14.7,2.7,11.8,0,8.4,0C3.8,0,0,3.8,0,8.4c0,9.4,9.5,11.9,16,21.2
   	c6.1-9.3,16-12.1,16-21.2C32,3.8,28.2,0,23.6,0z" />

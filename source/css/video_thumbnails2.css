@@ -170,7 +170,9 @@ ytd-radio-renderer img,
 ytd-video-renderer img,
 ytd-playlist-panel-supported-items img,
 ytd-playlist-panel-video-renderer img,
-ytd-rich-item-renderer img {
+ytd-rich-item-renderer #thumbnail img,
+ytd-reel-shelf-renderer img,
+yt-content-preview-image-view-model img {
   display: none !important;
 }
 
@@ -185,7 +187,8 @@ ytd-rich-movie-renderer ytd-thumbnail {
 
 ytd-thumbnail #overlays,
 ytd-grid-movie-renderer yt-img-shadow,
-ytd-rich-movie-renderer yt-img-shadow {
+ytd-rich-movie-renderer yt-img-shadow,
+ytm-shorts-lockup-view-model > a > div  {
   background-image: url("../img/youtube_logo.svg") !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
@@ -347,4 +350,10 @@ yt-thumbnail-overlay-badge-view-model yt-thumbnail-badge-view-model badge-shape 
   justify-content: center !important;
   align-items: center !important;
   padding: 0 !important;
+}
+
+/* Image of playlist in playlist's page */
+yt-content-preview-image-view-model thumbnail-hover-overlay-view-model {
+  opacity: 1 !important;
+  background-color: var(--yt-primary-color) !important;
 }

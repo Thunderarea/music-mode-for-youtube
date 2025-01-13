@@ -127,7 +127,7 @@ body {
   justify-content: space-between;
 }
 
-.optionsGroupTitle {
+.optionsGroupTitle:not(.not_style) {
   font-size: var(--optionsGroupTitle-font-size);
   font-weight: 500;
 }

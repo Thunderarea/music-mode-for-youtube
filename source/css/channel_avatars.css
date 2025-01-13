@@ -8,6 +8,7 @@ ytd-account-item-renderer img {
 #author-thumbnail.ytd-backstage-post-renderer yt-img-shadow.ytd-backstage-post-renderer img,
 #creator-thumbnail.ytd-comment-replies-renderer yt-img-shadow img,
 #author-thumbnail.ytd-post-renderer yt-img-shadow.ytd-post-renderer img,
+#author-thumbnail.ytd-comment-view-model yt-img-shadow img,
 #author-photo img,
 #hearted-thumbnail img,
 #hearted-thumbnail img {
@@ -19,7 +20,8 @@ ytd-profile-column-user-info-renderer img,
 ytd-channel-avatar-editor img,
 .branding-img-container img,
 #avatar img#img,
-ytd-grid-channel-renderer img {
+ytd-grid-channel-renderer img,
+yt-avatar-shape img {
   visibility: hidden !important;
 }
 
@@ -67,5 +69,18 @@ ytd-grid-channel-renderer yt-img-shadow {
 }
 
 yt-live-chat-author-chip #chat-badges {
+  display: none !important;
+}
+
+/* The first is probably not used now */
+yt-avatar-shape .yt-spec-avatar-shape--avatar-size-medium,
+yt-avatar-shape .yt-spec-avatar-shape {
+  background-image: url('../img/avatar-chanell.svg') !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+  background-size: 100% 100% !important;
+}
+
+#avatar-container {
   display: none !important;
 }
