@@ -520,6 +520,10 @@ body.no_controls #more {
   padding-bottom: 3px;
 }
 
+body.no_controls #buymeacoffeeButton {
+  padding-top: 10px;
+}
+
 #buymeacoffeeButton img:hover {
   filter: brightness(0.9);
 }
