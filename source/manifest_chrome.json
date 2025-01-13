@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Music Mode for YouTube™",
   "short_name": "Music Mode",
-  "version": "6.4.18",
+  "version": "6.4.19",
   "default_locale": "en",
   "incognito":"spanning",
   
