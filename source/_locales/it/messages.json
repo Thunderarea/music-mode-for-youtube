@@ -1,6 +1,6 @@
 {
     "extDescription": {
-      "message": "Blocca il video mantenendo solo l'audio su YouTube e YouTube Music."
+      "message": "Hides the video and thumbnails on YouTube. Blocks the video keeping only the audio on YouTube Music."
     },
     "command1Description": {
       "message": "Enable/Disable the extension on the current tab"
@@ -60,7 +60,7 @@
       "message": "Nasconde varie immagini nella ricerca Google come le copertine dei video"
     },
     "videoDescription": {
-      "message": "Blocks the video keeping only the audio (the video in live stream is hidden but not blocked)"
+      "message": "Hides the video"
     },
     "thumbnailsDescription": {
       "message": "Nasconde le copertine dei video"
@@ -99,7 +99,7 @@
       "message": "Video YouTube implementati\nin altri siti"
     },
     "videoTooltip": {
-      "message": "Blocca il video mantenendo\nsolo l'audio"
+      "message": "Hides the video"
     },
     "thumbnailsTooltip": {
       "message": "Nasconde le copertine dei video"
@@ -261,7 +261,7 @@
       "message": "Live video quality to 144p"
     },
     "live_144_text": {
-      "message": "Set automatically the quality of live videos to 144p when the option Video is enabled on YouTube (since YouTube live videos are not blocked but only hidden)"
+      "message": "Set automatically the quality of live videos to 144p when the option Video is enabled on YouTube"
     },
     "enabledByDefault": {
       "message": "Enabled by default"
@@ -282,7 +282,7 @@
       "message": "Show video thumbnail in video player"
     },
     "showVideoThumbnail_text": {
-      "message": "Display the video thumbnail in the video player when the video is blocked"
+      "message": "Display the video thumbnail in the video player when the video is hidden"
     },
     "continueWatchingPrompt_title": {
       "message": "Continue watching prompt"
