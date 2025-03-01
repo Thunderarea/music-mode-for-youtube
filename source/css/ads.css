@@ -9,7 +9,8 @@ ytd-promoted-sparkles-text-search-renderer,
 .ytd-promoted-sparkles-text-search-renderer,
 ytd-display-ad-renderer,
 ytd-promoted-sparkles-web-renderer,
-ytd-engagement-panel-section-list-renderer[target-id="engagement-panel-ads"] {
+ytd-engagement-panel-section-list-renderer[target-id="engagement-panel-ads"],
+ytd-ad-slot-renderer {
   visibility: hidden !important;
   width: 0 !important;
   height: 0 !important;

@@ -1,6 +1,6 @@
 {
     "extDescription": {
-      "message": "屏蔽视频，只保留YouTube和YouTube Music的音频。"
+      "message": "Hides the video and thumbnails on YouTube. Blocks the video keeping only the audio on YouTube Music."
     },
     "command1Description": {
       "message": "Enable/Disable the extension on the current tab"
@@ -60,7 +60,7 @@
       "message": "隐藏 Google 搜索的缩略图等其他图片"
     },
     "videoDescription": {
-      "message": "屏蔽视频，只保留音频（在 Live 直播中隐藏而非屏蔽视频流）"
+      "message": "Hides the video"
     },
     "thumbnailsDescription": {
       "message": "隐藏视频缩略图"
@@ -99,7 +99,7 @@
       "message": "其他站点内嵌的 YouTube 视频"
     },
     "videoTooltip": {
-      "message": "屏蔽视频，只保留音频"
+      "message": "Hides the video"
     },
     "thumbnailsTooltip": {
       "message": "隐藏视频缩略图"
@@ -261,7 +261,7 @@
       "message": "Live 视频质量 144p"
     },
     "live_144_text": {
-      "message": "当视频选项启用时，自动设置 Live 视频质量为 144p（Youtube Live 视频仅隐藏而非屏蔽）"
+      "message": "当视频选项启用时，自动设置 Live 视频质量为 144p"
     },
     "enabledByDefault": {
       "message": "Enabled by default"
@@ -282,7 +282,7 @@
       "message": "Show video thumbnail in video player"
     },
     "showVideoThumbnail_text": {
-      "message": "Display the video thumbnail in the video player when the video is blocked"
+      "message": "Display the video thumbnail in the video player when the video is hidden"
     },
     "continueWatchingPrompt_title": {
       "message": "Continue watching prompt"

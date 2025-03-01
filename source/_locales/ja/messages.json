@@ -1,6 +1,6 @@
 {
   "extDescription": {
-    "message": "YouTubeとYouTube Musicのオーディオのみを再生し動画をブロックします。"
+    "message": "Hides the video and thumbnails on YouTube. Blocks the video keeping only the audio on YouTube Music."
   },
   "command1Description": {
     "message": "現在のタブで拡張機能を有効/無効にする。"
@@ -60,7 +60,7 @@
     "message": "Google検索で動画のサムネイル等の画像を非表示にする。"
   },
   "videoDescription": {
-    "message": "動画をブロックし、オーディオだけを残す。（ライブストリームの動画は非表示になりますが、ブロックされません。）"
+    "message": "Hides the video"
   },
   "thumbnailsDescription": {
     "message": "動画のサムネイルを非表示にする。"
@@ -99,7 +99,7 @@
     "message": "他のサイトに埋め込まれたYouTube動画"
   },
   "videoTooltip": {
-    "message": "オーディオだけを残して動画をブロックする。"
+    "message": "Hides the video"
   },
   "thumbnailsTooltip": {
     "message": "動画のサムネイルを隠す。"
@@ -261,7 +261,7 @@
     "message": "ライブ動画の画質を144pに"
   },
   "live_144_text": {
-    "message": "YouTubeで「動画」オプションが有効になっている場合、ライブ動画の画質を自動的に144pに設定します（YouTubeのライブ動画はブロックされず、非表示になるだけです）。"
+    "message": "YouTubeで「動画」オプションが有効になっている場合、ライブ動画の画質を自動的に144pに設定します。"
   },
   "enabledByDefault": {
     "message": "デフォルトで有効"
@@ -282,7 +282,7 @@
     "message": "動画プレーヤに動画のサムネイルを表示する"
   },
   "showVideoThumbnail_text": {
-    "message": "動画がブロックされている場合、動画プレーヤに動画のサムネイルを表示する。"
+    "message": "Display the video thumbnail in the video player when the video is hidden"
   },
   "continueWatchingPrompt_title": {
     "message": "「視聴を続けますか？」を表示する。"
