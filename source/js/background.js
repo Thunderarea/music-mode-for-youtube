@@ -96,6 +96,7 @@ const blockingInfo = {
 };
 
 chrome.runtime.onInstalled.addListener(details => {
+  // Don't run the initialization when the browser is updated. It caused issues in Vivaldi and Opera reseting the options
   if (details.reason === "browser_update" || details.reason === "chrome_update") {
     resetTemporaryOptions();
     initializeTabLogo();
