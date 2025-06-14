@@ -119,8 +119,6 @@ function initialization(initializationReason) {
       "version": info.version
     });
   });
-
-  resetTemporaryOptions();
   initializeTabLogo();
 
   if (initializationReason === "install") {
@@ -173,6 +171,8 @@ function initializeExtensionOptions() {
       for (let key in storedValues) {
         if (extensionOptions[key] === undefined) chrome.storage.local.remove(key);
       }
+      
+      resetTemporaryOptions();
     }
   });
 }
