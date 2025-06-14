@@ -140,13 +140,17 @@ async function getThumbnailImage(videoPlayer) {
       method: "HEAD",
     }).then((response) => response)
       .then((data) => {
+        if (!data.ok) return getAltThumbnail(thumbnailUrl);
         return thumbnailUrl;
       })
       .catch((error) => {
-        thumbnailUrl = thumbnailUrl.replace("maxresdefault", "hqdefault");
-        return thumbnailUrl;
+        return getAltThumbnail(thumbnailUrl);
       });
   }
+}
+
+function getAltThumbnail(thumbnailUrl) {
+  return thumbnailUrl.replace("maxresdefault", "hqdefault");
 }
 
 // Continue watching prompt
