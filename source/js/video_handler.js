@@ -144,17 +144,12 @@ async function getThumbnailImage(videoPlayer) {
         }
       })
       .then((data) => {
-        if (!data.ok) return getAltThumbnail(thumbnailUrl);
         return thumbnailUrl;
       })
       .catch((error) => {
-        return getAltThumbnail(thumbnailUrl);
+        return thumbnailUrl.replace("maxresdefault", "hqdefault");
       });
   }
-}
-
-function getAltThumbnail(thumbnailUrl) {
-  return thumbnailUrl.replace("maxresdefault", "hqdefault");
 }
 
 // Continue watching prompt
