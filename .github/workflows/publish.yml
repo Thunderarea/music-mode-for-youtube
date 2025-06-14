@@ -36,7 +36,7 @@ jobs:
           mv config_chrome.js config.js
         fi
     - name: Upload Artifact
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: ${{ inputs.browser }}-extension
         path: source
