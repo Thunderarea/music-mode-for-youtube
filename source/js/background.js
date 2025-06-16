@@ -152,14 +152,14 @@ function initializeTabLogo() {
   });
 }
 
-function initializeExtensionOptions() {
+async function initializeExtensionOptions() {
   // delete records from previous versions
   chrome.storage.local.remove(["extension", "mmfytb_extension"]);
   
-  chrome.storage.local.get(null, storedValues => {
+  chrome.storage.local.get(null, async function(storedValues) {
     if (!storedValues.hasOwnProperty("version")) {
       // if the previous version was below version 5
-      chrome.storage.local.set(extensionOptions);
+      await chrome.storage.local.set(extensionOptions);
     } else {
       // add new options or change the value of options that their type was changed
       for (let key in extensionOptions) {
@@ -167,14 +167,12 @@ function initializeExtensionOptions() {
           storedValues[key] = extensionOptions[key];
         }
       }
-      chrome.storage.local.set(storedValues);
+      await chrome.storage.local.set(storedValues);
       // remove old options
-      for (let key in storedValues) {
-        if (extensionOptions[key] === undefined) chrome.storage.local.remove(key);
-      }
-      
-      resetTemporaryOptions();
+      const keysToRemove = Object.keys(storedValues).filter(key => extensionOptions[key] === undefined);
+      await Promise.all(keysToRemove.map(key => chrome.storage.local.remove(key)));
     }
+    resetTemporaryOptions();
   });
 }
 
