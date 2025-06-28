@@ -90,7 +90,7 @@ const blockingInfo = {
     }],
     first_id: 0,
     tab_ids: [0], // cannot be empty
-    resource_types: ["image"],
+    resource_types: ["image", "other"],
     options_fields: ["videoBlocker", "imgBlocker"]
   }
 };
@@ -127,11 +127,11 @@ function initialization(initializationReason) {
       url: "pages/options.html"
     });
   }
-  // else if (initializationReason === "update") {
-  //   chrome.tabs.create({
-  //     url: "pages/donation.html"
-  //   });
-  // }
+  else if (initializationReason === "update") {
+    chrome.tabs.create({
+      url: "pages/donation.html"
+    });
+  }
 }
 
 function resetTemporaryOptions() {
