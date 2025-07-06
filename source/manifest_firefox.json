@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Music Mode for YouTube™",
   "short_name": "Music Mode",
-  "version": "1.2.25",
+  "version": "1.2.27",
   "default_locale": "en",
   "incognito":"spanning",
   
@@ -11,6 +11,9 @@
   "browser_specific_settings": {
     "gecko": {
       "id": "{e960c19a-b3ce-477c-8a0d-d82959225dee}",
+      "strict_min_version": "113.0"
+    },
+    "gecko_android": {
       "strict_min_version": "113.0"
     }
   },

@@ -23,7 +23,6 @@ let extensionOptions = {
 
   "google_search": false,
 
-  "theme": 2,
   "control_from_popup": true,
   "popup_current_page": false,
   "popup_specific_options": false,

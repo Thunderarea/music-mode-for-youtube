@@ -172,7 +172,8 @@ ytd-playlist-panel-supported-items img,
 ytd-playlist-panel-video-renderer img,
 ytd-rich-item-renderer #thumbnail img,
 ytd-reel-shelf-renderer img,
-yt-content-preview-image-view-model img {
+yt-content-preview-image-view-model img,
+ytm-shorts-lockup-view-model img {
   display: none !important;
 }
 

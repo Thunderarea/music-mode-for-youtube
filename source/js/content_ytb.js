@@ -208,7 +208,7 @@ function addImagesButton() {
   }
 }
 
-function addFeature(optionName, theme, mustReload, videoOptions) {
+function addFeature(optionName, mustReload, videoOptions) {
   switch (optionName) {
     case "video":
       saveToSessionStorage(videoOptions);
@@ -222,37 +222,37 @@ function addFeature(optionName, theme, mustReload, videoOptions) {
         });
         document.dispatchEvent(customEvent);
       }
-      isMobileYouTube() ? insertStylesheet('video', "mobile", "") : insertStylesheet('video', "", "");
+      isMobileYouTube() ? insertStylesheet('video', "mobile") : insertStylesheet('video', "");
 
       videoButtonState = true;
       break;
     case "thumbnails":
-      if (isYoutubeMusic()) insertStylesheet('video_thumbnails', "YTMusic", "");
-      else if (isMobileYouTube()) insertStylesheet('video_thumbnails', "mobile", "");
-      else insertStylesheet('video_thumbnails', "", theme);
+      if (isYoutubeMusic()) insertStylesheet('video_thumbnails', "YTMusic");
+      else if (isMobileYouTube()) insertStylesheet('video_thumbnails', "mobile");
+      else insertStylesheet('video_thumbnails', "");
       imageButtonState = true;
       break;
     case "avatars":
-      if (isYoutubeMusic()) insertStylesheet('channel_avatars', "YTMusic", "");
-      else if (isMobileYouTube()) insertStylesheet('channel_avatars', "mobile", "");
-      else insertStylesheet('channel_avatars', "", "");
+      if (isYoutubeMusic()) insertStylesheet('channel_avatars', "YTMusic");
+      else if (isMobileYouTube()) insertStylesheet('channel_avatars', "mobile");
+      else insertStylesheet('channel_avatars', "");
       break;
     case "other_images":
-      if (isYoutubeMusic()) insertStylesheet('others', "YTMusic", "");
-      else if (isMobileYouTube()) insertStylesheet('others', "mobile", "");
-      else insertStylesheet('others', "", "");
+      if (isYoutubeMusic()) insertStylesheet('others', "YTMusic");
+      else if (isMobileYouTube()) insertStylesheet('others', "mobile");
+      else insertStylesheet('others', "");
       break;
     case "adblocker":
-      isMobileYouTube() ? insertStylesheet('ads', "mobile", "") : insertStylesheet('ads', "", "");
+      isMobileYouTube() ? insertStylesheet('ads', "mobile") : insertStylesheet('ads', "");
       insertAdSkipper("adSkipper");
       break;
   }
 }
 
-function insertStylesheet(name, site, theme) {
+function insertStylesheet(name, site) {
   if (document.getElementById(name + "_mmfytb_thunderarea") == null) {
     let link = document.createElement("link");
-    link.href = chrome.runtime.getURL(("../css/" + name + (site ? "_" : "") + site + theme + ".css"));
+    link.href = chrome.runtime.getURL(("../css/" + name + (site ? "_" : "") + site + ".css"));
     link.id = (name + "_mmfytb_thunderarea");
     link.className = "mmfytbthunderarea";
     link.type = "text/css";
@@ -422,9 +422,9 @@ let SITES = {
   "embedded": [0, 1, 2, 3]
 };
 
-function featuresHandler(options, theme, mustReload, videoOptions) {
+function featuresHandler(options, mustReload, videoOptions) {
   for (let name in options) {
-    (options[name]) ? addFeature(name, theme, mustReload, videoOptions) : removeFeature(name, mustReload);
+    (options[name]) ? addFeature(name, mustReload, videoOptions) : removeFeature(name, mustReload);
   }
 }
 
@@ -505,7 +505,7 @@ function applyOptions(mustReload) {
         continue_watching_prompt: values.continue_watching_prompt,
         video_button: values.quick_access_buttons_video
       };
-      featuresHandler(options, values.theme, mustReload, videoOptions);
+      featuresHandler(options, mustReload, videoOptions);
       if (!isMobileYouTube() && (siteName == "youtube" || siteName == "embedded")) {
         (values.quick_access_buttons_images) ? addImagesButton() : removeButtons(false, true);
         (values.quick_access_buttons_video) ? addVideoButton() : removeButtons(true, false);
