@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Music Mode for YouTube™",
   "short_name": "Music Mode",
-  "version": "1.2.27",
+  "version": "1.2.29",
   "default_locale": "en",
   "incognito":"spanning",
   
@@ -60,8 +60,7 @@
         "css/others.css",
         "css/others_mobile.css",
         "css/others_YTMusic.css",
-        "css/video_thumbnails1.css",
-        "css/video_thumbnails2.css",
+        "css/video_thumbnails.css",
         "css/video_thumbnails_mobile.css",
         "css/video_thumbnails_YTMusic.css",
         "css/video.css",
