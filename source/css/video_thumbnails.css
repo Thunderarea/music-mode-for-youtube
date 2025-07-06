@@ -358,3 +358,8 @@ yt-content-preview-image-view-model thumbnail-hover-overlay-view-model {
   opacity: 1 !important;
   background-color: var(--yt-primary-color) !important;
 }
+
+/* Video preview in recommended videos */
+animated-thumbnail-overlay-view-model img {
+  display: none !important;
+}
