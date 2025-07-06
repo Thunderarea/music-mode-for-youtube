@@ -63,3 +63,8 @@ ytm-thumbnail-overlay-time-status-renderer,
   background-size: 30% 30% !important;
   background-color: #323232 !important;
 }
+
+/* Hide Open in App button */
+.mobile-topbar-header-sign-in-button {
+  display: none !important;
+}

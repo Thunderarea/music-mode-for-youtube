@@ -23,7 +23,6 @@ let extensionOptions = {
 
   "google_search": false,
 
-  "theme": 2,
   "control_from_popup": true,
   "popup_current_page": false,
   "popup_specific_options": false,
@@ -90,83 +89,98 @@ const blockingInfo = {
     }],
     first_id: 0,
     tab_ids: [0], // cannot be empty
-    resource_types: ["image"],
+    resource_types: ["image", "other"],
     options_fields: ["videoBlocker", "imgBlocker"]
   }
 };
 
 chrome.runtime.onInstalled.addListener(details => {
-  initialization(details.reason);
+  // Don't run the initialization when the browser is updated. It caused issues in Vivaldi and Opera reseting the options
+  if (details.reason === "browser_update" || details.reason === "chrome_update") {
+    resetTemporaryOptions();
+    initializeTabLogo();
+  } else {
+    // if the extension is installed or updated, initialize the options
+    initialization(details.reason);
+  }
 });
 
 chrome.runtime.onStartup.addListener(() => {
-  initialization("startup");
+  resetTemporaryOptions();
+  initializeTabLogo();
 });
 
 function initialization(initializationReason) {
-  // delete records from previous versions
-  chrome.storage.local.remove(["extension", "mmfytb_extension"]);
-  chrome.storage.local.get(null, async function (storedValues) {
+  initializeExtensionOptions();
+  initializeBlockingInfo();
 
-    let enabled = initializeExtensionOptions(storedValues);
-    initializeBlockingInfo();
-    chrome.storage.local.set({ "blocking_info": blockingInfo });
+  chrome.management.getSelf(info => {
+    chrome.storage.local.set({
+      "version": info.version
+    });
+  });
+  initializeTabLogo();
 
-    for (let blockingInfoName in blockingInfo) declareRules(createRules(blockingInfo, blockingInfoName));
+  if (initializationReason === "install") {
+    chrome.tabs.create({
+      url: "pages/options.html"
+    });
+  }
+  else if (initializationReason === "update") {
+    chrome.tabs.create({
+      url: "pages/donation.html"
+    });
+  }
+}
 
+function resetTemporaryOptions() {
+  chrome.storage.local.set({
+    "sstabs": {},
+    "sspages": {},
+    "qapages": {}
+  });
+}
+
+function initializeTabLogo() {
+  chrome.storage.local.get("enabled", async function (enabled) {
     let [tab] = await chrome.tabs.query({
       active: true,
       lastFocusedWindow: true
     });
     if (tab) setLogoForTab(tab.id, enabled);
-
-    chrome.management.getSelf(info => {
-      chrome.storage.local.set({
-        "version": info.version,
-        "sstabs": {},
-        "sspages": {},
-        "qapages": {}
-      }, () => {
-        if (initializationReason === "install") {
-          chrome.tabs.create({
-            url: "pages/options.html"
-          });
-        }
-        // else if (initializationReason === "update") {
-        //   chrome.tabs.create({
-        //     url: "pages/about.html"
-        //   });
-        // }
-      });
-    });
   });
 }
 
-function initializeExtensionOptions(storedValues) {
-  let enabled = extensionOptions.enabled;
-  if (!storedValues.hasOwnProperty("version")) {
-    // if the previous version was below version 5
-    chrome.storage.local.set(extensionOptions);
-  } else {
-    enabled = storedValues.enabled;
-    // add new options or change the value of options that their type was changed
-    for (let key in extensionOptions) {
-      if (storedValues[key] === undefined || (typeof storedValues[key] != typeof extensionOptions[key])) {
-        storedValues[key] = extensionOptions[key];
+async function initializeExtensionOptions() {
+  // delete records from previous versions
+  chrome.storage.local.remove(["extension", "mmfytb_extension"]);
+  
+  chrome.storage.local.get(null, async function(storedValues) {
+    if (!storedValues.hasOwnProperty("version")) {
+      // if the previous version was below version 5
+      await chrome.storage.local.set(extensionOptions);
+    } else {
+      // add new options or change the value of options that their type was changed
+      for (let key in extensionOptions) {
+        if (storedValues[key] === undefined || (typeof storedValues[key] != typeof extensionOptions[key])) {
+          storedValues[key] = extensionOptions[key];
+        }
       }
+      await chrome.storage.local.set(storedValues);
+      // remove old options
+      const keysToRemove = Object.keys(storedValues).filter(key => extensionOptions[key] === undefined);
+      await Promise.all(keysToRemove.map(key => chrome.storage.local.remove(key)));
     }
-    chrome.storage.local.set(storedValues);
-    // remove old options
-    for (let key in storedValues) {
-      if (extensionOptions[key] === undefined) chrome.storage.local.remove(key);
-    }
-  }
-  return enabled;
+    resetTemporaryOptions();
+  });
 }
 
 function initializeBlockingInfo() {
   blockingInfo.images.first_id = blockingInfo.videos.rules.length + 1;
   blockingInfo.videoPreviewImage.first_id = blockingInfo.images.first_id + blockingInfo.images.rules.length + 1;
+
+  chrome.storage.local.set({ "blocking_info": blockingInfo });
+  for (let blockingInfoName in blockingInfo) declareRules(createRules(blockingInfo, blockingInfoName));
 }
 
 chrome.tabs.onRemoved.addListener(tabId => {
@@ -433,7 +447,7 @@ function runOnCurrentTab(command, currentTabId = -1) {
             if (tabs.length > 0) toglleStatusForTab(tabs[0].id);
           });
         } else toglleStatusForTab(currentTabId);
-      } 
+      }
     });
   }
 }

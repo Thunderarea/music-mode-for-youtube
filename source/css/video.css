@@ -1,11 +1,12 @@
+/* Don't add important to the rules that don't have. Under specific conditions they have priority over the thumbnail background image and they hide it */
 .html5-video-player,
 ytmusic-player {
   background-color: black !important;
   border-radius: 10px !important;
-  background-image: url("../img/logo/full_logo.svg") !important;
-  background-repeat: no-repeat !important;
-  background-position: center !important;
-  background-size: 55% !important;
+  background-image: url("../img/logo/full_logo.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 55%;
 }
 
 .html5-video-player video {

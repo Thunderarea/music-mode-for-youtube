@@ -182,15 +182,6 @@
   "VideoButtonTooltipDisabled": {
     "message": "動画を非表示にする"
   },
-  "themeVideoTitle": {
-    "message": "動画タイトル"
-  },
-  "themeChannel": {
-    "message": "Channel <svg viewBox='0 0 24 24' preserveAspectRatio='xMidYMid meet' focusable='false' style='pointer-events: none; display: block; width: 10px; height: 15px; margin-left: 3px; fill: #606060'><g viewBox='0 0 24 24' class='style-scope yt-icon'><path fill='none' d='M0 0h24v24H0z' class='style-scope yt-icon'></path><path d='M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z' class='style-scope yt-icon'></path></g></svg>"
-  },
-  "themeViews": {
-    "message": "5.1M&nbsp;views"
-  },
   "onTooltip": {
     "message": "すべてのタブの拡張機能を有効にする"
   },

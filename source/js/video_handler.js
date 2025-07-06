@@ -138,13 +138,16 @@ async function getThumbnailImage(videoPlayer) {
     else thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg?noblockingmmfytb=true`;
     return fetch(thumbnailUrl, {
       method: "HEAD",
-    }).then((response) => response)
+    }).then((response) => {
+        if (!response.ok) {
+          throw new Error(`Response status: ${response.status}`);
+        }
+      })
       .then((data) => {
         return thumbnailUrl;
       })
       .catch((error) => {
-        thumbnailUrl = thumbnailUrl.replace("maxresdefault", "hqdefault");
-        return thumbnailUrl;
+        return thumbnailUrl.replace("maxresdefault", "hqdefault");
       });
   }
 }

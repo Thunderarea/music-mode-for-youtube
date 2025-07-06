@@ -172,7 +172,9 @@ ytd-playlist-panel-supported-items img,
 ytd-playlist-panel-video-renderer img,
 ytd-rich-item-renderer #thumbnail img,
 ytd-reel-shelf-renderer img,
-yt-content-preview-image-view-model img {
+yt-content-preview-image-view-model img,
+ytm-shorts-lockup-view-model img,
+yt-thumbnail-view-model img {
   display: none !important;
 }
 
@@ -356,4 +358,9 @@ yt-thumbnail-overlay-badge-view-model yt-thumbnail-badge-view-model badge-shape 
 yt-content-preview-image-view-model thumbnail-hover-overlay-view-model {
   opacity: 1 !important;
   background-color: var(--yt-primary-color) !important;
+}
+
+/* Video preview in recommended videos */
+animated-thumbnail-overlay-view-model img {
+  display: none !important;
 }
