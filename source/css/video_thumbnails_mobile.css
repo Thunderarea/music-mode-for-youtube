@@ -1,6 +1,10 @@
 /* Mobile */
 /* Image of thumbnail */
-.video-thumbnail-img {
+.video-thumbnail-img,
+/* Shorts in homepage */
+ytm-shorts-lockup-view-model img,
+/* Posts */
+ytm-rich-section-renderer img {
   display: none !important;
 }
 
@@ -67,4 +71,18 @@ ytm-thumbnail-overlay-time-status-renderer,
 /* Hide Open in App button */
 .mobile-topbar-header-sign-in-button {
   display: none !important;
+}
+
+/* Shorts in homepage */
+ytm-shorts-lockup-view-model {
+  background-color: #323232 !important;
+}
+
+/* Posts */
+ytm-backstage-image-renderer {
+  background-color: #323232 !important;
+}
+
+badge-shape {
+  background-color: #323232 !important;
 }
