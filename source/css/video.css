@@ -36,3 +36,8 @@ ytmusic-player {
 .html5-video-player video[disableremoteplayback=""] {
   display: block !important;
 }
+
+/* Video image on YT Music */
+#song-image img {
+  display: none !important;
+}
