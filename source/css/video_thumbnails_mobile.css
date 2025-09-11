@@ -30,6 +30,18 @@ ytm-thumbnail-overlay-time-status-renderer {
   background-color: #323232 !important;
 }
 
+/* Playlists, Mixes */
+.radioBottomOverlayHost {
+  height: 100% !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #323232 !important;
+}
+
 ytm-thumbnail-overlay-time-status-renderer,
 .video-thumbnail-overlay-bottom-icon-text,
 .video-thumbnail-overlay-bottom-icon {
@@ -41,6 +53,11 @@ ytm-thumbnail-overlay-time-status-renderer,
   height: 100% !important;
   justify-content: center !important;
   align-items: center !important;
+}
+
+/* Normal video thumbnails */
+.videoThumbnailGroupOverlayBottomLeftRightGroup {
+  height: 100% !important;
 }
 
 /* Shorts in reel */
