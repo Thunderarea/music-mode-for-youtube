@@ -362,6 +362,11 @@ yt-thumbnail-bottom-overlay-view-model yt-thumbnail-badge-view-model badge-shape
     width: 100% !important;
     height: 100% !important;
     position: absolute !important;
+    padding: 0 !important;
+}
+
+yt-thumbnail-overlay-progress-bar-view-model {
+  z-index: 2 !important;
 }
 
 yt-thumbnail-view-model:has(yt-thumbnail-hover-overlay-toggle-actions-view-model) {
