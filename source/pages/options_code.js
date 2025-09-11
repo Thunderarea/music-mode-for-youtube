@@ -110,7 +110,7 @@ function detectChange(isGroupCheckbox, optionName, checked) {
       if (!checked) {
         switch (optionName) {
           case "popup_current_page":
-            newValues["sspages"] = [];
+            newValues["sspages"] = {};
             break;
           case "quick_access_buttons_images":
             newValues.qapages = removeQAPagesRecords(storedValues.qapages, "images");
