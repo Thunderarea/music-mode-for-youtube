@@ -1,6 +1,10 @@
 /* Mobile */
 /* Image of thumbnail */
-.video-thumbnail-img {
+.video-thumbnail-img,
+/* Shorts in homepage */
+ytm-shorts-lockup-view-model img,
+/* Posts */
+ytm-rich-section-renderer img {
   display: none !important;
 }
 
@@ -26,6 +30,18 @@ ytm-thumbnail-overlay-time-status-renderer {
   background-color: #323232 !important;
 }
 
+/* Playlists, Mixes */
+.radioBottomOverlayHost {
+  height: 100% !important;
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background-color: #323232 !important;
+}
+
 ytm-thumbnail-overlay-time-status-renderer,
 .video-thumbnail-overlay-bottom-icon-text,
 .video-thumbnail-overlay-bottom-icon {
@@ -37,6 +53,11 @@ ytm-thumbnail-overlay-time-status-renderer,
   height: 100% !important;
   justify-content: center !important;
   align-items: center !important;
+}
+
+/* Normal video thumbnails */
+.videoThumbnailGroupOverlayBottomLeftRightGroup {
+  height: 100% !important;
 }
 
 /* Shorts in reel */
@@ -67,4 +88,18 @@ ytm-thumbnail-overlay-time-status-renderer,
 /* Hide Open in App button */
 .mobile-topbar-header-sign-in-button {
   display: none !important;
+}
+
+/* Shorts in homepage */
+ytm-shorts-lockup-view-model {
+  background-color: #323232 !important;
+}
+
+/* Posts */
+ytm-backstage-image-renderer {
+  background-color: #323232 !important;
+}
+
+badge-shape {
+  background-color: #323232 !important;
 }

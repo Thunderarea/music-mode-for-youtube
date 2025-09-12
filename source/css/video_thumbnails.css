@@ -174,7 +174,8 @@ ytd-rich-item-renderer #thumbnail img,
 ytd-reel-shelf-renderer img,
 yt-content-preview-image-view-model img,
 ytm-shorts-lockup-view-model img,
-yt-thumbnail-view-model img {
+yt-thumbnail-view-model img,
+ytm-rich-section-renderer img {
   display: none !important;
 }
 
@@ -329,13 +330,15 @@ ytd-thumbnail-overlay-time-status-renderer badge-shape {
 }
 
 /* Playlists in Playlists page */
-yt-thumbnail-overlay-badge-view-model {
+yt-thumbnail-overlay-badge-view-model,
+yt-thumbnail-bottom-overlay-view-model {
   width: 100% !important;
   height: 100% !important;
   margin: 0 !important;
 }
 
-yt-thumbnail-overlay-badge-view-model yt-thumbnail-badge-view-model {
+yt-thumbnail-overlay-badge-view-model yt-thumbnail-badge-view-model,
+yt-thumbnail-bottom-overlay-view-model yt-thumbnail-badge-view-model {
   width: 100% !important;
   height: 100% !important;
   display: flex !important;
@@ -344,7 +347,8 @@ yt-thumbnail-overlay-badge-view-model yt-thumbnail-badge-view-model {
   margin: 0 !important;
 }
 
-yt-thumbnail-overlay-badge-view-model yt-thumbnail-badge-view-model badge-shape {
+yt-thumbnail-overlay-badge-view-model yt-thumbnail-badge-view-model badge-shape,
+yt-thumbnail-bottom-overlay-view-model yt-thumbnail-badge-view-model badge-shape {
   background-color: var(--yt-primary-color) !important;
   height: 100% !important;
   width: 100% !important;
@@ -352,6 +356,21 @@ yt-thumbnail-overlay-badge-view-model yt-thumbnail-badge-view-model badge-shape 
   justify-content: center !important;
   align-items: center !important;
   padding: 0 !important;
+}
+
+.ytThumbnailBottomOverlayViewModelBadgeContainer {
+    width: 100% !important;
+    height: 100% !important;
+    position: absolute !important;
+    padding: 0 !important;
+}
+
+yt-thumbnail-overlay-progress-bar-view-model {
+  z-index: 2 !important;
+}
+
+yt-thumbnail-view-model:has(yt-thumbnail-hover-overlay-toggle-actions-view-model) {
+  background-color: var(--yt-primary-color) !important;
 }
 
 /* Image of playlist in playlist's page */
