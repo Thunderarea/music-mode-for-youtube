@@ -126,11 +126,11 @@ function initialization(initializationReason) {
       url: "pages/options.html"
     });
   }
-  else if (initializationReason === "update") {
-    chrome.tabs.create({
-      url: "pages/donation.html"
-    });
-  }
+  // else if (initializationReason === "update") {
+    // chrome.tabs.create({
+    //   url: "pages/donation.html"
+    // });
+  // }
 }
 
 function resetTemporaryOptions() {
