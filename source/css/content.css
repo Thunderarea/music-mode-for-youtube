@@ -37,6 +37,7 @@
   background-position: center center;
   background-size: 50% 50%;
   background-repeat: no-repeat;
+  pointer-events: all;
 }
 
 #topbar_button_mmfytb_thunderarea {
