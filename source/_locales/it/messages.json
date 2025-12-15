@@ -41,12 +41,6 @@
     "avatars": {
       "message": "Avatars"
     },
-    "google_search_full": {
-      "message": "Ricerca Google"
-    },
-    "google_search": {
-      "message": "Ricerca Google"
-    },
     "other_images": {
       "message": "Altre immagini"
     },
@@ -55,9 +49,6 @@
     },
     "embeddedDescription": {
       "message": "Attiva o disattiva l'estenzione e le opzioni corrispondenti per i video YouTube implementati in altri siti"
-    },
-    "google_searchDescription": {
-      "message": "Nasconde varie immagini nella ricerca Google come le copertine dei video"
     },
     "videoDescription": {
       "message": "Hides the video"
@@ -91,9 +82,6 @@
     },
     "currentPageTooltip": {
       "message": "Configura le funzioni dall'estenzione\nsolo per questa pagina. Quando la\npagina cambia, queste impostazioni\nsono rimosse"
-    },
-    "google_searchTooltip": {
-      "message": "Nascondi varie immagini\ndalla ricerca Google"
     },
     "embeddedTooltip": {
       "message": "Video YouTube implementati\nin altri siti"

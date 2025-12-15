@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Music Mode for YouTube™",
   "short_name": "Music Mode",
-  "version": "6.4.39",
+  "version": "6.5.0",
   "default_locale": "en",
   "incognito":"spanning",
   
@@ -39,8 +39,7 @@
   },
   "web_accessible_resources": [
     {
-      "resources": [ 
-        "css/google_search.css",
+      "resources": [
         "css/ads.css",
         "css/ads_mobile.css",
         "css/channel_avatars.css",
@@ -66,15 +65,7 @@
        ]
     }, {
       "resources": [ 
-        "css/google_search.css"
-      ],
-      "matches": [ 
-        "<all_urls>"
-       ]
-    }, {
-      "resources": [ 
         "img/logo/logo_only.svg",
-        "img/image_document.svg",
         "img/avatar-chanell.svg",
         "img/youtube_logo.svg",
         "img/photo.jpg",
@@ -114,15 +105,6 @@
         "js/content_mytb.js"
       ],
       "run_at": "document_end",
-      "all_frames": true
-    }, {
-      "matches": [
-         "*://www.google.com/search*"
-      ],
-      "js": [
-        "js/google_search.js"
-      ],
-      "run_at": "document_start",
       "all_frames": true
     }
   ],

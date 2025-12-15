@@ -41,12 +41,6 @@
   "avatars": {
     "message": "プロフィール画像"
   },
-  "google_search_full": {
-    "message": "Google検索"
-  },
-  "google_search": {
-    "message": "Google検索"
-  },
   "other_images": {
     "message": "その他の画像"
   },
@@ -55,9 +49,6 @@
   },
   "embeddedDescription": {
     "message": "サイトに埋め込まれたYouTube動画の拡張機能と対応するオプションを有効/無効にする。"
-  },
-  "google_searchDescription": {
-    "message": "Google検索で動画のサムネイル等の画像を非表示にする。"
   },
   "videoDescription": {
     "message": "Hides the video"
@@ -91,9 +82,6 @@
   },
   "currentPageTooltip": {
     "message": "このページに対してのみ拡張機能を設定する。ページが変更されると、これらの設定は削除されます。"
-  },
-  "google_searchTooltip": {
-    "message": "Google検索で様々な画像を非表示にする。"
   },
   "embeddedTooltip": {
     "message": "他のサイトに埋め込まれたYouTube動画"

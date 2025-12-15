@@ -8,7 +8,7 @@ let SPECIFIC_OPTIONS = false;
 let FULL_OPTIONS = {};
 let SITE_ID = "";
 
-let sitesIDs = ["youtube", "youtube_music", "embedded", "google_search"];
+let sitesIDs = ["youtube", "youtube_music", "embedded"];
 
 let sitesInfo = {
   "youtube": {
@@ -22,10 +22,6 @@ let sitesInfo = {
   "embedded": {
     "name": chrome.i18n.getMessage("embedded"),
     "options": ["video", "thumbnails", "avatars", "adblocker"]
-  },
-  "google_search": {
-    "name": chrome.i18n.getMessage("google_search_full"),
-    "options": []
   }
 };
 
@@ -73,7 +69,6 @@ chrome.tabs.query({
     tabId = tabs[0].id;
     if (tabUrl.indexOf("www.youtube.com") !== -1) SITE_ID = "youtube";
     else if (tabUrl.indexOf("music.youtube.com") !== -1) SITE_ID = "youtube_music";
-    else if (tabUrl.indexOf("www.google.") !== -1) SITE_ID = "google_search";
     else if (tabUrl.indexOf("http") !== -1) SITE_ID = "embedded";
     adaptDisplay();
   }

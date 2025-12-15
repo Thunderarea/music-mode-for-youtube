@@ -41,12 +41,6 @@
     "avatars": {
       "message": "头像"
     },
-    "google_search_full": {
-      "message": "Google 搜索"
-    },
-    "google_search": {
-      "message": "Google 搜索"
-    },
     "other_images": {
       "message": "其他图片"
     },
@@ -55,9 +49,6 @@
     },
     "embeddedDescription": {
       "message": "在网页内嵌 YouTube 视频上启用或禁用此扩展和相应选项"
-    },
-    "google_searchDescription": {
-      "message": "隐藏 Google 搜索的缩略图等其他图片"
     },
     "videoDescription": {
       "message": "Hides the video"
@@ -91,9 +82,6 @@
     },
     "currentPageTooltip": {
       "message": "仅为当前页面配置插件功能，页面改变时会移除设置"
-    },
-    "google_searchTooltip": {
-      "message": "隐藏 Google 搜索中的各种图片"
     },
     "embeddedTooltip": {
       "message": "其他站点内嵌的 YouTube 视频"

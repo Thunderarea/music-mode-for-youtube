@@ -41,12 +41,6 @@
   "avatars": {
     "message": "Άβαταρ"
   },
-  "google_search_full": {
-    "message": "Αναζήτηση Google"
-  },
-  "google_search": {
-    "message": "Αναζητ. Google"
-  },
   "other_images": {
     "message": "Άλλες εικόνες"
   },
@@ -55,9 +49,6 @@
   },
   "embeddedDescription": {
     "message": "Ενεργοποιήστε/Απενεργοποιήστε την επέκταση και τις αντίστοιχες επιλογές για τα YouTube βίντεο που είναι ενσωματωμένα σε άλλα sites"
-  },
-  "google_searchDescription": {
-    "message": "Αποκρύπτει διάφορες εικόνες στην αναζήτηση Google όπως τις εικόνες των μικρογραφιών των βίντεο"
   },
   "videoDescription": {
     "message": "Αποκρύπτει το βίντεο"
@@ -91,9 +82,6 @@
   },
   "currentPageTooltip": {
     "message": "Ρυθμίστε την λειτουργία της επέκτασης μόνο\nγια αυτήν την σελίδα. Όταν η σελίδα αλλάζει\nοι ρυθμίσεις αυτές διαγράφονται"
-  },
-  "google_searchTooltip": {
-    "message": "Αποκρύπτει διάφορες εικόνες\nστην αναζήτηση Google"
   },
   "embeddedTooltip": {
     "message": "Για YouTube βίντεο ενσωματωμένα\nσε άλλα sites"

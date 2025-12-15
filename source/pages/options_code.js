@@ -1,4 +1,4 @@
-let sitesIDs = ["youtube", "youtube_music", "embedded", "google_search"];
+let sitesIDs = ["youtube", "youtube_music", "embedded"];
 
 let sitesInfo = {
   "youtube": {
@@ -12,10 +12,6 @@ let sitesInfo = {
   "embedded": {
     "name": chrome.i18n.getMessage("embedded"),
     "options": ["video", "thumbnails", "avatars", "adblocker"]
-  },
-  "google_search": {
-    "name": chrome.i18n.getMessage("google_search_full"),
-    "options": []
   }
 };
 

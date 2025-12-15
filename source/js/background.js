@@ -21,8 +21,6 @@ let extensionOptions = {
   "embedded_avatars": true,
   "embedded_adblocker": true,
 
-  "google_search": false,
-
   "control_from_popup": true,
   "popup_current_page": false,
   "popup_specific_options": false,
@@ -378,7 +376,7 @@ function detectURLChange(tabId, changeInfo, tab) {
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   switch (request.funct) {
     case 0:
-      // from content scripts (YouTube and Google) to find the tab id
+      // from content scripts (YouTube) to find the tab id
       sendResponse({
         id: sender.tab.id,
         url: sender.url
@@ -390,7 +388,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       setLogoForTab(sender.tab.id);
       break;
     case 2:
-      /*from Google content script and from popup*/
+      /*from popup*/
       setLogoForTab(request.tab_id);
       break;
     case 3:
@@ -467,9 +465,6 @@ async function toglleStatusForTab(tabId) {
         "embedded": {
           "enabled": storedValues.embedded
         },
-        "google_search": {
-          "enabled": storedValues.google_search
-        }
       }
     };
     let newRecord = {};

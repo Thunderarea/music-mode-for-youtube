@@ -41,12 +41,6 @@
   "avatars": {
     "message": "Avatars"
   },
-  "google_search_full": {
-    "message": "Google search"
-  },
-  "google_search": {
-    "message": "Google search"
-  },
   "other_images": {
     "message": "Other images"
   },
@@ -55,9 +49,6 @@
   },
   "embeddedDescription": {
     "message": "Enable or disable the extension and the corresponding options for YouTube videos embedded in sites"
-  },
-  "google_searchDescription": {
-    "message": "Hides various images in Google search such as the video thumbnails"
   },
   "videoDescription": {
     "message": "Hides the video"
@@ -91,9 +82,6 @@
   },
   "currentPageTooltip": {
     "message": "Configure the extension's function\nfor this page only. When the page\nchanges, these settings are removed"
-  },
-  "google_searchTooltip": {
-    "message": "Hides various images\nin Google search"
   },
   "embeddedTooltip": {
     "message": "YouTube videos embedded\nin other sites"
