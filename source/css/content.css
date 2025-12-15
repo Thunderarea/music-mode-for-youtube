@@ -59,3 +59,7 @@
 #topbar_button_mmfytb_thunderarea:hover {
   background-color: var(--yt-spec-10-percent-layer);
 }
+
+.mobile-topbar-header[data-mode=shorts] .mobile-topbar-header-content {
+  right: 3px !important;
+}

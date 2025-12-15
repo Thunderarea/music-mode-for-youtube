@@ -9,7 +9,7 @@ function addMMFYTButtonMobile() {
     let existElement = document.querySelector("#mmfytb_mobile_button");
     if (existElement == null || existElement == undefined) {
       let topbar = document.querySelector(".mobile-topbar-header div.mobile-topbar-header-content");
-      if (topbar && topbar.firstElementChild) {
+      if (topbar) {
         new MutationObserver(detectRemovalOfMMFYTButton).observe(topbar, {
           subtree: true,
           childList: true
