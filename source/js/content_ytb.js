@@ -125,7 +125,7 @@ function clickButton(vid) {
       newRecord["qapages"][id] = newValues;
       chrome.storage.local.set(newRecord);
 
-      applyOptions(1);
+      applyOptions(vid ? 1 : 2);
     });
   });
 }
@@ -141,7 +141,6 @@ function detectRemovalOfMMFYTButton(mutations) {
 
 function addImagesButton() {
   let iterations = 0;
-  let el_6;
   let timerId = setInterval(findImagesButton, 500);
 
   function findImagesButton() {
