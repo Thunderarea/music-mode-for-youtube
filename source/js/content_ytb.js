@@ -33,6 +33,8 @@ if (document.getElementById("video_quick_access_button_JS_mmfytb_thunderarea") =
   document.documentElement.appendChild(script);
 }
 
+
+
 function addVideoButton() {
   let iterations = 0;
   let timerId = setInterval(findVideoButton, 500);
@@ -40,23 +42,47 @@ function addVideoButton() {
   function findVideoButton() {
     iterations++;
     if (iterations >= 120) clearInterval(timerId);
-    let container = document.querySelector(".ytp-chrome-controls .ytp-right-controls");
-    if (container?.firstElementChild) {
-      let existEl = document.getElementById("video_button_mmfytb_thunderarea");
-      if (!existEl) {
-        let el_1 = document.createElement("BUTTON");
-        el_1.classList.add("ytp-button");
-        el_1.id = "video_button_mmfytb_thunderarea";
-        container.insertBefore(el_1, container.firstElementChild);
+    if (isYoutubeMusic()) {
+      let container = document.querySelector("#right-controls .right-controls-buttons.ytmusic-player-bar");
+      if (container?.firstElementChild) {
+        let existEl = document.getElementById("video_button_mmfytb_thunderarea");
+        if (!existEl) {
+          let el_1 = document.createElement("yt-icon-button");
+          el_1.classList.add("repeat", "style-scope", "ytmusic-player-bar");
+          el_1.id = "video_button_mmfytb_thunderarea";
+          container.append(el_1);
 
-        el_1.addEventListener("mouseenter", setTextOnTooltip);
-        el_1.addEventListener("mousemove", enableTooltip);
-        el_1.addEventListener("mouseleave", hideVideoButTooltip);
-        el_1.onmouseup = function () {
-          clickButton(true);
-        };
-      }
-    } else return;
+          el_1.addEventListener("mouseenter", () => {
+            console.log(el_1);
+
+            if (videoButtonState) el_1.title = chrome.i18n.getMessage("VideoButtonTooltipEnabled");
+            else el_1.title = chrome.i18n.getMessage("VideoButtonTooltipDisabled");
+          });
+          el_1.onmouseup = function () {
+            clickButton(true);
+          };
+        }
+      } else return;
+    } else {
+      let container = document.querySelector(".ytp-chrome-controls .ytp-right-controls");
+      if (container?.firstElementChild) {
+        let existEl = document.getElementById("video_button_mmfytb_thunderarea");
+        if (!existEl) {
+          let el_1 = document.createElement("BUTTON");
+          el_1.classList.add("ytp-button");
+          el_1.id = "video_button_mmfytb_thunderarea";
+          container.insertBefore(el_1, container.firstElementChild);
+
+          el_1.addEventListener("mouseenter", setTextOnTooltip);
+          el_1.addEventListener("mousemove", enableTooltip);
+          el_1.addEventListener("mouseleave", hideVideoButTooltip);
+          el_1.onmouseup = function () {
+            clickButton(true);
+          };
+        }
+      } else return;
+    }
+
     setvideoButtonState();
     clearInterval(timerId);
   }
@@ -505,8 +531,8 @@ function applyOptions(mustReload) {
         video_button: values.quick_access_buttons_video
       };
       featuresHandler(options, mustReload, videoOptions);
-      if (!isMobileYouTube() && (siteName == "youtube" || siteName == "embedded")) {
-        (values.quick_access_buttons_images) ? addImagesButton() : removeButtons(false, true);
+      if (!isMobileYouTube()) {
+        if (!isYoutubeMusic()) (values.quick_access_buttons_images) ? addImagesButton() : removeButtons(false, true);
         (values.quick_access_buttons_video) ? addVideoButton() : removeButtons(true, false);
       }
     });

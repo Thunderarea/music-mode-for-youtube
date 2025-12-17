@@ -8,7 +8,7 @@ ytmusic-item-thumbnail-overlay-renderer.ytmusic-two-row-item-renderer {
 }
 
 ytmusic-thumbnail-renderer img,
-.thumbnail img {
+.thumbnail:not(#thumbnail) img {
   visibility: hidden !important;
 }
 
