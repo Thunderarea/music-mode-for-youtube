@@ -286,5 +286,8 @@
   },
   "tip_2": {
     "message": "Use the keyboard shortcut <b>Ctrl + M</b> to enable the extension for the current tab with the options that you have selected on the options page. (the shortcut will not work if it is used from another extension)"
+  },
+  "noShortsTitle": {
+    "message": "Hide YouTube Shorts"
   }
 }
