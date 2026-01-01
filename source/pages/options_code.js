@@ -1,3 +1,4 @@
+import { noShortsMode_url } from '../config.js';
 let sitesIDs = ["youtube", "youtube_music", "embedded"];
 
 let sitesInfo = {
@@ -21,6 +22,7 @@ function init() {
   addTemplates();
   initializeListeners();
   initializeOptions();
+  initNoShortsLinks();
 }
 
 function addTemplates() {
@@ -135,4 +137,11 @@ function groupCheckboxChange(optionName, checked) {
   let optionsContainer = document.querySelector("#" + optionName + " .optionsContainer");
   if (checked) optionsContainer.classList.add("visibleOptions");
   else optionsContainer.classList.remove("visibleOptions");
+}
+
+function initNoShortsLinks() {
+  let noShortsURLElements = document.querySelectorAll(".noShortsURL");
+  noShortsURLElements.forEach(element => {
+    element.href = noShortsMode_url;
+  });
 }
