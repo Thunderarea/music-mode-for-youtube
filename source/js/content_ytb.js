@@ -33,14 +33,14 @@ if (document.getElementById("video_quick_access_button_JS_mmfytb_thunderarea") =
   document.documentElement.appendChild(script);
 }
 
-
-
 function addVideoButton() {
+  
   let iterations = 0;
   let timerId = setInterval(findVideoButton, 500);
 
   function findVideoButton() {
     iterations++;
+    
     if (iterations >= 120) clearInterval(timerId);
     if (isYoutubeMusic()) {
       let container = document.querySelector("#right-controls .right-controls-buttons.ytmusic-player-bar");
@@ -53,8 +53,6 @@ function addVideoButton() {
           container.append(el_1);
 
           el_1.addEventListener("mouseenter", () => {
-            console.log(el_1);
-
             if (videoButtonState) el_1.title = chrome.i18n.getMessage("VideoButtonTooltipEnabled");
             else el_1.title = chrome.i18n.getMessage("VideoButtonTooltipDisabled");
           });
@@ -64,25 +62,51 @@ function addVideoButton() {
         }
       } else return;
     } else {
-      let container = document.querySelector(".ytp-chrome-controls .ytp-right-controls");
-      if (container?.firstElementChild) {
-        let existEl = document.getElementById("video_button_mmfytb_thunderarea");
-        if (!existEl) {
-          let el_1 = document.createElement("BUTTON");
-          el_1.classList.add("ytp-button");
-          el_1.id = "video_button_mmfytb_thunderarea";
-          container.insertBefore(el_1, container.firstElementChild);
+      if (isShorts()) {
+        let container = document.querySelector("#actions reel-action-bar-view-model");
+        if (container?.firstElementChild) {
+          let existEl = document.querySelector("#video_button_mmfytb_thunderarea");
+          if (!existEl?.classList.contains("shorts-video-button")) {
+            // if exists, but it is not the shorts button, remove it
+            if (existEl) existEl.remove();
+            let el_1 = document.createElement("button");
+            el_1.classList.add("yt-spec-button-shape-next", "yt-spec-button-shape-next--tonal", "yt-spec-button-shape-next--mono", "yt-spec-button-shape-next--size-l", "yt-spec-button-shape-next--icon-button", "yt-spec-button-shape-next--enable-backdrop-filter-experiment", "shorts-video-button");
+            el_1.id = "video_button_mmfytb_thunderarea";
+            container.insertBefore(el_1, container.firstElementChild);
+            
+            el_1.addEventListener("mouseenter", () => {
+              if (videoButtonState) {
+                el_1.title = chrome.i18n.getMessage("VideoButtonTooltipEnabled");
+              } else {
+                el_1.title = chrome.i18n.getMessage("VideoButtonTooltipDisabled");
+              }
+            });
+            el_1.onmouseup = function () {
+              clickButton(true);
+            };
+          }
+        } else return;
+      } else {
+        let container = document.querySelector(".ytp-chrome-controls .ytp-right-controls");
+        if (container?.firstElementChild) {
+          let existEl = document.getElementById("video_button_mmfytb_thunderarea");
+          if (!existEl) {
+            let el_1 = document.createElement("BUTTON");
+            el_1.classList.add("ytp-button");
+            el_1.id = "video_button_mmfytb_thunderarea";
+            container.insertBefore(el_1, container.firstElementChild);
 
-          el_1.addEventListener("mouseenter", setTextOnTooltip);
-          el_1.addEventListener("mousemove", enableTooltip);
-          el_1.addEventListener("mouseleave", hideVideoButTooltip);
-          el_1.onmouseup = function () {
-            clickButton(true);
-          };
-        }
-      } else return;
+            el_1.addEventListener("mouseenter", setTextOnTooltip);
+            el_1.addEventListener("mousemove", enableTooltip);
+            el_1.addEventListener("mouseleave", hideVideoButTooltip);
+            el_1.onmouseup = function () {
+              clickButton(true);
+            };
+          }
+        } else return;
+      }
     }
-
+    
     setvideoButtonState();
     clearInterval(timerId);
   }
@@ -432,6 +456,10 @@ function isEmbed() {
 
 function isYoutubeMusic() {
   return (window.location.hostname.indexOf("music.youtube.com") !== -1);
+}
+
+function isShorts() {
+  return (window.location.href.indexOf("youtube.com/shorts/") !== -1);
 }
 
 function getSiteName() {
