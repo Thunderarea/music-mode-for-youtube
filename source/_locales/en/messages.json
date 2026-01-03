@@ -65,6 +65,9 @@
   "adBlockerDescription": {
     "message": "Skips the YouTube ads"
   },
+  "adBlockerWarning": {
+    "message": "Enabling this option may cause disruptions, as YouTube may detect the extension as an ad blocker."
+  },
   "contactHeader": {
     "message": "Developer: Nick Pantelidis"
   },

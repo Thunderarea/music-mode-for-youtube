@@ -83,8 +83,8 @@ function initializeListeners() {
     let isGroupCheckbox = checkbox.classList.contains("groupCheckboxes");
     let optionName = checkbox.name;
 
-    checkbox.addEventListener("change", function () {
-      detectChange(isGroupCheckbox, optionName, this.checked);
+    checkbox.addEventListener("change", function (e) {
+      detectChange(isGroupCheckbox, optionName, this.checked, e.isTrusted);
     });
   });
 }
@@ -99,7 +99,7 @@ function initializeOptions() {
   });
 }
 
-function detectChange(isGroupCheckbox, optionName, checked) {
+function detectChange(isGroupCheckbox, optionName, checked, isTrusted) {
   if (isGroupCheckbox) groupCheckboxChange(optionName, checked);
   chrome.storage.local.get(null, storedValues => {
     if (storedValues[optionName] != undefined) {
@@ -119,6 +119,8 @@ function detectChange(isGroupCheckbox, optionName, checked) {
           default:
             break;
         } 
+      } else if (isTrusted && optionName.endsWith("_adblocker")) {
+        alert(chrome.i18n.getMessage("adBlockerWarning"));
       }
       chrome.storage.local.set(newValues);
     }
