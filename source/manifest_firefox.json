@@ -69,7 +69,9 @@
         "css/video_mobile.css",
         "js/video_handler.js",
         "js/video_quick_access_button.js",
-        "js/adSkipper.js"
+        "js/adSkipper.js",
+        "content_popup/style.css",
+        "content_popup/index.js"
       ],
       "matches": [ 
         "*://www.youtube.com/*",
@@ -107,7 +109,8 @@
         "css/content.css"
       ],
       "js": [
-        "js/content_ytb.js"
+        "js/content_ytb.js",
+        "content_popup/content.js"
       ],
       "run_at": "document_start",
       "all_frames": true
