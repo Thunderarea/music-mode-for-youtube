@@ -2,6 +2,8 @@
   const { support_url, review_url } = await import(chrome.runtime.getURL("config.js"));
 
   function createPanel() {
+    if (document.querySelector("#mmfytb_review_popup")) return;
+
     const host = document.createElement("div");
     host.id = "mmfytb_popup_container";
 
@@ -40,6 +42,7 @@
     shadow.innerHTML = htmlCode;
     shadow.querySelector("#close_button").addEventListener("click", () => {
       shadow.querySelector("#mmfytb_review_popup").remove();
+      setReviewPopupThreshold(blocked_videos_counter + 2000);
     });
 
     // Handle Yes/No button clicks
@@ -49,35 +52,65 @@
     const actionsBar = shadow.querySelector("#actions_bar");
 
     yesButton.addEventListener("click", () => {
-      textElement.textContent = "Thank you! Please rate us on the extension store.";
+      textElement.textContent = "A quick review really helps us out!";
       actionsBar.innerHTML = `
-      <button class="action_button negative_action close_later">No thanks</button>
+      <button class="action_button negative_action close_later">Maybe later</button>
       <a href="${review_url}" target="_blank"><button class="action_button positive_action rate_button">Rate Extension</button></a>
     `;
 
-    shadow.querySelectorAll(".action_button").forEach((button) => {
-        button.addEventListener("click", () => {
-          shadow.querySelector("#mmfytb_review_popup").remove();
-        });
+      shadow.querySelector(".negative_action").addEventListener("click", () => {
+        shadow.querySelector("#mmfytb_review_popup").remove();
+        setReviewPopupThreshold(blocked_videos_counter + 1000);
+      });
+
+      shadow.querySelector(".positive_action").addEventListener("click", () => {
+        shadow.querySelector("#mmfytb_review_popup").remove();
+        setReviewPopupThreshold(-1);
       });
     });
 
     noButton.addEventListener("click", () => {
       textElement.textContent = "Please let us know what you would like to improve";
       actionsBar.innerHTML = `
-        <button class="action_button negative_action close_dismiss">No thanks</button>
-        <a href="${support_url}" target="_blank"><button class="action_button positive_action feedback_button">Report issue</button></a>
+        <button class="action_button negative_action close_dismiss">Maybe later</button>
+        <a href="${support_url}" target="_blank"><button class="action_button positive_action">Report issue</button></a>
         `;
 
-      shadow.querySelectorAll(".action_button").forEach((button) => {
-        button.addEventListener("click", () => {
-          shadow.querySelector("#mmfytb_review_popup").remove();
-        });
+      shadow.querySelector(".negative_action").addEventListener("click", () => {
+        shadow.querySelector("#mmfytb_review_popup").remove();
+        setReviewPopupThreshold(blocked_videos_counter + 7000);
+      });
+
+      shadow.querySelector(".positive_action").addEventListener("click", () => {
+        shadow.querySelector("#mmfytb_review_popup").remove();
+        setReviewPopupThreshold(blocked_videos_counter + 6000);
       });
     });
   }
 
-  setTimeout(() => {
-    createPanel();
-  }, 5000);
+  const { blocked_videos_counter, review_popup_threshold } = await chrome.storage.local.get(["blocked_videos_counter", "review_popup_threshold"]);
+  // ask the background for tab visibility and to make sure its the only tab that will show the popup
+  if (review_popup_threshold > 0 /*&& blocked_videos_counter >= review_popup_threshold*/) {
+    chrome.runtime.sendMessage({
+      funct: 4,
+    }, (response) => {
+      if (response.showPopup) {
+        if (document.visibilityState === "visible") createPanel();
+        else {
+          document.addEventListener("visibilitychange", function onVisibilityChange() {
+            if (document.visibilityState === "visible") {
+              createPanel();
+              document.removeEventListener("visibilitychange", onVisibilityChange);
+            }
+          });
+        }
+      }
+    });
+  }
 })();
+
+
+function setReviewPopupThreshold(threshold) {
+  if (threshold > 15000) threshold = -1; // disable if too high
+  chrome.storage.local.set({ review_popup_threshold: threshold });
+}

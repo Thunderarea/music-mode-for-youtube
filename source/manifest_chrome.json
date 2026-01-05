@@ -57,7 +57,8 @@
         "js/video_quick_access_button.js",
         "js/adSkipper.js",
         "content_popup/style.css",
-        "content_popup/index.js"
+        "content_popup/index.js",
+        "config.js"
       ],
       "matches": [ 
         "*://www.youtube.com/*",

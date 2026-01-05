@@ -1,3 +1,11 @@
+document.addEventListener("video_block_count", () => {
+  chrome.storage.local.get("blocked_videos_counter", result => {
+    chrome.storage.local.set({
+      "blocked_videos_counter": ++result.blocked_videos_counter
+    });
+  });
+});
+
 const communication_event = new Event("injection_script_communication");
 
 let videoButtonState = false;
