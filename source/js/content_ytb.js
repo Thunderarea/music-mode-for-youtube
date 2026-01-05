@@ -6,7 +6,7 @@ document.addEventListener("video_block_count", () => {
   });
 });
 
-const communication_event = new Event('injection_script_communication');
+const communication_event = new Event("injection_script_communication");
 
 let videoButtonState = false;
 let imageButtonState = false;
@@ -27,20 +27,19 @@ let svgImageDisabledEl = new DOMParser().parseFromString(svgImageDisabled, "text
 
 if (document.getElementById("video_quick_access_button_JS_mmfytb_thunderarea") == null) {
   let script = document.createElement("script");
-  script.src = chrome.runtime.getURL(("../js/video_quick_access_button.js"));
+  script.src = chrome.runtime.getURL("../js/video_quick_access_button.js");
   script.id = "video_quick_access_button_JS_mmfytb_thunderarea";
   script.className = "mmfytbthunderarea";
   document.documentElement.appendChild(script);
 }
 
 function addVideoButton() {
-  
   let iterations = 0;
   let timerId = setInterval(findVideoButton, 500);
 
   function findVideoButton() {
     iterations++;
-    
+
     if (iterations >= 120) clearInterval(timerId);
     if (isYoutubeMusic()) {
       let container = document.querySelector("#right-controls .right-controls-buttons.ytmusic-player-bar");
@@ -70,10 +69,18 @@ function addVideoButton() {
             // if exists, but it is not the shorts button, remove it
             if (existEl) existEl.remove();
             let el_1 = document.createElement("button");
-            el_1.classList.add("yt-spec-button-shape-next", "yt-spec-button-shape-next--tonal", "yt-spec-button-shape-next--mono", "yt-spec-button-shape-next--size-l", "yt-spec-button-shape-next--icon-button", "yt-spec-button-shape-next--enable-backdrop-filter-experiment", "shorts-video-button");
+            el_1.classList.add(
+              "yt-spec-button-shape-next",
+              "yt-spec-button-shape-next--tonal",
+              "yt-spec-button-shape-next--mono",
+              "yt-spec-button-shape-next--size-l",
+              "yt-spec-button-shape-next--icon-button",
+              "yt-spec-button-shape-next--enable-backdrop-filter-experiment",
+              "shorts-video-button"
+            );
             el_1.id = "video_button_mmfytb_thunderarea";
             container.insertBefore(el_1, container.firstElementChild);
-            
+
             el_1.addEventListener("mouseenter", () => {
               if (videoButtonState) {
                 el_1.title = chrome.i18n.getMessage("VideoButtonTooltipEnabled");
@@ -106,7 +113,7 @@ function addVideoButton() {
         } else return;
       }
     }
-    
+
     setvideoButtonState();
     clearInterval(timerId);
   }
@@ -150,39 +157,42 @@ function addVideoButton() {
 }
 
 function clickButton(vid) {
-  chrome.runtime.sendMessage({
-    funct: 0
-  }, function (response) {
-    chrome.runtime.lastError;
-    chrome.storage.local.get('qapages', function (values) {
-      let qapages = values.qapages;
-      let id = response.id;
+  chrome.runtime.sendMessage(
+    {
+      funct: 0,
+    },
+    function (response) {
+      chrome.runtime.lastError;
+      chrome.storage.local.get("qapages", function (values) {
+        let qapages = values.qapages;
+        let id = response.id;
 
-      let qapage = qapages[id];
-      let qapageExists = qapage != undefined;
+        let qapage = qapages[id];
+        let qapageExists = qapage != undefined;
 
-      let newValues = {};
-      if (vid) {
-        newValues["video"] = !videoButtonState;
-        if (qapageExists && (qapage.images != undefined)) newValues["images"] = qapage.images;
-      } else {
-        newValues["images"] = !imageButtonState;
-        if (qapageExists && (qapage.video != undefined)) newValues["video"] = qapage.video;
-      }
+        let newValues = {};
+        if (vid) {
+          newValues["video"] = !videoButtonState;
+          if (qapageExists && qapage.images != undefined) newValues["images"] = qapage.images;
+        } else {
+          newValues["images"] = !imageButtonState;
+          if (qapageExists && qapage.video != undefined) newValues["video"] = qapage.video;
+        }
 
-      let newRecord = {};
-      newRecord["qapages"] = qapages;
-      newRecord["qapages"][id] = newValues;
-      chrome.storage.local.set(newRecord);
+        let newRecord = {};
+        newRecord["qapages"] = qapages;
+        newRecord["qapages"][id] = newValues;
+        chrome.storage.local.set(newRecord);
 
-      applyOptions(vid ? 1 : 2);
-    });
-  });
+        applyOptions(vid ? 1 : 2);
+      });
+    }
+  );
 }
 
 let topBarObserver = new MutationObserver(detectRemovalOfMMFYTButton);
 let options = {
-  childList: true
+  childList: true,
 };
 
 function detectRemovalOfMMFYTButton(mutations) {
@@ -241,7 +251,11 @@ function addImagesButton() {
     if (tooltipEl) {
       tooltipEl.classList.add("fade-in-animation");
       tooltipEl.classList.remove("hidden");
-      tooltipEl.style.top = document.querySelector("#end.ytd-masthead div#buttons").offsetHeight + document.querySelector("#end.ytd-masthead div#buttons").offsetTop + 8 + "px";
+      tooltipEl.style.top =
+        document.querySelector("#end.ytd-masthead div#buttons").offsetHeight +
+        document.querySelector("#end.ytd-masthead div#buttons").offsetTop +
+        8 +
+        "px";
       tooltipEl.style.setProperty("display", "block", "important");
     }
   }
@@ -265,34 +279,34 @@ function addFeature(optionName, mustReload, videoOptions) {
       document.dispatchEvent(communication_event);
       if (mustReload === 1) {
         let clonedDetail = { enabled: true };
-        if (typeof cloneInto != 'undefined') clonedDetail = cloneInto({ enabled: true }, document.defaultView);
-        let customEvent = new CustomEvent('vqab', {
-          detail: clonedDetail
+        if (typeof cloneInto != "undefined") clonedDetail = cloneInto({ enabled: true }, document.defaultView);
+        let customEvent = new CustomEvent("vqab", {
+          detail: clonedDetail,
         });
         document.dispatchEvent(customEvent);
       }
-      isMobileYouTube() ? insertStylesheet('video', "mobile") : insertStylesheet('video', "");
+      isMobileYouTube() ? insertStylesheet("video", "mobile") : insertStylesheet("video", "");
 
       videoButtonState = true;
       break;
     case "thumbnails":
-      if (isYoutubeMusic()) insertStylesheet('video_thumbnails', "YTMusic");
-      else if (isMobileYouTube()) insertStylesheet('video_thumbnails', "mobile");
-      else insertStylesheet('video_thumbnails', "");
+      if (isYoutubeMusic()) insertStylesheet("video_thumbnails", "YTMusic");
+      else if (isMobileYouTube()) insertStylesheet("video_thumbnails", "mobile");
+      else insertStylesheet("video_thumbnails", "");
       imageButtonState = true;
       break;
     case "avatars":
-      if (isYoutubeMusic()) insertStylesheet('channel_avatars', "YTMusic");
-      else if (isMobileYouTube()) insertStylesheet('channel_avatars', "mobile");
-      else insertStylesheet('channel_avatars', "");
+      if (isYoutubeMusic()) insertStylesheet("channel_avatars", "YTMusic");
+      else if (isMobileYouTube()) insertStylesheet("channel_avatars", "mobile");
+      else insertStylesheet("channel_avatars", "");
       break;
     case "other_images":
-      if (isYoutubeMusic()) insertStylesheet('others', "YTMusic");
-      else if (isMobileYouTube()) insertStylesheet('others', "mobile");
-      else insertStylesheet('others', "");
+      if (isYoutubeMusic()) insertStylesheet("others", "YTMusic");
+      else if (isMobileYouTube()) insertStylesheet("others", "mobile");
+      else insertStylesheet("others", "");
       break;
     case "adblocker":
-      isMobileYouTube() ? insertStylesheet('ads', "mobile") : insertStylesheet('ads', "");
+      isMobileYouTube() ? insertStylesheet("ads", "mobile") : insertStylesheet("ads", "");
       insertAdSkipper("adSkipper");
       break;
   }
@@ -301,8 +315,8 @@ function addFeature(optionName, mustReload, videoOptions) {
 function insertStylesheet(name, site) {
   if (document.getElementById(name + "_mmfytb_thunderarea") == null) {
     let link = document.createElement("link");
-    link.href = chrome.runtime.getURL(("../css/" + name + (site ? "_" : "") + site + ".css"));
-    link.id = (name + "_mmfytb_thunderarea");
+    link.href = chrome.runtime.getURL("../css/" + name + (site ? "_" : "") + site + ".css");
+    link.id = name + "_mmfytb_thunderarea";
     link.className = "mmfytbthunderarea";
     link.type = "text/css";
     link.rel = "stylesheet";
@@ -313,7 +327,7 @@ function insertStylesheet(name, site) {
 function insertVideoHandler(name) {
   if (document.getElementById(name + "JS_mmfytb_thunderarea") == null) {
     let script = document.createElement("script");
-    script.src = chrome.runtime.getURL(("../js/" + name + ".js"));
+    script.src = chrome.runtime.getURL("../js/" + name + ".js");
     script.id = name + "JS_mmfytb_thunderarea";
     script.className = "mmfytbthunderarea";
     document.documentElement.appendChild(script);
@@ -321,15 +335,15 @@ function insertVideoHandler(name) {
 }
 
 function saveToSessionStorage(videoOptions, allFalse) {
-  sessionStorage.setItem('mmfytb_block_video', allFalse ? false : true);
-  sessionStorage.setItem('mmfytb_progress_bar', allFalse ? false : videoOptions.progress_bar);
-  sessionStorage.setItem('mmfytb_control_buttons', allFalse ? false : videoOptions.control_buttons);
-  sessionStorage.setItem('mmfytb_live_144', allFalse ? false : videoOptions.live_144);
-  sessionStorage.setItem('mmfytb_hide_logo', allFalse ? false : videoOptions.hide_logo);
-  sessionStorage.setItem('mmfytb_show_thumbnail', allFalse ? false : videoOptions.show_thumbnail);
-  sessionStorage.setItem('mmfytb_continue_watching_prompt', allFalse ? false : videoOptions.continue_watching_prompt);
-  sessionStorage.setItem('mmfytb_video_button', allFalse ? false : videoOptions.video_button);
-  sessionStorage.setItem('mmfytb_extension_id', chrome.i18n.getMessage("@@extension_id"));
+  sessionStorage.setItem("mmfytb_block_video", allFalse ? false : true);
+  sessionStorage.setItem("mmfytb_progress_bar", allFalse ? false : videoOptions.progress_bar);
+  sessionStorage.setItem("mmfytb_control_buttons", allFalse ? false : videoOptions.control_buttons);
+  sessionStorage.setItem("mmfytb_live_144", allFalse ? false : videoOptions.live_144);
+  sessionStorage.setItem("mmfytb_hide_logo", allFalse ? false : videoOptions.hide_logo);
+  sessionStorage.setItem("mmfytb_show_thumbnail", allFalse ? false : videoOptions.show_thumbnail);
+  sessionStorage.setItem("mmfytb_continue_watching_prompt", allFalse ? false : videoOptions.continue_watching_prompt);
+  sessionStorage.setItem("mmfytb_video_button", allFalse ? false : videoOptions.video_button);
+  sessionStorage.setItem("mmfytb_extension_id", chrome.i18n.getMessage("@@extension_id"));
 }
 
 function removeVideoOptions() {
@@ -341,8 +355,8 @@ function removeVideoOptions() {
 function insertAdSkipper(name) {
   if (document.getElementById(name + "JS_mmfytb_thunderarea") == null) {
     let script = document.createElement("script");
-    script.src = chrome.runtime.getURL(("../js/" + name + ".js"));
-    script.id = (name + "JS_mmfytb_thunderarea");
+    script.src = chrome.runtime.getURL("../js/" + name + ".js");
+    script.id = name + "JS_mmfytb_thunderarea";
     script.className = "mmfytbthunderarea";
     document.documentElement.appendChild(script);
   }
@@ -365,7 +379,7 @@ function reloadImages() {
             break;
           }
         }
-      } catch (error) { }
+      } catch (error) {}
     } else {
       source = images[j].src;
       images[j].src = source;
@@ -385,10 +399,10 @@ function removeFeature(optionName, mustReload) {
       if (elem != null) elem.parentNode.removeChild(elem);
       if (mustReload === 1) {
         let clonedDetail = { enabled: false };
-        if (typeof cloneInto != 'undefined') clonedDetail = cloneInto({ enabled: false }, document.defaultView);
-        let customEvent = new CustomEvent('vqab', {
+        if (typeof cloneInto != "undefined") clonedDetail = cloneInto({ enabled: false }, document.defaultView);
+        let customEvent = new CustomEvent("vqab", {
           bubbles: true,
-          detail: clonedDetail
+          detail: clonedDetail,
         });
         document.dispatchEvent(customEvent);
       }
@@ -423,7 +437,7 @@ function removeFeature(optionName, mustReload) {
       if (elem != null) elem.parentNode.removeChild(elem);
       break;
   }
-  if (((mustReload === 1) || (mustReload === 2)) && mustReloadImages) reloadImages();
+  if ((mustReload === 1 || mustReload === 2) && mustReloadImages) reloadImages();
 }
 
 function removeButtons(video, images) {
@@ -447,19 +461,22 @@ function empty(node) {
 }
 
 function isMobileYouTube() {
-  return (window.location.href.indexOf("m.youtube.com") !== -1);
+  return window.location.href.indexOf("m.youtube.com") !== -1;
 }
 
 function isEmbed() {
-  return (window.location.href.indexOf("www.youtube.com/embed/") !== -1 || window.location.href.indexOf("www.youtube-nocookie.com/embed/") !== -1);
+  return (
+    window.location.href.indexOf("www.youtube.com/embed/") !== -1 ||
+    window.location.href.indexOf("www.youtube-nocookie.com/embed/") !== -1
+  );
 }
 
 function isYoutubeMusic() {
-  return (window.location.hostname.indexOf("music.youtube.com") !== -1);
+  return window.location.hostname.indexOf("music.youtube.com") !== -1;
 }
 
 function isShorts() {
-  return (window.location.href.indexOf("youtube.com/shorts/") !== -1);
+  return window.location.href.indexOf("youtube.com/shorts/") !== -1;
 }
 
 function getSiteName() {
@@ -470,14 +487,14 @@ function getSiteName() {
 
 let OPTIONS_LIST = ["video", "thumbnails", "avatars", "adblocker", "other_images"];
 let SITES = {
-  "youtube": [0, 1, 2, 3, 4],
-  "youtube_music": [0, 1, 2, 3, 4],
-  "embedded": [0, 1, 2, 3]
+  youtube: [0, 1, 2, 3, 4],
+  youtube_music: [0, 1, 2, 3, 4],
+  embedded: [0, 1, 2, 3],
 };
 
 function featuresHandler(options, mustReload, videoOptions) {
   for (let name in options) {
-    (options[name]) ? addFeature(name, mustReload, videoOptions) : removeFeature(name, mustReload);
+    options[name] ? addFeature(name, mustReload, videoOptions) : removeFeature(name, mustReload);
   }
 }
 
@@ -496,7 +513,7 @@ function getOptions(values, qapage, ssvalue, siteName) {
           if (ssvalue.options[siteName].options != undefined) {
             options = initializeOptions(siteName, qapage, false, ssvalue.options[siteName].options, "");
           } else {
-            options = initializeOptions(siteName, qapage, !values[siteName], values, (siteName + "_"));
+            options = initializeOptions(siteName, qapage, !values[siteName], values, siteName + "_");
           }
         }
       }
@@ -505,7 +522,7 @@ function getOptions(values, qapage, ssvalue, siteName) {
     if (!values.enabled) {
       options = initializeOptions(siteName, qapage, true);
     } else {
-      options = initializeOptions(siteName, qapage, !values[siteName], values, (siteName + "_"));
+      options = initializeOptions(siteName, qapage, !values[siteName], values, siteName + "_");
     }
   }
   return options;
@@ -516,7 +533,12 @@ function initializeOptions(siteName, qapage, allFalse, values = undefined, prefi
   let optionName = "";
   for (const optionNumber of SITES[siteName]) {
     optionName = OPTIONS_LIST[optionNumber];
-    options[optionName] = (qapage != undefined) ? ((qapage[optionName] != undefined) ? qapage[optionName] : getOptionValue(allFalse, values, prefix, optionName)) : getOptionValue(allFalse, values, prefix, optionName);
+    options[optionName] =
+      qapage != undefined
+        ? qapage[optionName] != undefined
+          ? qapage[optionName]
+          : getOptionValue(allFalse, values, prefix, optionName)
+        : getOptionValue(allFalse, values, prefix, optionName);
   }
   return options;
 }
@@ -534,37 +556,48 @@ function formatQApage(qapage) {
 }
 
 function applyOptions(mustReload) {
-  if ((mustReload === 1) || isEmbed()) {
-    chrome.runtime.sendMessage({
-      funct: 1,
-      isEmbed: isEmbed(),
-      isYTMusic: isYoutubeMusic()
-    }, () => chrome.runtime.lastError);
+  if (mustReload === 1 || isEmbed()) {
+    chrome.runtime.sendMessage(
+      {
+        funct: 1,
+        isEmbed: isEmbed(),
+        isYTMusic: isYoutubeMusic(),
+      },
+      () => chrome.runtime.lastError
+    );
   }
-  chrome.runtime.sendMessage({
-    funct: 0
-  }, response => {
-    chrome.runtime.lastError;
-    let tabId = response.id;
-    let siteName = getSiteName();
-    chrome.storage.local.get(null, values => {
-      let options = getOptions(values, values.qapages[tabId], (values.sspages[tabId] != undefined) ? values.sspages[tabId] : values.sstabs[tabId], siteName);
-      let videoOptions = {
-        progress_bar: values.progress_bar,
-        control_buttons: values.control_buttons,
-        live_144: values.live_144,
-        hide_logo: values.hide_logo,
-        show_thumbnail: values.show_thumbnail,
-        continue_watching_prompt: values.continue_watching_prompt,
-        video_button: values.quick_access_buttons_video
-      };
-      featuresHandler(options, mustReload, videoOptions);
-      if (!isMobileYouTube()) {
-        if (!isYoutubeMusic()) (values.quick_access_buttons_images) ? addImagesButton() : removeButtons(false, true);
-        (values.quick_access_buttons_video) ? addVideoButton() : removeButtons(true, false);
-      }
-    });
-  });
+  chrome.runtime.sendMessage(
+    {
+      funct: 0,
+    },
+    (response) => {
+      chrome.runtime.lastError;
+      let tabId = response.id;
+      let siteName = getSiteName();
+      chrome.storage.local.get(null, (values) => {
+        let options = getOptions(
+          values,
+          values.qapages[tabId],
+          values.sspages[tabId] != undefined ? values.sspages[tabId] : values.sstabs[tabId],
+          siteName
+        );
+        let videoOptions = {
+          progress_bar: values.progress_bar,
+          control_buttons: values.control_buttons,
+          live_144: values.live_144,
+          hide_logo: values.hide_logo,
+          show_thumbnail: values.show_thumbnail,
+          continue_watching_prompt: values.continue_watching_prompt,
+          video_button: values.quick_access_buttons_video,
+        };
+        featuresHandler(options, mustReload, videoOptions);
+        if (!isMobileYouTube()) {
+          if (!isYoutubeMusic()) values.quick_access_buttons_images ? addImagesButton() : removeButtons(false, true);
+          values.quick_access_buttons_video ? addVideoButton() : removeButtons(true, false);
+        }
+      });
+    }
+  );
 }
 
 chrome.runtime.onMessage.addListener(function (request, sender, sendResponse) {

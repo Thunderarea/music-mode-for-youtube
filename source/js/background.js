@@ -35,7 +35,8 @@ let extensionOptions = {
   "show_thumbnail": false,
   "continue_watching_prompt": true,
 
-  "blocked_videos_counter": 0
+  "blocked_videos_counter": 0,
+  "review_popup_threshold": 1000
 };
 
 const blockingInfo = {
@@ -373,6 +374,7 @@ function detectURLChange(tabId, changeInfo, tab) {
   setLogoForTab(tabId);
 }
 
+let reviewPopupIsShown = false;
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   switch (request.funct) {
     case 0:
@@ -394,6 +396,14 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     case 3:
       // from mmfytb button on mobile YouTube
       runOnCurrentTab("run_extension_tab", sender.tab.id);
+      break;
+    case 4:
+      if (reviewPopupIsShown) {
+        sendResponse({ showPopup: false });
+      } else {
+        reviewPopupIsShown = true;
+        sendResponse({ showPopup: true });
+      }
       break;
   }
 });
