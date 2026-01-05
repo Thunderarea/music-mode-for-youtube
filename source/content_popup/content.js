@@ -90,7 +90,7 @@
 
   const { blocked_videos_counter, review_popup_threshold } = await chrome.storage.local.get(["blocked_videos_counter", "review_popup_threshold"]);
   // ask the background for tab visibility and to make sure its the only tab that will show the popup
-  if (review_popup_threshold > 0 /*&& blocked_videos_counter >= review_popup_threshold*/) {
+  if (review_popup_threshold > 0 && blocked_videos_counter >= review_popup_threshold) {
     chrome.runtime.sendMessage({
       funct: 4,
     }, (response) => {
