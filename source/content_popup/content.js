@@ -35,7 +35,6 @@
         </main>
 
         <link type="text/css" rel="stylesheet" href="${chrome.runtime.getURL("content_popup/style.css")}" />
-        <script src="${chrome.runtime.getURL("content_popup/index.js")}"></script>
       </div>
     </div>
   `;
