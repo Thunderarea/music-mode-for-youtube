@@ -159,7 +159,7 @@ function addSites(specificSiteIDs, containerId, storedValues) {
 function getSiteHTML(item, storedValues, id) {
   return `
   <div class="list_item" id="${id}">
-    <input type="checkbox" class="ptpCheckbox trigger_apply" ${(storedValues.enabled) ? "checked" : ""} title="${chrome.i18n.getMessage(id + "Tooltip")}">
+    <input type="checkbox" class="ptpCheckbox trigger_apply" ${(storedValues.enabled) ? "checked" : ""}>
     <div class="title">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
         <circle cx="8" cy="8" r="8" />
@@ -170,7 +170,7 @@ function getSiteHTML(item, storedValues, id) {
       ${(SPECIFIC_OPTIONS) ?
       item.options.map(option => {
         return `
-            <div class="option tooltip" title="${chrome.i18n.getMessage(option + "Tooltip")}">
+            <div class="option tooltip">
               <input type="checkbox" id="${option}" class="trigger_apply" ${(storedValues.options[option]) ? "checked" : ""}>
               <span class="tooltiptext">${chrome.i18n.getMessage(option)}</span>
               ${optionsTemplates[option]}

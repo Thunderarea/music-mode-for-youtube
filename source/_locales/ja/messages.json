@@ -77,30 +77,6 @@
   "rate": {
     "message": "レビュー"
   },
-  "currentTabTooltip": {
-    "message": "このタブのみに拡張機能を設定する。"
-  },
-  "currentPageTooltip": {
-    "message": "このページに対してのみ拡張機能を設定する。ページが変更されると、これらの設定は削除されます。"
-  },
-  "embeddedTooltip": {
-    "message": "他のサイトに埋め込まれたYouTube動画"
-  },
-  "videoTooltip": {
-    "message": "Hides the video"
-  },
-  "thumbnailsTooltip": {
-    "message": "動画のサムネイルを隠す。"
-  },
-  "avatarsTooltip": {
-    "message": "チャンネル/ユーザープロフィール画像を非表示にする。"
-  },
-  "other_imagesTooltip": {
-    "message": "その他の画像を非表示にする。"
-  },
-  "adblockerTooltip": {
-    "message": "広告をスキップする。"
-  },
   "apply": {
     "message": "OK"
   },
@@ -169,30 +145,6 @@
   },
   "VideoButtonTooltipDisabled": {
     "message": "動画を非表示にする"
-  },
-  "onTooltip": {
-    "message": "すべてのタブの拡張機能を有効にする"
-  },
-  "offTooltip": {
-    "message": "すべてのタブの拡張機能を無効にする"
-  },
-  "tabOnTooltip": {
-    "message": "このタブの拡張機能を有効にする"
-  },
-  "tabOffTooltip": {
-    "message": "このタブの拡張機能を無効にする"
-  },
-  "tabXTooltip": {
-    "message": "このタブの設定を削除する"
-  },
-  "pageOnTooltip": {
-    "message": "このページの拡張機能を有効にする"
-  },
-  "pageOffTooltip": {
-    "message": "このページの拡張機能を無効にする"
-  },
-  "pageXTooltip": {
-    "message": "このページの設定を削除する"
   },
   "pressEnter": {
     "message": "または'Enter'を押す"

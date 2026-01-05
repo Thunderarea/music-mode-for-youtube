@@ -80,30 +80,6 @@
   "rate": {
     "message": "Review"
   },
-  "currentTabTooltip": {
-    "message": "Configure the extension's function\nfor this tab only"
-  },
-  "currentPageTooltip": {
-    "message": "Configure the extension's function\nfor this page only. When the page\nchanges, these settings are removed"
-  },
-  "embeddedTooltip": {
-    "message": "YouTube videos embedded\nin other sites"
-  },
-  "videoTooltip": {
-    "message": "Hides the video"
-  },
-  "thumbnailsTooltip": {
-    "message": "Hides the video thumbnails"
-  },
-  "avatarsTooltip": {
-    "message": "Hides the images of\nchannel/user avatars"
-  },
-  "other_imagesTooltip": {
-    "message": "Hides various additional images"
-  },
-  "adblockerTooltip": {
-    "message": "Skips the ads"
-  },
   "apply": {
     "message": "OK"
   },
@@ -178,30 +154,6 @@
   },
   "VideoButtonTooltipDisabled": {
     "message": "Hide the video"
-  },
-  "onTooltip": {
-    "message": "Enable the extension for all tabs"
-  },
-  "offTooltip": {
-    "message": "Disable the extension for all tabs"
-  },
-  "tabOnTooltip": {
-    "message": "Enable the extension for this tab"
-  },
-  "tabOffTooltip": {
-    "message": "Disable the extension for this tab"
-  },
-  "tabXTooltip": {
-    "message": "Remove the settings for this tab"
-  },
-  "pageOnTooltip": {
-    "message": "Enable the extension for this page"
-  },
-  "pageOffTooltip": {
-    "message": "Disable the extension for this page"
-  },
-  "pageXTooltip": {
-    "message": "Remove the settings for this page"
   },
   "pressEnter": {
     "message": "or press 'Enter'"

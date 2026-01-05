@@ -77,30 +77,6 @@
     "rate": {
       "message": "Recenzisci"
     },
-    "currentTabTooltip": {
-      "message": "Configura le funzioni dall'estenzione\nsolo per questa scheda"
-    },
-    "currentPageTooltip": {
-      "message": "Configura le funzioni dall'estenzione\nsolo per questa pagina. Quando la\npagina cambia, queste impostazioni\nsono rimosse"
-    },
-    "embeddedTooltip": {
-      "message": "Video YouTube implementati\nin altri siti"
-    },
-    "videoTooltip": {
-      "message": "Hides the video"
-    },
-    "thumbnailsTooltip": {
-      "message": "Nasconde le copertine dei video"
-    },
-    "avatarsTooltip": {
-      "message": "Nasconde le immagini\ndei canali/avatar utente"
-    },
-    "other_imagesTooltip": {
-      "message": "Nasconde varie altre immagini"
-    },
-    "adblockerTooltip": {
-      "message": "Salta le pubblicità"
-    },
     "apply": {
       "message": "OK"
     },
@@ -169,30 +145,6 @@
     },
     "VideoButtonTooltipDisabled": {
       "message": "Nascondi i video"
-    },
-    "onTooltip": {
-      "message": "Attiva l'estenzione per tutte le schede"
-    },
-    "offTooltip": {
-      "message": "Disattiva l'estenzione per tutte le schede"
-    },
-    "tabOnTooltip": {
-      "message": "Attiva l'estenzione per questa scheda"
-    },
-    "tabOffTooltip": {
-      "message": "Disattiva l'estenzione per questa scheda"
-    },
-    "tabXTooltip": {
-      "message": "Rimuovi le impostazioni per questa scheda"
-    },
-    "pageOnTooltip": {
-      "message": "Attiva l'estenzione per questa pagina"
-    },
-    "pageOffTooltip": {
-      "message": "Disattiva l'estenzione per questa pagina"
-    },
-    "pageXTooltip": {
-      "message": "Rimuovi le impostazioni per questa pagina"
     },
     "pressEnter": {
       "message": "o premi 'Invio'"
