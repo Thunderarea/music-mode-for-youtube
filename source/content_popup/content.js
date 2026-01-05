@@ -7,7 +7,6 @@
     const host = document.createElement("div");
     host.id = "mmfytb_popup_container";
 
-    // append somewhere safe (NOT ytd-popup-container if you plan to shadow it)
     document.documentElement.appendChild(host);
 
     const shadow = host.attachShadow({ mode: "open" });
@@ -44,7 +43,6 @@
       setReviewPopupThreshold(blocked_videos_counter + 2000);
     });
 
-    // Handle Yes/No button clicks
     const yesButton = shadow.querySelector(".positive_action");
     const noButton = shadow.querySelector(".negative_action");
     const textElement = shadow.querySelector("#text");
@@ -88,7 +86,6 @@
   }
 
   const { blocked_videos_counter, review_popup_threshold } = await chrome.storage.local.get(["blocked_videos_counter", "review_popup_threshold"]);
-  // ask the background for tab visibility and to make sure its the only tab that will show the popup
   if (review_popup_threshold > 0 && blocked_videos_counter >= review_popup_threshold) {
     chrome.runtime.sendMessage({
       funct: 4,
