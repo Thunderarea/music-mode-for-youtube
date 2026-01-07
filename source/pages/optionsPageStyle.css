@@ -24,9 +24,8 @@ ul {
 }
 
 body {
-  font-family: "Google Sans", -apple-system, "BlinkMacSystemFont", "Segoe UI",
-    Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
-    "Segoe UI Symbol";
+  font-family: "Google Sans", -apple-system, "BlinkMacSystemFont", "Segoe UI", Helvetica, Arial, sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 14px;
   background-color: #f8f9fa;
 }
@@ -125,6 +124,7 @@ body {
 .descr_toggle {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .optionsGroupTitle:not(.not_style) {
@@ -168,13 +168,15 @@ body {
   margin-left: 10px;
 }
 
+.toggleButton {
+  display: flex;
+}
+
 .switch {
   position: relative;
   display: inline-block;
   width: 28px;
   height: 12px;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 .switch input {
@@ -208,11 +210,11 @@ body {
   box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.4);
 }
 
-input:checked+.slider {
+input:checked + .slider {
   background-color: #8db9f4;
 }
 
-input:checked+.slider:before {
+input:checked + .slider:before {
   transform: translateX(18px);
   background-color: #1a73e8;
 }
@@ -271,7 +273,7 @@ select {
   margin-top: 30px;
 }
 
-#advanced_options>.optionsContainer {
+#advanced_options > .optionsContainer {
   padding-bottom: 5px;
 }
 
@@ -297,7 +299,7 @@ select {
 }
 
 .checkbox-container:hover,
-.checkbox-container input:checked~span {
+.checkbox-container input:checked ~ span {
   color: black;
 }
 
@@ -315,7 +317,7 @@ select {
 }
 
 /* Show the checkmark when checked */
-.checkbox-container input:checked~.checkmark {
+.checkbox-container input:checked ~ .checkmark {
   transform: rotate(180deg);
   border-top-color: black;
 }
@@ -353,4 +355,27 @@ select {
   padding: 5px;
   border-radius: 4px;
   color: white;
+}
+
+/* No Shorts Element */
+#noShortsIcon {
+  height: 36px;
+  width: auto;
+}
+
+.textWithIcon {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.noShortsLinkButton {
+  flex: 1;
+  text-align: right;
+}
+
+#noShortsContainer .settingsText {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
 }

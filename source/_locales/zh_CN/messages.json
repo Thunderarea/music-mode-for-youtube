@@ -41,12 +41,6 @@
     "avatars": {
       "message": "头像"
     },
-    "google_search_full": {
-      "message": "Google 搜索"
-    },
-    "google_search": {
-      "message": "Google 搜索"
-    },
     "other_images": {
       "message": "其他图片"
     },
@@ -55,9 +49,6 @@
     },
     "embeddedDescription": {
       "message": "在网页内嵌 YouTube 视频上启用或禁用此扩展和相应选项"
-    },
-    "google_searchDescription": {
-      "message": "隐藏 Google 搜索的缩略图等其他图片"
     },
     "videoDescription": {
       "message": "Hides the video"
@@ -85,33 +76,6 @@
     },
     "rate": {
       "message": "评论"
-    },
-    "currentTabTooltip": {
-      "message": "仅为当前标签页配置插件功能"
-    },
-    "currentPageTooltip": {
-      "message": "仅为当前页面配置插件功能，页面改变时会移除设置"
-    },
-    "google_searchTooltip": {
-      "message": "隐藏 Google 搜索中的各种图片"
-    },
-    "embeddedTooltip": {
-      "message": "其他站点内嵌的 YouTube 视频"
-    },
-    "videoTooltip": {
-      "message": "Hides the video"
-    },
-    "thumbnailsTooltip": {
-      "message": "隐藏视频缩略图"
-    },
-    "avatarsTooltip": {
-      "message": "隐藏频道/用户头像"
-    },
-    "other_imagesTooltip": {
-      "message": "隐藏其他各种图片"
-    },
-    "adblockerTooltip": {
-      "message": "跳过 YouTube 的广告"
     },
     "apply": {
       "message": "好的"
@@ -181,30 +145,6 @@
     },
     "VideoButtonTooltipDisabled": {
       "message": "隐藏视频"
-    },
-    "onTooltip": {
-      "message": "在所有标签页上启用此插件"
-    },
-    "offTooltip": {
-      "message": "在所有标签页上停用此插件"
-    },
-    "tabOnTooltip": {
-      "message": "在当前标签页上启用此插件"
-    },
-    "tabOffTooltip": {
-      "message": "在当前标签页上停用此插件"
-    },
-    "tabXTooltip": {
-      "message": "移除当前标签页的插件设置"
-    },
-    "pageOnTooltip": {
-      "message": "在当前页面上启用此插件"
-    },
-    "pageOffTooltip": {
-      "message": "在当前页面上停用此插件"
-    },
-    "pageXTooltip": {
-      "message": "移除当前页面的插件设置"
     },
     "pressEnter": {
       "message": "或者按下“回车键”"

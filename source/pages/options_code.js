@@ -1,4 +1,5 @@
-let sitesIDs = ["youtube", "youtube_music", "embedded", "google_search"];
+import { noShortsMode_url } from '../config.js';
+let sitesIDs = ["youtube", "youtube_music", "embedded"];
 
 let sitesInfo = {
   "youtube": {
@@ -12,10 +13,6 @@ let sitesInfo = {
   "embedded": {
     "name": chrome.i18n.getMessage("embedded"),
     "options": ["video", "thumbnails", "avatars", "adblocker"]
-  },
-  "google_search": {
-    "name": chrome.i18n.getMessage("google_search_full"),
-    "options": []
   }
 };
 
@@ -25,6 +22,7 @@ function init() {
   addTemplates();
   initializeListeners();
   initializeOptions();
+  initNoShortsLinks();
 }
 
 function addTemplates() {
@@ -85,8 +83,8 @@ function initializeListeners() {
     let isGroupCheckbox = checkbox.classList.contains("groupCheckboxes");
     let optionName = checkbox.name;
 
-    checkbox.addEventListener("change", function () {
-      detectChange(isGroupCheckbox, optionName, this.checked);
+    checkbox.addEventListener("change", function (e) {
+      detectChange(isGroupCheckbox, optionName, this.checked, e.isTrusted);
     });
   });
 }
@@ -101,7 +99,7 @@ function initializeOptions() {
   });
 }
 
-function detectChange(isGroupCheckbox, optionName, checked) {
+function detectChange(isGroupCheckbox, optionName, checked, isTrusted) {
   if (isGroupCheckbox) groupCheckboxChange(optionName, checked);
   chrome.storage.local.get(null, storedValues => {
     if (storedValues[optionName] != undefined) {
@@ -121,6 +119,8 @@ function detectChange(isGroupCheckbox, optionName, checked) {
           default:
             break;
         } 
+      } else if (isTrusted && optionName.endsWith("_adblocker")) {
+        alert(chrome.i18n.getMessage("adBlockerWarning"));
       }
       chrome.storage.local.set(newValues);
     }
@@ -139,4 +139,11 @@ function groupCheckboxChange(optionName, checked) {
   let optionsContainer = document.querySelector("#" + optionName + " .optionsContainer");
   if (checked) optionsContainer.classList.add("visibleOptions");
   else optionsContainer.classList.remove("visibleOptions");
+}
+
+function initNoShortsLinks() {
+  let noShortsURLElements = document.querySelectorAll(".noShortsURL");
+  noShortsURLElements.forEach(element => {
+    element.href = noShortsMode_url;
+  });
 }

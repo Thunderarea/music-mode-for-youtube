@@ -41,6 +41,56 @@
 
         <div id="addOptions"></div>
 
+        <div class="pageBody" id="noShortsContainer">
+          <div class="settings setbord">
+            <div class="descr_toggle">
+              <div class="textWithIcon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="96"
+                  height="120"
+                  viewBox="0 0 96 120"
+                  fill="none"
+                  id="noShortsIcon"
+                >
+                  <path
+                    d="M85.341 51.3311C88.6158 53.3879 91.4102 56.2901 93.3459 59.9298C99.2643 71.0581 94.9563 84.8254 83.7013 90.6856L34.3908 116.591C23.1453 122.451 9.22168 118.182 3.3029 107.054C1.39271 103.462 0.550274 99.5955 0.661298 95.8087C33.0912 78.7754 56.1564 66.6599 85.341 51.3311ZM61.6076 2.62801C72.8531 -3.23206 86.7767 1.03681 92.6955 12.1651C94.6014 15.7487 95.4436 19.6061 95.3371 23.3848L10.6349 67.8731C7.36992 65.8172 4.58365 62.9204 2.65251 59.2891C-3.26605 48.1607 1.05248 34.3934 12.298 28.5333L61.6076 2.62801Z"
+                    fill="#F40407"
+                  />
+                </svg>
+                <div class="settingsText optionsGroupTitle">
+                  <div class="settingsHead"><span data-i18n="noShortsTitle"></span></div>
+                  <div class="settingsDescription">
+                    Use
+                    <a
+                      class="noShortsURL"
+                      target="_blank"
+                      href=""
+                      >No Shorts Mode for YouTube™</a
+                    >
+                    to hide Shorts
+                  </div>
+                </div>
+              </div>
+
+              <a
+                class="noShortsLinkButton noShortsURL"
+                href=""
+                target="_blank"
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" id="openLinkIcon">
+                  <path
+                    fill="#F40407"
+                    d="M14 3v2h3.59l-9.83 9.83l1.41 1.41L19 6.41V10h2V3m-2 16H5V5h7V3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7h-2z"
+                    stroke-width="0.5"
+                    stroke="#F40407"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+
         <div class="title2" data-i18n="videoPlayer"></div>
         <div class="pageBody">
           <div class="settings setbord">
@@ -227,7 +277,9 @@
               <div class="settings setbord">
                 <div class="descr_toggle">
                   <div class="settingsText">
-                    <div class="settingsHead"><span data-i18n="live_144"></span><span class="beta_feature">BETA</span></div>
+                    <div class="settingsHead">
+                      <span data-i18n="live_144"></span><span class="beta_feature">BETA</span>
+                    </div>
                     <div class="settingsDescription" data-i18n="live_144_text"></div>
                   </div>
                   <div class="toggleButton">
@@ -244,7 +296,7 @@
       </div>
     </div>
 
-    <script type="text/javascript" src="options_code.js"></script>
-    <script type="text/javascript" src="setTheTitles.js"></script>
+    <script type="module" src="options_code.js"></script>
+    <script type="module" src="setTheTitles.js"></script>
   </body>
 </html>

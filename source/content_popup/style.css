@@ -1,0 +1,106 @@
+:host {
+  --yt-dark-grey: #323232;
+  --yt-red: #fe0100;
+}
+
+#mmfytb_popup_container {
+  z-index: 9999999999;
+  width: 100vw;
+  position: fixed;
+  height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  padding: 25px;
+  box-sizing: border-box;
+  pointer-events: none;
+}
+
+#mmfytb_review_popup {
+  pointer-events: all;
+  position: relative;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  box-shadow: -1px 2px 9px 3px #5454547a;
+  border-radius: 8px;
+  padding: 10px 35px;
+  font-size: 16px;
+  font-family: "Roboto", "Arial", sans-serif;
+}
+
+* {
+  font-family: "Roboto", "Arial", sans-serif;
+}
+
+#header img#logo {
+  height: 40px;
+}
+
+#close_button {
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: none;
+  border-radius: 100%;
+  background-color: transparent;
+  color: #6b6b6b;
+}
+
+#close_button:hover {
+  background-color: revert;
+  color: black;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+#text {
+  font-weight: 400;
+}
+
+#actions_bar {
+  display: flex;
+  gap: 35px;
+}
+
+.action_button {
+  border: none;
+  border-radius: 100px;
+  padding: 10px 25px;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+}
+
+.action_button:hover {
+  scale: calc(1.1);
+}
+
+.action_button.positive_action {
+  background-color: var(--yt-red);
+}
+
+.action_button.positive_action:hover {
+  background-color: #e60000;
+}
+
+.action_button.negative_action {
+  background-color: #f2f2f2;
+  color: #101010;
+}
+
+.action_button.negative_action:hover {
+  background-color: #d9d9d9;
+}

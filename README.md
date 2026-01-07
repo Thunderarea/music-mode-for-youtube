@@ -50,6 +50,8 @@ After downloading the source code:
 - For Chromium-based browsers, rename `manifest_chrome.json` and `config_chrome.js` to `manifest.json` and `config.js`
 - For Firefox, rename the corresponding files
 
+Forking or reusing this code for other projects or extensions is not permitted.
+
 ## Privacy Policy
 The extension does not collect any kind of data. The user options are stored locally in the user's browser.
 

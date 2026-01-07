@@ -41,12 +41,6 @@
   "avatars": {
     "message": "Άβαταρ"
   },
-  "google_search_full": {
-    "message": "Αναζήτηση Google"
-  },
-  "google_search": {
-    "message": "Αναζητ. Google"
-  },
   "other_images": {
     "message": "Άλλες εικόνες"
   },
@@ -55,9 +49,6 @@
   },
   "embeddedDescription": {
     "message": "Ενεργοποιήστε/Απενεργοποιήστε την επέκταση και τις αντίστοιχες επιλογές για τα YouTube βίντεο που είναι ενσωματωμένα σε άλλα sites"
-  },
-  "google_searchDescription": {
-    "message": "Αποκρύπτει διάφορες εικόνες στην αναζήτηση Google όπως τις εικόνες των μικρογραφιών των βίντεο"
   },
   "videoDescription": {
     "message": "Αποκρύπτει το βίντεο"
@@ -85,33 +76,6 @@
   },
   "rate": {
     "message": "Αξιολόγηση"
-  },
-  "currentTabTooltip": {
-    "message": "Ρυθμίστε την λειτουργία της επέκτασης\nμόνο για αυτήν την καρτέλα"
-  },
-  "currentPageTooltip": {
-    "message": "Ρυθμίστε την λειτουργία της επέκτασης μόνο\nγια αυτήν την σελίδα. Όταν η σελίδα αλλάζει\nοι ρυθμίσεις αυτές διαγράφονται"
-  },
-  "google_searchTooltip": {
-    "message": "Αποκρύπτει διάφορες εικόνες\nστην αναζήτηση Google"
-  },
-  "embeddedTooltip": {
-    "message": "Για YouTube βίντεο ενσωματωμένα\nσε άλλα sites"
-  },
-  "videoTooltip": {
-    "message": "Αποκρύπτει το βίντεο"
-  },
-  "thumbnailsTooltip": {
-    "message": "Αποκρύπτει τις εικόνες των\nμικρογραφιών των βίντεο"
-  },
-  "avatarsTooltip": {
-    "message": "Αποκρύπτει τις εικόνες των άβαταρ\nτων καναλιών/χρηστών"
-  },
-  "other_imagesTooltip": {
-    "message": "Αποκρύπτει διάφορες\nάλλες εικόνες"
-  },
-  "adblockerTooltip": {
-    "message": "Κάνει skip τις διαφημίσεις"
   },
   "apply": {
     "message": "OK"
@@ -187,30 +151,6 @@
   },
   "VideoButtonTooltipDisabled": {
     "message": "Απέκρυψε το βίντεο"
-  },
-  "onTooltip": {
-    "message": "Ενεργοποιήστε την επέκταση για όλες τις καρτέλες"
-  },
-  "offTooltip": {
-    "message": "Απενεργοποιήστε την επέκταση για όλες τις καρτέλες"
-  },
-  "tabOnTooltip": {
-    "message": "Ενεργοποιήστε την επέκταση για αυτήν την καρτέλα"
-  },
-  "tabOffTooltip": {
-    "message": "Απενεργοποιήστε την επέκταση για αυτήν την καρτέλα"
-  },
-  "tabXTooltip": {
-    "message": "Διαγράψτε τις ρυθμίσεις για αυτήν την καρτέλα"
-  },
-  "pageOnTooltip": {
-    "message": "Ενεργοποιήστε την επέκταση για αυτήν την σελίδα"
-  },
-  "pageOffTooltip": {
-    "message": "Απενεργοποιήστεε την επέκταση για αυτήν την σελίδα"
-  },
-  "pageXTooltip": {
-    "message": "Διαγράψτε τις ρυθμίσεις για αυτήν την σελίδα"
   },
   "pressEnter": {
     "message": "ή πάτα 'Enter'"

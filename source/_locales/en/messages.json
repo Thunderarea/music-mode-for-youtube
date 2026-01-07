@@ -41,12 +41,6 @@
   "avatars": {
     "message": "Avatars"
   },
-  "google_search_full": {
-    "message": "Google search"
-  },
-  "google_search": {
-    "message": "Google search"
-  },
   "other_images": {
     "message": "Other images"
   },
@@ -55,9 +49,6 @@
   },
   "embeddedDescription": {
     "message": "Enable or disable the extension and the corresponding options for YouTube videos embedded in sites"
-  },
-  "google_searchDescription": {
-    "message": "Hides various images in Google search such as the video thumbnails"
   },
   "videoDescription": {
     "message": "Hides the video"
@@ -74,6 +65,9 @@
   "adBlockerDescription": {
     "message": "Skips the YouTube ads"
   },
+  "adBlockerWarning": {
+    "message": "Enabling this option may cause disruptions, as YouTube may detect the extension as an ad blocker."
+  },
   "contactHeader": {
     "message": "Developer: Nick Pantelidis"
   },
@@ -85,33 +79,6 @@
   },
   "rate": {
     "message": "Review"
-  },
-  "currentTabTooltip": {
-    "message": "Configure the extension's function\nfor this tab only"
-  },
-  "currentPageTooltip": {
-    "message": "Configure the extension's function\nfor this page only. When the page\nchanges, these settings are removed"
-  },
-  "google_searchTooltip": {
-    "message": "Hides various images\nin Google search"
-  },
-  "embeddedTooltip": {
-    "message": "YouTube videos embedded\nin other sites"
-  },
-  "videoTooltip": {
-    "message": "Hides the video"
-  },
-  "thumbnailsTooltip": {
-    "message": "Hides the video thumbnails"
-  },
-  "avatarsTooltip": {
-    "message": "Hides the images of\nchannel/user avatars"
-  },
-  "other_imagesTooltip": {
-    "message": "Hides various additional images"
-  },
-  "adblockerTooltip": {
-    "message": "Skips the ads"
   },
   "apply": {
     "message": "OK"
@@ -187,30 +154,6 @@
   },
   "VideoButtonTooltipDisabled": {
     "message": "Hide the video"
-  },
-  "onTooltip": {
-    "message": "Enable the extension for all tabs"
-  },
-  "offTooltip": {
-    "message": "Disable the extension for all tabs"
-  },
-  "tabOnTooltip": {
-    "message": "Enable the extension for this tab"
-  },
-  "tabOffTooltip": {
-    "message": "Disable the extension for this tab"
-  },
-  "tabXTooltip": {
-    "message": "Remove the settings for this tab"
-  },
-  "pageOnTooltip": {
-    "message": "Enable the extension for this page"
-  },
-  "pageOffTooltip": {
-    "message": "Disable the extension for this page"
-  },
-  "pageXTooltip": {
-    "message": "Remove the settings for this page"
   },
   "pressEnter": {
     "message": "or press 'Enter'"
@@ -298,5 +241,8 @@
   },
   "tip_2": {
     "message": "Use the keyboard shortcut <b>Ctrl + M</b> to enable the extension for the current tab with the options that you have selected on the options page. (the shortcut will not work if it is used from another extension)"
+  },
+  "noShortsTitle": {
+    "message": "Hide YouTube Shorts"
   }
 }

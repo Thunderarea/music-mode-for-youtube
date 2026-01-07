@@ -8,7 +8,7 @@ let SPECIFIC_OPTIONS = false;
 let FULL_OPTIONS = {};
 let SITE_ID = "";
 
-let sitesIDs = ["youtube", "youtube_music", "embedded", "google_search"];
+let sitesIDs = ["youtube", "youtube_music", "embedded"];
 
 let sitesInfo = {
   "youtube": {
@@ -22,10 +22,6 @@ let sitesInfo = {
   "embedded": {
     "name": chrome.i18n.getMessage("embedded"),
     "options": ["video", "thumbnails", "avatars", "adblocker"]
-  },
-  "google_search": {
-    "name": chrome.i18n.getMessage("google_search_full"),
-    "options": []
   }
 };
 
@@ -73,7 +69,6 @@ chrome.tabs.query({
     tabId = tabs[0].id;
     if (tabUrl.indexOf("www.youtube.com") !== -1) SITE_ID = "youtube";
     else if (tabUrl.indexOf("music.youtube.com") !== -1) SITE_ID = "youtube_music";
-    else if (tabUrl.indexOf("www.google.") !== -1) SITE_ID = "google_search";
     else if (tabUrl.indexOf("http") !== -1) SITE_ID = "embedded";
     adaptDisplay();
   }
@@ -164,7 +159,7 @@ function addSites(specificSiteIDs, containerId, storedValues) {
 function getSiteHTML(item, storedValues, id) {
   return `
   <div class="list_item" id="${id}">
-    <input type="checkbox" class="ptpCheckbox trigger_apply" ${(storedValues.enabled) ? "checked" : ""} title="${chrome.i18n.getMessage(id + "Tooltip")}">
+    <input type="checkbox" class="ptpCheckbox trigger_apply" ${(storedValues.enabled) ? "checked" : ""}>
     <div class="title">
       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-circle-fill" viewBox="0 0 16 16">
         <circle cx="8" cy="8" r="8" />
@@ -175,7 +170,7 @@ function getSiteHTML(item, storedValues, id) {
       ${(SPECIFIC_OPTIONS) ?
       item.options.map(option => {
         return `
-            <div class="option tooltip" title="${chrome.i18n.getMessage(option + "Tooltip")}">
+            <div class="option tooltip">
               <input type="checkbox" id="${option}" class="trigger_apply" ${(storedValues.options[option]) ? "checked" : ""}>
               <span class="tooltiptext">${chrome.i18n.getMessage(option)}</span>
               ${optionsTemplates[option]}

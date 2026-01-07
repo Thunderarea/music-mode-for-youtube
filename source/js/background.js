@@ -21,8 +21,6 @@ let extensionOptions = {
   "embedded_avatars": true,
   "embedded_adblocker": true,
 
-  "google_search": false,
-
   "control_from_popup": true,
   "popup_current_page": false,
   "popup_specific_options": false,
@@ -37,7 +35,8 @@ let extensionOptions = {
   "show_thumbnail": false,
   "continue_watching_prompt": true,
 
-  "blocked_videos_counter": 0
+  "blocked_videos_counter": 0,
+  "review_popup_threshold": 1000
 };
 
 const blockingInfo = {
@@ -375,10 +374,11 @@ function detectURLChange(tabId, changeInfo, tab) {
   setLogoForTab(tabId);
 }
 
+let reviewPopupIsShown = false;
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   switch (request.funct) {
     case 0:
-      // from content scripts (YouTube and Google) to find the tab id
+      // from content scripts (YouTube) to find the tab id
       sendResponse({
         id: sender.tab.id,
         url: sender.url
@@ -390,12 +390,20 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       setLogoForTab(sender.tab.id);
       break;
     case 2:
-      /*from Google content script and from popup*/
+      /*from popup*/
       setLogoForTab(request.tab_id);
       break;
     case 3:
       // from mmfytb button on mobile YouTube
       runOnCurrentTab("run_extension_tab", sender.tab.id);
+      break;
+    case 4:
+      if (reviewPopupIsShown) {
+        sendResponse({ showPopup: false });
+      } else {
+        reviewPopupIsShown = true;
+        sendResponse({ showPopup: true });
+      }
       break;
   }
 });
@@ -467,9 +475,6 @@ async function toglleStatusForTab(tabId) {
         "embedded": {
           "enabled": storedValues.embedded
         },
-        "google_search": {
-          "enabled": storedValues.google_search
-        }
       }
     };
     let newRecord = {};

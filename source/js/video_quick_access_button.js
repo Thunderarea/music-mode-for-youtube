@@ -1,4 +1,3 @@
-var timerIDPlayerButton;
 let youtubeURLpattern = /(www.youtube.com|music.youtube.com|m.youtube.com|www.youtube-nocookie.com)/;
 
 document.addEventListener("vqab", e => {
@@ -6,10 +5,9 @@ document.addEventListener("vqab", e => {
 });
 
 function enableAudio() {
+    if (!isYoutubeMusic()) return;
     let videoElements = findVideoElements();
-    let video;
-    for (let i = 0; i < videoElements.length; i++) {
-        video = videoElements[i];
+    for (const video of videoElements) {
         if ((video.src !== "") && youtubeURLpattern.test(video.src)) {
             let paused = video.paused;
             video.pause();
@@ -29,14 +27,14 @@ function enableAudio() {
 
 function enableVideo() {
     let videoElements = findVideoElements();
-    for (let i = 0; i < videoElements.length; i++) {
-        if ((videoElements[i].src !== "") && !youtubeURLpattern.test(videoElements[i].src)) {
-            if (videoElements[i].dataset.musicurl && (videoElements[i].dataset.musicurl === videoElements[i].src) && videoElements[i].dataset.originalurl) {
-                let paused = videoElements[i].paused;
-                videoElements[i].pause();
+    for (const video of videoElements) {
+        if ((video.src !== "") && !youtubeURLpattern.test(video.src)) {
+            if (video.dataset.musicurl && (video.dataset.musicurl === video.src) && video.dataset.originalurl) {
+                let paused = video.paused;
+                video.pause();
                 let currentTime = 0;
-                currentTime = videoElements[i].currentTime;
-                changeVideoURL(videoElements[i], videoElements[i].dataset.originalurl, paused, currentTime);
+                currentTime = video.currentTime;
+                changeVideoURL(video, video.dataset.originalurl, paused, currentTime);
             }
         }
     }
@@ -51,7 +49,7 @@ function changeVideoURL(videoEl, newURL, paused, currentTime) {
     if (!paused) {
         try {
             videoEl.parentNode.parentNode.playVideo();
-        } catch (error) {}
+        } catch (error) { }
     } else if (paused && isMobileYouTube()) {
         let videoElement = videoEl;
         let promise = videoEl.play();
@@ -60,7 +58,7 @@ function changeVideoURL(videoEl, newURL, paused, currentTime) {
                 setTimeout(() => {
                     videoElement.pause();
                 }, 1000);
-            }).catch(error => {});
+            }).catch(error => { });
         }
     }
 }
@@ -74,7 +72,7 @@ function loadVideoOnError(video, currentTime, paused) {
                     video.parentNode.parentNode.loadVideoById(video.parentNode.parentNode.getVideoData().video_id);
                     video.currentTime = currentTime;
                     if (paused) video.pause();
-                } catch (error) {}
+                } catch (error) { }
             }
         }
     }, 1000);
@@ -83,17 +81,12 @@ function loadVideoOnError(video, currentTime, paused) {
 function findVideoElements() {
     let videoElementsArray = [];
     let videoElements = document.getElementsByTagName("video");
-    for (let i = 0; i < videoElements.length; i++) {
-        videoRect = videoElements[i].getBoundingClientRect();
-        if (isYoutubeMusic()) {
-            if (videoElements[i]) {
-                videoElementsArray.push(videoElements[i]);
-            }
-        } else {
-            if (videoRect.width > 0 && videoRect.height > 0) {
-                if (videoElements[i]) {
-                    videoElementsArray.push(videoElements[i]);
-                }
+    let videoRect;
+    for (const video of videoElements) {
+        videoRect = video.getBoundingClientRect();
+        if (isYoutubeMusic() || (videoRect.width > 0 && videoRect.height > 0)) {
+            if (video) {
+                videoElementsArray.push(video);
             }
         }
     }

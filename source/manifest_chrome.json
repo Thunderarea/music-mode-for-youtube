@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Music Mode for YouTube™",
   "short_name": "Music Mode",
-  "version": "6.4.36",
+  "version": "6.5.8",
   "default_locale": "en",
   "incognito":"spanning",
   
@@ -39,8 +39,7 @@
   },
   "web_accessible_resources": [
     {
-      "resources": [ 
-        "css/google_search.css",
+      "resources": [
         "css/ads.css",
         "css/ads_mobile.css",
         "css/channel_avatars.css",
@@ -56,7 +55,9 @@
         "css/video_mobile.css",
         "js/video_handler.js",
         "js/video_quick_access_button.js",
-        "js/adSkipper.js"
+        "js/adSkipper.js",
+        "content_popup/style.css",
+        "config.js"
       ],
       "matches": [ 
         "*://www.youtube.com/*",
@@ -66,15 +67,7 @@
        ]
     }, {
       "resources": [ 
-        "css/google_search.css"
-      ],
-      "matches": [ 
-        "<all_urls>"
-       ]
-    }, {
-      "resources": [ 
         "img/logo/logo_only.svg",
-        "img/image_document.svg",
         "img/avatar-chanell.svg",
         "img/youtube_logo.svg",
         "img/photo.jpg",
@@ -102,7 +95,8 @@
         "css/content.css"
       ],
       "js": [
-        "js/content_ytb.js"
+        "js/content_ytb.js",
+        "content_popup/content.js"
       ],
       "run_at": "document_start",
       "all_frames": true
@@ -114,15 +108,6 @@
         "js/content_mytb.js"
       ],
       "run_at": "document_end",
-      "all_frames": true
-    }, {
-      "matches": [
-         "*://www.google.com/search*"
-      ],
-      "js": [
-        "js/google_search.js"
-      ],
-      "run_at": "document_start",
       "all_frames": true
     }
   ],
