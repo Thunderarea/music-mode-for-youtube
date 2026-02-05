@@ -17,7 +17,7 @@ Moreover, the extension can be enabled globally, for specific tabs, or temporari
 > Due to recent changes on YouTube, it's no longer possible to separate audio from video, so the video cannot be blocked anymore. However, the extension still works on YouTube Music, allowing you to block video and save bandwidth. We are trying to find ways to block the video again. Any help is appreciated!
 
 ### Mobile support
-The extension is fully compatible with YouTube for mobiles offering an extra feature that allows music and videos to play in the background. The extension can be installed in a smartphone using **[Kiwi](https://play.google.com/store/apps/details?id=com.kiwibrowser.browser)**, a Chromium browser for mobiles that supports extensions from the Chrome Web Store.
+The extension is fully compatible with YouTube for mobiles. The extension can be installed in a smartphone using **[Kiwi](https://play.google.com/store/apps/details?id=com.kiwibrowser.browser)**, a Chromium browser for mobiles that supports extensions from the Chrome Web Store, or the Firefox browser for the Firefox version of the extension.
 
 ### Reasons to use Music Mode for YouTube™
 - Hide NSFW content while listening to music (e.g. in workplace)
