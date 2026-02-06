@@ -36,7 +36,9 @@ let extensionOptions = {
   "continue_watching_prompt": true,
 
   "blocked_videos_counter": 0,
-  "review_popup_threshold": 1000
+  "review_popup_threshold": 1000,
+
+  "version": chrome.runtime.getManifest().version,
 };
 
 const blockingInfo = {
@@ -109,15 +111,10 @@ chrome.runtime.onStartup.addListener(() => {
   initializeTabLogo();
 });
 
-function initialization(initializationReason) {
-  initializeExtensionOptions();
+async function initialization(initializationReason) {
+  await initializeExtensionOptions();
   initializeBlockingInfo();
 
-  chrome.management.getSelf(info => {
-    chrome.storage.local.set({
-      "version": info.version
-    });
-  });
   initializeTabLogo();
 
   if (initializationReason === "install") {
@@ -126,9 +123,9 @@ function initialization(initializationReason) {
     });
   }
   // else if (initializationReason === "update") {
-    // chrome.tabs.create({
-    //   url: "pages/donation.html"
-    // });
+  // chrome.tabs.create({
+  //   url: "pages/donation.html"
+  // });
   // }
 }
 
@@ -152,26 +149,25 @@ function initializeTabLogo() {
 
 async function initializeExtensionOptions() {
   // delete records from previous versions
-  chrome.storage.local.remove(["extension", "mmfytb_extension"]);
-  
-  chrome.storage.local.get(null, async function(storedValues) {
-    if (!storedValues.hasOwnProperty("version")) {
-      // if the previous version was below version 5
-      await chrome.storage.local.set(extensionOptions);
-    } else {
-      // add new options or change the value of options that their type was changed
-      for (let key in extensionOptions) {
-        if (storedValues[key] === undefined || (typeof storedValues[key] != typeof extensionOptions[key])) {
-          storedValues[key] = extensionOptions[key];
-        }
+  await chrome.storage.local.remove(["extension", "mmfytb_extension"]);
+
+  const storedValues = await chrome.storage.local.get();
+  if (!storedValues.hasOwnProperty("version")) {
+    // if the previous version was below version 5
+    await chrome.storage.local.set(extensionOptions);
+  } else {
+    // add new options or change the value of options that their type was changed
+    for (let key in extensionOptions) {
+      if (storedValues[key] === undefined || (typeof storedValues[key] != typeof extensionOptions[key])) {
+        storedValues[key] = extensionOptions[key];
       }
-      await chrome.storage.local.set(storedValues);
-      // remove old options
-      const keysToRemove = Object.keys(storedValues).filter(key => extensionOptions[key] === undefined);
-      await Promise.all(keysToRemove.map(key => chrome.storage.local.remove(key)));
     }
-    resetTemporaryOptions();
-  });
+    await chrome.storage.local.set(storedValues);
+    // remove old options
+    const keysToRemove = Object.keys(storedValues).filter(key => extensionOptions[key] === undefined);
+    await Promise.all(keysToRemove.map(key => chrome.storage.local.remove(key)));
+  }
+  resetTemporaryOptions();
 }
 
 function initializeBlockingInfo() {
