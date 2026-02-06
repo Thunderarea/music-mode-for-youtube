@@ -183,8 +183,8 @@ function clickButton(vid) {
         newRecord["qapages"] = qapages;
         newRecord["qapages"][id] = newValues;
         chrome.storage.local.set(newRecord);
-
-        applyOptions(vid ? 1 : 2);
+        
+        applyOptions(1);
       });
     }
   );
@@ -367,23 +367,23 @@ function reloadImages() {
     source,
     imagesParent,
     params = [];
-  for (let j = 0; j < images.length; j++) {
-    imagesParent = images[j].parentNode.parentNode;
-    if (images[j].src.includes("data:image") && imagesParent.id == "thumbnail" && imagesParent.href != undefined) {
+  for (const image of images) {
+    imagesParent = image.parentNode.parentNode;
+    if (image.src.includes("data:image") && imagesParent.id == "thumbnail" && imagesParent.href != undefined) {
       try {
         params = imagesParent.href.split("?")[1].split("&");
         for (let part of params) {
           if (part.includes("v=")) {
-            images[j].src = "https://i3.ytimg.com/vi/" + part.replace("v=", "") + "/hqdefault.jpg";
-            images[j].style.visibility = "visible";
+            image.src = "https://i3.ytimg.com/vi/" + part.replace("v=", "") + "/hqdefault.jpg";
+            image.style.visibility = "visible";
             break;
           }
         }
-      } catch (error) {}
+      } catch (error) { }
     } else {
-      source = images[j].src;
-      images[j].src = source;
-      images[j].style.visibility = "visible";
+      source = image.src;
+      image.src = source;
+      image.style.visibility = "visible";
     }
   }
 }
