@@ -218,6 +218,7 @@ function addImagesButton() {
         <div id="topbar_button_mmfytb_thunderarea">
           <div class="icon-container"></div>
           <tp-yt-paper-tooltip class="style-scope ytd-topbar-menu-button-renderer" id="tooltip_text_mmfytb_thunderarea" role="tooltip" tabindex="-1">
+            <div id="tooltip"></div>
           </tp-yt-paper-tooltip>
         </div>`;
         let newButton = new DOMParser().parseFromString(customButton, "text/html").body.firstElementChild;
