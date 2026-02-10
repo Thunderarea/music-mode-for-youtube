@@ -1,6 +1,6 @@
 {
     "extDescription": {
-      "message": "Hides the video and thumbnails on YouTube. Blocks the video keeping only the audio on YouTube Music."
+      "message": "隐藏 YouTube 上的视频和缩略图。在 YouTube Music 上屏蔽视频，仅保留音频。"
     },
     "command1Description": {
       "message": "Enable/Disable the extension on the current tab"
