@@ -1,6 +1,6 @@
 {
     "extDescription": {
-      "message": "Hides the video and thumbnails on YouTube. Blocks the video keeping only the audio on YouTube Music."
+      "message": "Nasconde il video e le miniature su YouTube. Blocca il video mantenendo solo l’audio su YouTube Music."
     },
     "command1Description": {
       "message": "Enable/Disable the extension on the current tab"
