@@ -191,7 +191,7 @@ ytd-rich-movie-renderer ytd-thumbnail {
 ytd-thumbnail #overlays,
 ytd-grid-movie-renderer yt-img-shadow,
 ytd-rich-movie-renderer yt-img-shadow,
-ytm-shorts-lockup-view-model > a > div  {
+ytm-shorts-lockup-view-model > a > div {
   background-image: url("../img/youtube_logo.svg") !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
@@ -302,7 +302,11 @@ ytd-video-renderer ytd-expandable-metadata-renderer[is-expanded] #content {
   height: auto !important;
 }
 
-ytd-video-renderer ytd-expandable-metadata-renderer ytd-horizontal-card-list-renderer #items ytd-macro-markers-list-item-renderer {
+ytd-video-renderer
+  ytd-expandable-metadata-renderer
+  ytd-horizontal-card-list-renderer
+  #items
+  ytd-macro-markers-list-item-renderer {
   vertical-align: top !important;
 }
 
@@ -359,10 +363,10 @@ yt-thumbnail-bottom-overlay-view-model yt-thumbnail-badge-view-model badge-shape
 }
 
 .ytThumbnailBottomOverlayViewModelBadgeContainer {
-    width: 100% !important;
-    height: 100% !important;
-    position: absolute !important;
-    padding: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  position: absolute !important;
+  padding: 0 !important;
 }
 
 yt-thumbnail-overlay-progress-bar-view-model {
@@ -382,4 +386,24 @@ yt-content-preview-image-view-model thumbnail-hover-overlay-view-model {
 /* Video preview in recommended videos */
 animated-thumbnail-overlay-view-model img {
   display: none !important;
+}
+
+/* Recommended videos on video player, at the end of a video when autoplay is not enabled */
+.ytp-modern-videowall-still-image {
+  background-image: none !important;
+}
+
+.ytp-modern-videowall-still-info-duration {
+  background: var(--yt-primary-color) !important;
+  position: relative !important;
+  top: 0 !important;
+  left: 0 !important;
+  padding: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  height: 100% !important;
+  width: 100% !important;
+  border-radius: 12px !important;
+  opacity: 1 !important;
 }
