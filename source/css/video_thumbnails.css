@@ -188,7 +188,7 @@ ytd-rich-movie-renderer ytd-thumbnail {
   height: 118px !important;
 }
 
-ytd-thumbnail #overlays,
+ytd-thumbnail #overlays:not(#player ytd-thumbnail #overlays),
 ytd-grid-movie-renderer yt-img-shadow,
 ytd-rich-movie-renderer yt-img-shadow,
 ytm-shorts-lockup-view-model > a > div {
@@ -259,7 +259,7 @@ ytd-movie-renderer ytd-thumbnail {
   width: 100% !important;
 }
 
-#overlays.ytd-thumbnail {
+#overlays.ytd-thumbnail:not(#player #overlays.ytd-thumbnail) {
   display: block !important;
 }
 
