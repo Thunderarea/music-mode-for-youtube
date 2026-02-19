@@ -338,7 +338,7 @@ function saveToSessionStorage(videoOptions, allFalse) {
   sessionStorage.setItem("mmfytb_block_video", allFalse ? false : true);
   sessionStorage.setItem("mmfytb_progress_bar", allFalse ? false : videoOptions.progress_bar);
   sessionStorage.setItem("mmfytb_control_buttons", allFalse ? false : videoOptions.control_buttons);
-  sessionStorage.setItem("mmfytb_live_144", allFalse ? false : videoOptions.live_144);
+  sessionStorage.setItem("mmfytb_low_video_quality", allFalse ? false : videoOptions.low_video_quality);
   sessionStorage.setItem("mmfytb_hide_logo", allFalse ? false : videoOptions.hide_logo);
   sessionStorage.setItem("mmfytb_show_thumbnail", allFalse ? false : videoOptions.show_thumbnail);
   sessionStorage.setItem("mmfytb_continue_watching_prompt", allFalse ? false : videoOptions.continue_watching_prompt);
@@ -584,7 +584,7 @@ function applyOptions(mustReload) {
         let videoOptions = {
           progress_bar: values.progress_bar,
           control_buttons: values.control_buttons,
-          live_144: values.live_144,
+          low_video_quality: values.low_video_quality,
           hide_logo: values.hide_logo,
           show_thumbnail: values.show_thumbnail,
           continue_watching_prompt: values.continue_watching_prompt,

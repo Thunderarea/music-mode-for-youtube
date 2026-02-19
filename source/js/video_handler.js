@@ -303,7 +303,7 @@ function musicModeForYouTube(url, isLive, firstCall) {
 }
 
 function setResolutionTo144p(video) {
-  if (getValue("mmfytb_live_144")) {
+  if (getValue("mmfytb_low_video_quality")) {
     try {
       let ytb_player = video.parentNode.parentNode;
       let qualityLevels = ytb_player.getAvailableQualityLevels();

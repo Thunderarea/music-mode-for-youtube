@@ -122,8 +122,8 @@
     "ShowImages": {
       "message": "Mostra immagini"
     },
-    "liveVideoTitle": {
-      "message": "Live videos"
+    "lowVideoQualityTitle": {
+      "message": "Hidden video quality"
     },
     "quickAccessButtons": {
       "message": "Tasti di accesso rapido"
@@ -188,11 +188,11 @@
     "advanced_options": {
       "message": "Advanced options"
     },
-    "live_144": {
-      "message": "Live video quality to 144p"
+    "low_video_quality": {
+      "message": "Auto lower video quality"
     },
-    "live_144_text": {
-      "message": "Set automatically the quality of live videos to 144p when the option Video is enabled on YouTube"
+    "low_video_quality_text": {
+      "message": "It automatically lowers the video quality to 144p when the video is hidden on YouTube"
     },
     "enabledByDefault": {
       "message": "Enabled by default"
