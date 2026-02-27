@@ -32,59 +32,6 @@ document.addEventListener("injection_script_communication", () => {
   initialization();
 });
 
-// function getLowestQualityLevel(ytb_player) {
-//   try {
-//     let qualityData = ytb_player.getAvailableQualityData();
-//     for (let i = qualityData.length - 1; i >= 0; i--) {
-//       let q = qualityData[i];
-//       if (q.quality === "tiny" || q.qualityLabel === "144p" && q.isPlayable) {
-//         return q;
-//       }
-//     };
-//     return null;
-//   } catch (error) {
-//     console.error("Error getting video quality levels:", error);
-//     return null;
-//   }
-// }
-
-// function resetVideoQuality(ytb_player) {
-//   console.log("reset quality");
-
-//   const currentQuality = ytb_player.getPlaybackQuality();
-//   console.log("current quality: ", currentQuality);
-
-//   if (currentQuality != "tiny") return;
-//   const lastQuality = localStorage.getItem("mmfytb_last_quality");
-//   console.log("last quality: ", lastQuality);
-
-//   if (!lastQuality) return;
-
-//   try {
-//     ytb_player.setPlaybackQualityRange(lastQuality, lastQuality);
-//     // localStorage.removeItem("mmfytb_last_quality");
-//   } catch (error) {
-//     console.error("Error resetting video quality:", error);
-//   }
-// }
-
-// function setLowestQuality(ytb_player) {
-//   const lastQuality = ytb_player.getPlaybackQuality();
-//   // if it is tiny, it means that probably was set by the extension
-//   if (lastQuality != "tiny") {
-//     localStorage.setItem("mmfytb_last_quality", lastQuality);
-//   }
-
-//   try {
-//     const lowestQualityLevel = getLowestQualityLevel(ytb_player);
-//     if (lowestQualityLevel) {
-//       ytb_player.setPlaybackQualityRange(lowestQualityLevel.quality, lowestQualityLevel.quality);
-//     }
-//   } catch (error) {
-//     console.error("Error setting video quality:", error);
-//   }
-// }
-
 function initialization() {
   blockVideo = getValue("mmfytb_block_video");
   videoPlayer = getPlayer();
@@ -101,12 +48,7 @@ function initialization() {
     if (blockVideo) document.dispatchEvent(communication_event);
   }
 
-  // if (getSiteName() != "youtube_music") {
-  //   const lowVideoQuality = getValue("mmfytb_low_video_quality");
-
-  //   if (lowVideoQuality && blockVideo) setLowestQuality(videoPlayer);
-  //   else resetVideoQuality(videoPlayer);
-  // }
+  applyVideoPlayerOptions();
 
   if (getValue("mmfytb_continue_watching_prompt")) {
     if (!intervalId)
@@ -262,10 +204,11 @@ function youtubeActivation() {
 }
 
 function getPlayer() {
+  let player;
   let video = findVideoEl();
-  const player = video?.parentNode?.parentNode;
-  if (player) return player;
-  return null;
+  if (video && video.parentNode && video.parentNode.parentNode)
+    player = video.parentNode.parentNode;
+  return player;
 }
 
 try {
@@ -333,6 +276,7 @@ function musicModeForYouTube(url, isLive, firstCall) {
       if (isNotMusicUrl(video.src)) {
         video.dataset.originalurl = video.src;
         video.dataset.musicurl = 1;
+        setResolutionTo144p(video);
       }
     } else {
       if (isNotMusicUrl(video.src)) {
@@ -355,6 +299,19 @@ function musicModeForYouTube(url, isLive, firstCall) {
         }
       }
     }
+  }
+}
+
+function setResolutionTo144p(video) {
+  if (getValue("mmfytb_low_video_quality")) {
+    try {
+      let ytb_player = video.parentNode.parentNode;
+      let qualityLevels = ytb_player.getAvailableQualityLevels();
+      let lastLevel = qualityLevels[qualityLevels.length - 2];
+      if (lastLevel) {
+        ytb_player.setPlaybackQualityRange(lastLevel, lastLevel);
+      }
+    } catch (error) { }
   }
 }
 
@@ -462,18 +419,18 @@ function timeUpdate(event) {
 function findVideoEl() {
   let video;
   let videoElements = document.querySelectorAll("video");
-  if (videoElements?.length) {
+  if (videoElements && videoElements.length) {
     let videoRect = 0;
-    for (const videoElement of videoElements) {
-      if (videoElement !== undefined) {
-        videoRect = videoElement.getBoundingClientRect();
+    for (var i = 0; i < videoElements.length; i++) {
+      if (videoElements[i] !== undefined) {
+        videoRect = videoElements[i].getBoundingClientRect();
         if (getSiteName() !== "youtube_music") {
           if (videoRect.width > 0 && videoRect.height > 0) {
-            video = videoElement;
+            video = videoElements[i];
             break;
           }
         } else {
-          video = videoElement;
+          video = videoElements[i];
           break;
         }
       }

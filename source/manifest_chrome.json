@@ -57,8 +57,7 @@
         "js/video_quick_access_button.js",
         "js/adSkipper.js",
         "content_popup/style.css",
-        "config.js",
-        "js/videoQuality.js"
+        "config.js"
       ],
       "matches": [ 
         "*://www.youtube.com/*",
@@ -107,17 +106,6 @@
       ],
       "js": [
         "js/content_mytb.js"
-      ],
-      "run_at": "document_end",
-      "all_frames": true
-    }, {
-      "matches": [
-        "*://www.youtube.com/*",
-        "*://www.youtube-nocookie.com/*",
-        "*://m.youtube.com/*"
-      ],
-      "js": [
-        "js/videoQuality_content.js"
       ],
       "run_at": "document_end",
       "all_frames": true
