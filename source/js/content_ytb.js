@@ -183,7 +183,7 @@ function clickButton(vid) {
         newRecord["qapages"] = qapages;
         newRecord["qapages"][id] = newValues;
         chrome.storage.local.set(newRecord);
-        
+
         applyOptions(1);
       });
     }
@@ -275,7 +275,7 @@ function addFeature(optionName, mustReload, videoOptions) {
   switch (optionName) {
     case "video":
       saveToSessionStorage(videoOptions);
-      insertVideoHandler("video_handler");
+      insertScript("video_handler");
       document.dispatchEvent(communication_event);
       if (mustReload === 1) {
         let clonedDetail = { enabled: true };
@@ -307,7 +307,7 @@ function addFeature(optionName, mustReload, videoOptions) {
       break;
     case "adblocker":
       isMobileYouTube() ? insertStylesheet("ads", "mobile") : insertStylesheet("ads", "");
-      insertAdSkipper("adSkipper");
+      insertScript("adSkipper");
       break;
   }
 }
@@ -321,16 +321,6 @@ function insertStylesheet(name, site) {
     link.type = "text/css";
     link.rel = "stylesheet";
     document.getElementsByTagName("html")[0].appendChild(link);
-  }
-}
-
-function insertVideoHandler(name) {
-  if (document.getElementById(name + "JS_mmfytb_thunderarea") == null) {
-    let script = document.createElement("script");
-    script.src = chrome.runtime.getURL("../js/" + name + ".js");
-    script.id = name + "JS_mmfytb_thunderarea";
-    script.className = "mmfytbthunderarea";
-    document.documentElement.appendChild(script);
   }
 }
 
@@ -352,7 +342,7 @@ function removeVideoOptions() {
   if (elem) elem.parentNode.removeChild(elem);
 }
 
-function insertAdSkipper(name) {
+function insertScript(name) {
   if (document.getElementById(name + "JS_mmfytb_thunderarea") == null) {
     let script = document.createElement("script");
     script.src = chrome.runtime.getURL("../js/" + name + ".js");
