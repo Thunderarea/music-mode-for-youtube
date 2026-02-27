@@ -13,14 +13,14 @@ let imageButtonState = false;
 
 let svgImageEnabled = `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path fill="currentColor" d="m20 17.15l-1-1V5H7.85l-1-1H20zm.492 4.758L18.585 20H4V5.416L2.092 3.508L2.8 2.8l18.4 18.4zM7.5 16.5l1.962-2.577l1.75 2.116l1.517-1.889L5 6.421V19h12.579l-2.5-2.5zm3.792-3.792"/>
+	<path fill="currentColor" d="m20 17.15l-1-1V5.616q0-.231-.192-.424T18.384 5H7.85l-1-1h11.535q.69 0 1.153.463T20 5.616zm.492 4.758L18.585 20H5.615q-.69 0-1.152-.462T4 18.384V5.416L2.092 3.508L2.8 2.8l18.4 18.4zM7.5 16.5l1.962-2.577l1.75 2.116l1.517-1.889L5 6.421v11.964q0 .23.192.423t.423.192H17.58l-2.5-2.5zm3.792-3.792" stroke-width="0.5" stroke="currentColor" />
 </svg>
 `;
 let svgImageEnabledEl = new DOMParser().parseFromString(svgImageEnabled, "text/html").body.firstElementChild;
 
 let svgImageDisabled = `
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-  <path fill="currentColor" d="M7.5 16.5h9.154l-2.827-3.77l-2.615 3.308l-1.75-2.115zM4 20V4h16v16zm1-1h14V5H5zm0 0V5z"/>
+	<path fill="currentColor" d="M5.616 20q-.691 0-1.153-.462T4 18.384V5.616q0-.691.463-1.153T5.616 4h12.769q.69 0 1.153.463T20 5.616v12.769q0 .69-.462 1.153T18.384 20zm0-1h12.769q.23 0 .423-.192t.192-.424V5.616q0-.231-.192-.424T18.384 5H5.616q-.231 0-.424.192T5 5.616v12.769q0 .23.192.423t.423.192M7.5 16.5h9.154l-2.827-3.77l-2.615 3.308l-1.75-2.115zM5 19V5z" stroke-width="0.5" stroke="currentColor" />
 </svg>
 `;
 let svgImageDisabledEl = new DOMParser().parseFromString(svgImageDisabled, "text/html").body.firstElementChild;

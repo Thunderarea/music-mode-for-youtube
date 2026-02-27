@@ -67,3 +67,7 @@
 .mobile-topbar-header[data-mode=shorts] .mobile-topbar-header-content {
   right: 3px !important;
 }
+
+ytd-masthead[dark] #topbar_button_mmfytb_thunderarea svg {
+  color: white;
+}
