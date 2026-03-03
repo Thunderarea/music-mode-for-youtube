@@ -30,7 +30,7 @@ let extensionOptions = {
 
   "progress_bar": false,
   "control_buttons": false,
-  "live_144": false,
+  "low_video_quality": true,
   "hide_logo": false,
   "show_thumbnail": false,
   "continue_watching_prompt": true,

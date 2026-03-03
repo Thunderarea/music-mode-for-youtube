@@ -128,8 +128,8 @@
   "ShowImages": {
     "message": "Εμφάνισε τις εικόνες"
   },
-  "liveVideoTitle": {
-    "message": "Live βίντεο"
+  "lowVideoQualityTitle": {
+    "message": "Ποιότητα κρυμμένου βίντεο"
   },
   "quickAccessButtons": {
     "message": "Κουμπιά γρήγορης πρόσβασης"
@@ -194,11 +194,11 @@
   "advanced_options": {
     "message": "Προχωρημένες επιλογές"
   },
-  "live_144": {
-    "message": "Live βίντεο ποιότητα στα 144p"
+  "low_video_quality": {
+    "message": "Αυτόματη χαμηλή ποιότητα βίντεο"
   },
-  "live_144_text": {
-    "message": "Θέτει αυτόματα την ποιότητα των live βίντεο στα 144p όταν η επιλογή Βίντεο είναι ενεργοποιημένη στο YouTube"
+  "low_video_quality_text": {
+    "message": "Θέτει αυτόματα την ποιότητα του βίντεο σε 144p όταν το βίντεο είναι κρυμμένο στο YouTube"
   },
   "enabledByDefault": {
     "message": "Ενεργοποιημένη από προεπιλογή"

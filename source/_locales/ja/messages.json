@@ -122,8 +122,8 @@
   "ShowImages": {
     "message": "画像を表示する"
   },
-  "liveVideoTitle": {
-    "message": "ライブ動画"
+  "lowVideoQualityTitle": {
+    "message": "Hidden video quality"
   },
   "quickAccessButtons": {
     "message": "クイックアクセスボタン"
@@ -188,11 +188,11 @@
   "advanced_options": {
     "message": "高度なオプション"
   },
-  "live_144": {
-    "message": "ライブ動画の画質を144pに"
+  "low_video_quality": {
+    "message": "Auto lower video quality"
   },
-  "live_144_text": {
-    "message": "YouTubeで「動画」オプションが有効になっている場合、ライブ動画の画質を自動的に144pに設定します。"
+  "low_video_quality_text": {
+    "message": "It automatically lowers the video quality to 144p when the video is hidden on YouTube"
   },
   "enabledByDefault": {
     "message": "デフォルトで有効"

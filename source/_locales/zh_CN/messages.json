@@ -122,8 +122,8 @@
     "ShowImages": {
       "message": "显示图片"
     },
-    "liveVideoTitle": {
-      "message": "Live 视频"
+    "lowVideoQualityTitle": {
+      "message": "Hidden video quality"
     },
     "quickAccessButtons": {
       "message": "快速访问键"
@@ -188,11 +188,11 @@
     "advanced_options": {
       "message": "高级选项"
     },
-    "live_144": {
-      "message": "Live 视频质量 144p"
+    "low_video_quality": {
+      "message": "Auto lower video quality"
     },
-    "live_144_text": {
-      "message": "当视频选项启用时，自动设置 Live 视频质量为 144p"
+    "low_video_quality_text": {
+      "message": "It automatically lowers the video quality to 144p when the video is hidden on YouTube"
     },
     "enabledByDefault": {
       "message": "Enabled by default"
