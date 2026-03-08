@@ -39,40 +39,88 @@
 
 */
 
+// Make sure that the lowest quality has been set (don't check time update because it can run for the previous video)
+
+let playerObserver = null;
+let playerObserverMutationCount = 0;
+const MAX_PLAYER_OBSERVER_MUTATIONS = 10;
+
 document.addEventListener("injection_script_communication", () => {
-  manageVideoQuality();
+  init();
 });
 
-manageVideoQuality();
+init();
 
-function manageVideoQuality(retry = true) {
+function init() {
   const videoPlayer = getPlayer();
 
   if (!videoPlayer) {
-    if (retry) {
-      setTimeout(() => manageVideoQuality(false), 5000);
-    }
+    waitForPlayer();
     return;
   }
 
+  stopWaitingForPlayer();
+
+  applyVideoQuality(videoPlayer);
+}
+
+function applyVideoQuality(videoPlayer) {
   const blockVideo = getBooleanValue("mmfytb_block_video");
   const lowVideoQuality = getBooleanValue("mmfytb_low_video_quality");
 
-  if (lowVideoQuality && blockVideo) setLowestQuality(videoPlayer);
-  else resetVideoQuality(videoPlayer);
+  if (lowVideoQuality && blockVideo) {
+    setLowestQuality(videoPlayer);
+  } else {
+    resetVideoQuality(videoPlayer);
+  }
 }
 
-function setLowestQuality(ytb_player) {
-  const lastQuality = ytb_player.getPlaybackQuality();
+function waitForPlayer() {
+  if (playerObserver) return;
 
-  // if it is tiny, it means that probably was set by the extension
-  if (lastQuality != "tiny") {
-    sessionStorage.setItem("mmfytb_last_quality", lastQuality);
+  playerObserverMutationCount = 0;
+
+  playerObserver = new MutationObserver(() => {
+    playerObserverMutationCount++;
+
+    const videoPlayer = getPlayer();
+
+    if (videoPlayer) {
+      stopWaitingForPlayer();
+      applyVideoQuality(videoPlayer);
+      return;
+    }
+
+    if (playerObserverMutationCount >= MAX_PLAYER_OBSERVER_MUTATIONS) {
+      stopWaitingForPlayer();
+    }
+  });
+
+  playerObserver.observe(document.documentElement, {
+    childList: true,
+    subtree: true,
+  });
+}
+
+function stopWaitingForPlayer() {
+  if (!playerObserver) return;
+  playerObserver.disconnect();
+  playerObserver = null;
+  playerObserverMutationCount = 0;
+}
+
+async function setLowestQuality(ytb_player) {
+  if (!sessionStorage.getItem("mmfytb_last_quality")) {
+    let quality = await saveLastPlaybackQuality(ytb_player);
+    console.log(quality);
   }
 
-  const playerQualityMetadata = localStorage.getItem("yt-player-quality");
-  console.log(JSON.stringify(playerQualityMetadata));
+  const video = ytb_player.querySelector("video");
+  video.addEventListener("timeupdate", () => {
+    console.log("update");
+  });
 
+  const playerQualityMetadata = localStorage.getItem("yt-player-quality");
   try {
     ytb_player.setPlaybackQualityRange("tiny", "tiny");
     // Don't override the YouTube player quality metadata with the lowest quality
@@ -84,9 +132,41 @@ function setLowestQuality(ytb_player) {
   }
 }
 
-function resetVideoQuality(ytb_player) {
-  console.log("reset");
+function saveLastPlaybackQuality(ytb_player) {
+  return new Promise((resolve) => {
+    let lastQuality = ytb_player.getPlaybackQuality();
+    console.log(lastQuality);
 
+    if (lastQuality === "unknown") {
+      const video = ytb_player.querySelector("video");
+      if (!video) {
+        resolve(null);
+        return;
+      }
+
+      const handler = () => {
+        lastQuality = ytb_player.getPlaybackQuality();
+
+        if (lastQuality !== "tiny") {
+          sessionStorage.setItem("mmfytb_last_quality", lastQuality);
+        }
+
+        video.removeEventListener("loadedmetadata", handler);
+        resolve(lastQuality);
+      };
+
+      video.addEventListener("loadedmetadata", handler);
+    } else {
+      if (lastQuality !== "tiny") {
+        sessionStorage.setItem("mmfytb_last_quality", lastQuality);
+      }
+
+      resolve(lastQuality);
+    }
+  });
+}
+
+function resetVideoQuality(ytb_player) {
   const currentQuality = ytb_player.getPlaybackQuality();
   console.log("current quality: ", currentQuality);
 
