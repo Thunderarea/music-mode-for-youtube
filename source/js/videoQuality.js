@@ -73,16 +73,16 @@ function init() {
   applyVideoQuality(videoPlayer);
 }
 
-function applyVideoQuality(videoPlayer) {
+async function applyVideoQuality(videoPlayer) {
   console.log("APPLY");
 
   const blockVideo = getBooleanValue("mmfytb_block_video");
   const lowVideoQuality = getBooleanValue("mmfytb_low_video_quality");
 
   if (lowVideoQuality && blockVideo) {
-    setLowestQuality(videoPlayer);
+    await setLowestQuality(videoPlayer);
   } else {
-    resetVideoQuality(videoPlayer);
+    await resetVideoQuality(videoPlayer);
   }
 }
 
@@ -135,19 +135,20 @@ async function setLowestQuality(ytb_player, retry = true) {
     ytb_player.setPlaybackQualityRange("tiny", "tiny");
     // Check that the quality has been set
     const video = ytb_player.querySelector("video");
-    const handler = () => {
+    const handler = async () => {
       const currentQuality = ytb_player.getPlaybackQuality();
       console.log("current quality: ", currentQuality);
-      video.removeEventListener("loadedmetadata", handler);
-      if (currentQuality !== "tiny") retry && setLowestQuality(ytb_player, false);
+      if (currentQuality !== "tiny" && retry) await setLowestQuality(ytb_player, false);
     };
-    video.addEventListener("loadedmetadata", handler);
+    const videoLoaded = await waitForVideoListener(video, "loadedmetadata");
+    if (videoLoaded) await handler();
+  } catch (error) {
+    console.log("Error setting video quality:", error);
+  } finally {
     // Don't override the YouTube player quality metadata with the lowest quality
     if (playerQualityMetadata) {
       localStorage.setItem("yt-player-quality", playerQualityMetadata);
     }
-  } catch (error) {
-    console.log("Error setting video quality:", error);
   }
 }
 
@@ -167,35 +168,33 @@ async function resetVideoQuality(ytb_player) {
 
   try {
     if (lastQuality != "unknown") ytb_player.setPlaybackQualityRange(lastQuality, lastQuality);
+  } catch (error) {
+    console.error("Error resetting video quality:", error);
+  } finally {
     // Don't override the YouTube player quality metadata with the lowest quality
     if (playerQualityMetadata) {
       localStorage.setItem("yt-player-quality", playerQualityMetadata);
     }
-  } catch (error) {
-    console.error("Error resetting video quality:", error);
   }
 }
 
-function getCurrentVideoQuality(ytb_player) {
-  return new Promise((resolve) => {
-    let lastQuality = ytb_player.getPlaybackQuality();
-    console.log(lastQuality);
+async function getCurrentVideoQuality(ytb_player) {
+  let lastQuality = ytb_player.getPlaybackQuality();
+  console.log(lastQuality);
 
-    if (lastQuality === "unknown") {
-      const video = ytb_player.querySelector("video");
+  if (lastQuality === "unknown") {
+    const video = ytb_player.querySelector("video");
+    const videoLoaded = await waitForVideoListener(video, "loadedmetadata");
 
-      const handler = () => {
-        lastQuality = ytb_player.getPlaybackQuality();
-
-        video.removeEventListener("loadedmetadata", handler);
-        resolve(lastQuality);
-      };
-
-      video.addEventListener("loadedmetadata", handler);
-    } else {
-      resolve(lastQuality);
+    if (videoLoaded) {
+      lastQuality = ytb_player.getPlaybackQuality();
+      return lastQuality;
     }
-  });
+
+    return "tiny";
+  }
+
+  return lastQuality;
 }
 
 function getBooleanValue(option) {
@@ -225,4 +224,20 @@ function findVideoEl() {
     }
   }
   return video;
+}
+
+function waitForVideoListener(video, eventName, timeout = 60000) {
+  return new Promise((resolve) => {
+    const handler = () => {
+      clearTimeout(timer);
+      resolve(true);
+    };
+
+    const timer = setTimeout(() => {
+      video.removeEventListener(eventName, handler);
+      resolve(false);
+    }, timeout);
+
+    video.addEventListener(eventName, handler, { once: true });
+  });
 }
