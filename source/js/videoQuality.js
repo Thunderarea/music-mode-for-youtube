@@ -64,6 +64,8 @@ function init() {
 }
 
 function applyVideoQuality(videoPlayer) {
+  console.log("APPLY");
+
   const blockVideo = getBooleanValue("mmfytb_block_video");
   const lowVideoQuality = getBooleanValue("mmfytb_low_video_quality");
 
@@ -108,7 +110,7 @@ function stopWaitingForPlayer() {
   playerObserverMutationCount = 0;
 }
 
-async function setLowestQuality(ytb_player) {
+async function setLowestQuality(ytb_player, retry = true) {
   if (!sessionStorage.getItem("mmfytb_last_quality")) {
     let quality = await getCurrentVideoQuality(ytb_player);
     console.log(quality);
@@ -116,23 +118,26 @@ async function setLowestQuality(ytb_player) {
     if (quality !== "tiny") {
       sessionStorage.setItem("mmfytb_last_quality", quality);
     }
-  }
-
-  const video = ytb_player.querySelector("video");
-  video.addEventListener("timeupdate", () => {
-    console.log("update");
-  });
+  } else console.log("last quality already set: ", sessionStorage.getItem("mmfytb_last_quality"));
 
   const playerQualityMetadata = localStorage.getItem("yt-player-quality");
   try {
     ytb_player.setPlaybackQualityRange("tiny", "tiny");
     // Check that the quality has been set
+    const video = ytb_player.querySelector("video");
+    const handler = () => {
+      const currentQuality = ytb_player.getPlaybackQuality();
+      console.log("current quality: ", currentQuality);
+      video.removeEventListener("loadedmetadata", handler);
+      if (currentQuality !== "tiny") retry && setLowestQuality(ytb_player, false);
+    };
+    video.addEventListener("loadedmetadata", handler);
     // Don't override the YouTube player quality metadata with the lowest quality
     if (playerQualityMetadata) {
       localStorage.setItem("yt-player-quality", playerQualityMetadata);
     }
   } catch (error) {
-    console.error("Error setting video quality:", error);
+    console.log("Error setting video quality:", error);
   }
 }
 
@@ -168,10 +173,6 @@ function getCurrentVideoQuality(ytb_player) {
 
     if (lastQuality === "unknown") {
       const video = ytb_player.querySelector("video");
-      if (!video) {
-        resolve(null);
-        return;
-      }
 
       const handler = () => {
         lastQuality = ytb_player.getPlaybackQuality();
