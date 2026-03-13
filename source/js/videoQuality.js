@@ -1,4 +1,14 @@
 /*
+Copyright © 2026 Nikolaos Pantelidis
+All rights reserved.
+
+This file is part of Music Mode for YouTube.
+Unauthorized copying, modification, or redistribution of this file is prohibited.
+
+See the LICENSE file in the project root for full license terms.
+*/
+
+/*
 * Runs only on YouTube where the video is not blocked but hidden
 
 0
