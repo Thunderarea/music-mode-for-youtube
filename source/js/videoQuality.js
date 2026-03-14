@@ -10,43 +10,6 @@ See the LICENSE file in the project root for full license terms.
 
 /*
 * Runs only on YouTube where the video is not blocked but hidden
-
-0
-: 
-{formatId: undefined, qualityLabel: '2160p60', quality: 'hd2160', isPlayable: true}
-1
-: 
-{formatId: undefined, qualityLabel: '1440p60', quality: 'hd1440', isPlayable: true}
-2
-: 
-{formatId: undefined, qualityLabel: '1080p60', quality: 'hd1080', isPlayable: true}
-3
-: 
-{formatId: undefined, qualityLabel: '720p60', quality: 'hd720', isPlayable: true}
-4
-: 
-{formatId: undefined, qualityLabel: '480p', quality: 'large', isPlayable: true}
-5
-: 
-{formatId: undefined, qualityLabel: '360p', quality: 'medium', isPlayable: true}
-6
-: 
-{formatId: undefined, qualityLabel: '240p', quality: 'small', isPlayable: true}
-7
-: 
-{formatId: undefined, qualityLabel: '144p', quality: 'tiny', isPlayable: true}
-
-
-144
-240
-360
-480
-720
-1080
-1440
-2160
-4320
-
 */
 
 // Make sure that the lowest quality has been set (don't check time update because it can run for the previous video)
