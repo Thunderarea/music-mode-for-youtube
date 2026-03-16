@@ -53,6 +53,9 @@
   "videoDescription": {
     "message": "Hides the video"
   },
+  "youtube_music_videoDescription": {
+    "message": "Blocks the video"
+  },
   "thumbnailsDescription": {
     "message": "Hides the video thumbnails"
   },

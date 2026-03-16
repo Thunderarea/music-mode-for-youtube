@@ -41,8 +41,8 @@ function getSiteHTML(id, item) {
     <div class="settings setbord optionsGroupTitle">
       <div class="descr_toggle">
         <div class="settingsText">
-          <div class="settingsHead"><span data-i18n="${id}"></span></div>
-          <div class="settingsDescription" data-i18n="${id}Description"></div>
+          <div class="settingsHead"><span>${chrome.i18n.getMessage(id)}</span></div>
+          <div class="settingsDescription">${chrome.i18n.getMessage(`${id}Description`)}</div>
         </div>
         <div class="toggleButton">
           <label class="switch">
@@ -59,8 +59,8 @@ function getSiteHTML(id, item) {
             <div class="descr_toggle">
               <ul class="settingsTextIcon">
                 <li class="settingsText">
-                  <div class="settingsHead"><span data-i18n="${option}"></span></div>
-                  <div class="settingsDescription" data-i18n="${option}Description"></div>
+                  <div class="settingsHead"><span>${chrome.i18n.getMessage(option)}</span></div>
+                  <div class="settingsDescription">${chrome.i18n.getMessage(`${id}_${option}Description`) || chrome.i18n.getMessage(`${option}Description`)}</div>
                 </li>
               </ul>
               <div class="toggleButton">
