@@ -12,8 +12,6 @@ See the LICENSE file in the project root for full license terms.
 * Runs only on YouTube where the video is not blocked but hidden
 */
 
-// Make sure that the lowest quality has been set (don't check time update because it can run for the previous video)
-
 let playerObserver = null;
 let playerObserverMutationCount = 0;
 const MAX_PLAYER_OBSERVER_MUTATIONS = 10;
@@ -103,8 +101,7 @@ async function setLowestQuality(ytb_player, retry = true) {
       console.log("current quality: ", currentQuality);
       if (currentQuality !== "tiny" && retry) await setLowestQuality(ytb_player, false);
     };
-    const videoLoaded = await waitForVideoListener(video, "loadedmetadata");
-    if (videoLoaded) await handler();
+    video.addEventListener("loadedmetadata", handler, { once: true });
   } catch (error) {
     console.log("Error setting video quality:", error);
   } finally {
@@ -141,23 +138,26 @@ async function resetVideoQuality(ytb_player) {
   }
 }
 
-async function getCurrentVideoQuality(ytb_player) {
-  let lastQuality = ytb_player.getPlaybackQuality();
-  console.log(lastQuality);
+function getCurrentVideoQuality(ytb_player) {
+  return new Promise((resolve) => {
+    let lastQuality = ytb_player.getPlaybackQuality();
+    console.log(lastQuality);
 
-  if (lastQuality === "unknown") {
-    const video = ytb_player.querySelector("video");
-    const videoLoaded = await waitForVideoListener(video, "loadedmetadata");
+    if (lastQuality === "unknown") {
+      const video = ytb_player.querySelector("video");
 
-    if (videoLoaded) {
-      lastQuality = ytb_player.getPlaybackQuality();
-      return lastQuality;
+      video.addEventListener(
+        "loadedmetadata",
+        () => {
+          lastQuality = ytb_player.getPlaybackQuality();
+          resolve(lastQuality);
+        },
+        { once: true },
+      );
+    } else {
+      resolve(lastQuality);
     }
-
-    return "tiny";
-  }
-
-  return lastQuality;
+  });
 }
 
 function getBooleanValue(option) {
@@ -165,7 +165,7 @@ function getBooleanValue(option) {
 }
 
 function getPlayer() {
-  let video = findVideoEl();
+  const video = findVideoEl();
   const player = video?.parentNode?.parentNode;
   if (player) return player;
   return null;
@@ -173,7 +173,7 @@ function getPlayer() {
 
 function findVideoEl() {
   let video;
-  let videoElements = document.querySelectorAll("video");
+  const videoElements = document.querySelectorAll("video");
   if (videoElements?.length) {
     let videoRect = 0;
     for (const videoElement of videoElements) {
@@ -187,20 +187,4 @@ function findVideoEl() {
     }
   }
   return video;
-}
-
-function waitForVideoListener(video, eventName, timeout = 60000) {
-  return new Promise((resolve) => {
-    const handler = () => {
-      clearTimeout(timer);
-      resolve(true);
-    };
-
-    const timer = setTimeout(() => {
-      video.removeEventListener(eventName, handler);
-      resolve(false);
-    }, timeout);
-
-    video.addEventListener(eventName, handler, { once: true });
-  });
 }
