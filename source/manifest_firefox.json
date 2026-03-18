@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Music Mode for YouTube™",
   "short_name": "Music Mode",
-  "version": "1.3.14",
+  "version": "1.3.16",
   "default_locale": "en",
   "incognito":"spanning",
   
@@ -71,8 +71,7 @@
         "js/video_quick_access_button.js",
         "js/adSkipper.js",
         "content_popup/style.css",
-        "config.js",
-        "js/videoQuality.js"
+        "config.js"
       ],
       "matches": [ 
         "*://www.youtube.com/*",
