@@ -11,7 +11,6 @@ See the LICENSE file in the project root for full license terms.
 /*
 * Runs only on YouTube where the video is not blocked but hidden
 */
-
 let playerObserver = null;
 let playerObserverMutationCount = 0;
 const MAX_PLAYER_OBSERVER_MUTATIONS = 10;
@@ -35,8 +34,6 @@ function init() {
 }
 
 async function applyVideoQuality(videoPlayer) {
-  console.log("APPLY");
-
   const blockVideo = getBooleanValue("mmfytb_block_video");
   const lowVideoQuality = getBooleanValue("mmfytb_low_video_quality");
 
@@ -84,12 +81,10 @@ function stopWaitingForPlayer() {
 async function setLowestQuality(ytb_player, retry = true) {
   if (!sessionStorage.getItem("mmfytb_last_quality")) {
     let quality = await getCurrentVideoQuality(ytb_player);
-    console.log(quality);
-
     if (quality !== "tiny") {
       sessionStorage.setItem("mmfytb_last_quality", quality);
     }
-  } else console.log("last quality already set: ", sessionStorage.getItem("mmfytb_last_quality"));
+  }
 
   const playerQualityMetadata = localStorage.getItem("yt-player-quality");
   try {
@@ -98,12 +93,11 @@ async function setLowestQuality(ytb_player, retry = true) {
     const video = ytb_player.querySelector("video");
     const handler = async () => {
       const currentQuality = ytb_player.getPlaybackQuality();
-      console.log("current quality: ", currentQuality);
       if (currentQuality !== "tiny" && retry) await setLowestQuality(ytb_player, false);
     };
     video.addEventListener("loadedmetadata", handler, { once: true });
   } catch (error) {
-    console.log("Error setting video quality:", error);
+    console.error("setLowestQuality: Error setting video quality:", error);
   } finally {
     // Don't override the YouTube player quality metadata with the lowest quality
     if (playerQualityMetadata) {
@@ -114,22 +108,19 @@ async function setLowestQuality(ytb_player, retry = true) {
 
 async function resetVideoQuality(ytb_player) {
   const currentQuality = await getCurrentVideoQuality(ytb_player);
-  console.log("current quality: ", currentQuality);
 
   if (currentQuality != "tiny") return;
 
   const lastQuality = sessionStorage.getItem("mmfytb_last_quality");
   sessionStorage.removeItem("mmfytb_last_quality");
-  console.log("last quality: ", lastQuality);
 
   if (!lastQuality) return;
 
   const playerQualityMetadata = localStorage.getItem("yt-player-quality");
-
   try {
     if (lastQuality != "unknown") ytb_player.setPlaybackQualityRange(lastQuality, lastQuality);
   } catch (error) {
-    console.error("Error resetting video quality:", error);
+    console.error("resetVideoQuality: Error resetting video quality:", error);
   } finally {
     // Don't override the YouTube player quality metadata with the lowest quality
     if (playerQualityMetadata) {
@@ -141,7 +132,6 @@ async function resetVideoQuality(ytb_player) {
 function getCurrentVideoQuality(ytb_player) {
   return new Promise((resolve) => {
     let lastQuality = ytb_player.getPlaybackQuality();
-    console.log(lastQuality);
 
     if (lastQuality === "unknown") {
       const video = ytb_player.querySelector("video");
