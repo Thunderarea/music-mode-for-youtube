@@ -134,9 +134,6 @@
   "ShowImages": {
     "message": "Show images"
   },
-  "lowVideoQualityTitle": {
-    "message": "Hidden video quality"
-  },
   "quickAccessButtons": {
     "message": "Quick access buttons"
   },
@@ -201,10 +198,10 @@
     "message": "Advanced options"
   },
   "low_video_quality": {
-    "message": "Auto lower video quality"
+    "message": "Lower video quality"
   },
   "low_video_quality_text": {
-    "message": "It automatically lowers the video quality to 144p when the video is hidden on YouTube"
+    "message": "Sets the video quality to 144p when the video is hidden on YouTube"
   },
   "enabledByDefault": {
     "message": "Enabled by default"
