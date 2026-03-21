@@ -1,3 +1,13 @@
+/*
+Copyright © 2026 Nikolaos Pantelidis
+All rights reserved.
+
+This file is part of Music Mode for YouTube.
+Unauthorized copying, modification, or redistribution of this file is prohibited.
+
+See the LICENSE file in the project root for full license terms.
+*/
+
 let extensionOptions = {
   "enabled": true,
 
@@ -23,7 +33,7 @@ let extensionOptions = {
 
   "control_from_popup": true,
   "popup_current_page": false,
-  "popup_specific_options": false,
+  // "popup_specific_options": false,
 
   "quick_access_buttons_images": true,
   "quick_access_buttons_video": true,

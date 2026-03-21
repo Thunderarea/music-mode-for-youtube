@@ -60,3 +60,7 @@ Music Mode for YouTube™ is free. Support the development and maintenance of th
 
 ## Date of release
 October 2, 2019
+
+
+Copyright © 2026 Nikolaos Pantelidis
+All rights reserved.
