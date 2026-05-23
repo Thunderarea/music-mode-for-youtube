@@ -16,13 +16,13 @@ See the LICENSE file in the project root for full license terms.
 
 /* Almost all the avatar images */
 ytm-profile-icon:not(.topbar-menu-button-avatar):not(.active-account-icon) img,
-/* teaser comment's avatar */
-img.ytm-comments-entry-point-teaser-avatar,
 /* Channel avatar in video description */
 img.ytm-infocards-channel-details-thumbnail {
   content: url("../img/avatar-chanell.svg") !important;
 }
 
+/* Channel avatars in homepage and in teaser comment */
+.ytSpecAvatarShapeHost,
 ytm-profile-icon {
   background-image: url('../img/avatar-chanell.svg') !important;
   background-repeat: no-repeat !important;
