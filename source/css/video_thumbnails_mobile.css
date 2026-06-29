@@ -14,7 +14,9 @@ See the LICENSE file in the project root for full license terms.
 /* Shorts in homepage */
 ytm-shorts-lockup-view-model img,
 /* Posts */
-ytm-rich-section-renderer img {
+ytm-rich-section-renderer img,
+/* Playlist thumbnails */
+img.video-thumbnail-img {
   display: none !important;
 }
 
@@ -101,7 +103,7 @@ yt-thumbnail-bottom-overlay-view-model {
 }
 
 /* Collections in YouTube's Music channel */
-.video-thumbnail-container-compact {
+yt-collections-stack .video-thumbnail-container-compact {
   background-image: url('../img/youtube_logo.svg') !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
@@ -127,4 +129,16 @@ ytm-backstage-image-renderer {
 /* Time element in videos */
 .ytBadgeShapeThumbnailBadge {
   background-color: #323232 !important;
+}
+
+/* PLaylist thumbnail in playlist's page */
+yt-content-preview-image-view-model {
+  display: none !important;
+}
+
+/* Playlist videos */
+ytm-compact-thumbnail .thumbnailBottomOverlayGroupHost {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
 }
