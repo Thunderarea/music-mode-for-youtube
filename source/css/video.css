@@ -51,3 +51,8 @@ ytmusic-player {
 #song-image img {
   display: none !important;
 }
+
+/* Video thumbnail (cover) on embedded videos */
+video-cover {
+  display: none !important;
+}

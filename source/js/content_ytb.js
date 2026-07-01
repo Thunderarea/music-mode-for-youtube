@@ -9,9 +9,9 @@ See the LICENSE file in the project root for full license terms.
 */
 
 document.addEventListener("video_block_count", () => {
-  chrome.storage.local.get("blocked_videos_counter", result => {
+  chrome.storage.local.get("blocked_videos_counter", (result) => {
     chrome.storage.local.set({
-      "blocked_videos_counter": ++result.blocked_videos_counter
+      blocked_videos_counter: ++result.blocked_videos_counter,
     });
   });
 });
@@ -70,58 +70,75 @@ function addVideoButton() {
           };
         }
       } else return;
-    } else {
-      if (isShorts()) {
-        let container = document.querySelector("#actions reel-action-bar-view-model");
-        if (container?.firstElementChild) {
-          let existEl = document.querySelector("#video_button_mmfytb_thunderarea");
-          if (!existEl?.classList.contains("shorts-video-button")) {
-            // if exists, but it is not the shorts button, remove it
-            if (existEl) existEl.remove();
-            let el_1 = document.createElement("button");
-            el_1.classList.add(
-              "yt-spec-button-shape-next",
-              "yt-spec-button-shape-next--tonal",
-              "yt-spec-button-shape-next--mono",
-              "yt-spec-button-shape-next--size-l",
-              "yt-spec-button-shape-next--icon-button",
-              "yt-spec-button-shape-next--enable-backdrop-filter-experiment",
-              "shorts-video-button"
-            );
-            el_1.id = "video_button_mmfytb_thunderarea";
-            container.insertBefore(el_1, container.firstElementChild);
+    } else if (isShorts()) {
+      let container = document.querySelector("#actions reel-action-bar-view-model");
+      if (container?.firstElementChild) {
+        let existEl = document.querySelector("#video_button_mmfytb_thunderarea");
+        if (!existEl?.classList.contains("shorts-video-button")) {
+          // if exists, but it is not the shorts button, remove it
+          if (existEl) existEl.remove();
+          let el_1 = document.createElement("button");
+          el_1.classList.add(
+            "yt-spec-button-shape-next",
+            "yt-spec-button-shape-next--tonal",
+            "yt-spec-button-shape-next--mono",
+            "yt-spec-button-shape-next--size-l",
+            "yt-spec-button-shape-next--icon-button",
+            "yt-spec-button-shape-next--enable-backdrop-filter-experiment",
+            "shorts-video-button",
+          );
+          el_1.id = "video_button_mmfytb_thunderarea";
+          container.insertBefore(el_1, container.firstElementChild);
 
-            el_1.addEventListener("mouseenter", () => {
-              if (videoButtonState) {
-                el_1.title = chrome.i18n.getMessage("VideoButtonTooltipEnabled");
-              } else {
-                el_1.title = chrome.i18n.getMessage("VideoButtonTooltipDisabled");
-              }
-            });
-            el_1.onmouseup = function () {
-              clickButton(true);
-            };
-          }
-        } else return;
-      } else {
-        let container = document.querySelector(".ytp-chrome-controls .ytp-right-controls");
-        if (container?.firstElementChild) {
-          let existEl = document.getElementById("video_button_mmfytb_thunderarea");
-          if (!existEl) {
-            let el_1 = document.createElement("BUTTON");
-            el_1.classList.add("ytp-button");
-            el_1.id = "video_button_mmfytb_thunderarea";
-            container.insertBefore(el_1, container.firstElementChild);
+          el_1.addEventListener("mouseenter", () => {
+            if (videoButtonState) {
+              el_1.title = chrome.i18n.getMessage("VideoButtonTooltipEnabled");
+            } else {
+              el_1.title = chrome.i18n.getMessage("VideoButtonTooltipDisabled");
+            }
+          });
+          el_1.onmouseup = function () {
+            clickButton(true);
+          };
+        }
+      } else return;
+    } else if (isEmbed()) {
+      let container = document.querySelector(".action-menu-engagement-buttons-wrapper");
+      if (container?.firstElementChild) {
+        let existEl = document.getElementById("video_button_mmfytb_thunderarea");
+        if (!existEl) {
+          const html = `
+            <ytm-button-renderer class="circle-buttons" id="video_button_mmfytb_thunderarea">
+              <button class="ytSpecButtonShapeNextHost ytSpecButtonShapeNextText ytSpecButtonShapeNextOverlay ytSpecButtonShapeNextSizeM ytSpecButtonShapeNextIconOnlyDefault" title="" aria-label="" aria-disabled="false">
+              </button>
+            </ytm-button-renderer>
+          `;
+          const el_1 = new DOMParser().parseFromString(html, "text/html").body.firstElementChild;
+          container.insertBefore(el_1, container.firstElementChild);
 
-            el_1.addEventListener("mouseenter", setTextOnTooltip);
-            el_1.addEventListener("mousemove", enableTooltip);
-            el_1.addEventListener("mouseleave", hideVideoButTooltip);
-            el_1.onmouseup = function () {
-              clickButton(true);
-            };
-          }
-        } else return;
+          el_1.onmouseup = function () {
+            clickButton(true);
+          };
+        }
       }
+    } else {
+      let container = document.querySelector(".ytp-chrome-controls .ytp-right-controls");
+      if (container?.firstElementChild) {
+        let existEl = document.getElementById("video_button_mmfytb_thunderarea");
+        if (!existEl) {
+          let el_1 = document.createElement("BUTTON");
+          el_1.classList.add("ytp-button");
+          el_1.id = "video_button_mmfytb_thunderarea";
+          container.insertBefore(el_1, container.firstElementChild);
+
+          el_1.addEventListener("mouseenter", setTextOnTooltip);
+          el_1.addEventListener("mousemove", enableTooltip);
+          el_1.addEventListener("mouseleave", hideVideoButTooltip);
+          el_1.onmouseup = function () {
+            clickButton(true);
+          };
+        }
+      } else return;
     }
 
     setvideoButtonState();
@@ -193,10 +210,10 @@ function clickButton(vid) {
         newRecord["qapages"] = qapages;
         newRecord["qapages"][id] = newValues;
         chrome.storage.local.set(newRecord);
-        
+
         applyOptions(1);
       });
-    }
+    },
   );
 }
 
@@ -389,7 +406,7 @@ function reloadImages() {
             break;
           }
         }
-      } catch (error) { }
+      } catch (error) {}
     } else {
       source = image.src;
       image.src = source;
@@ -573,7 +590,7 @@ function applyOptions(mustReload) {
         isEmbed: isEmbed(),
         isYTMusic: isYoutubeMusic(),
       },
-      () => chrome.runtime.lastError
+      () => chrome.runtime.lastError,
     );
   }
   chrome.runtime.sendMessage(
@@ -589,7 +606,7 @@ function applyOptions(mustReload) {
           values,
           values.qapages[tabId],
           values.sspages[tabId] != undefined ? values.sspages[tabId] : values.sstabs[tabId],
-          siteName
+          siteName,
         );
         let videoOptions = {
           progress_bar: values.progress_bar,
@@ -606,7 +623,7 @@ function applyOptions(mustReload) {
           values.quick_access_buttons_video ? addVideoButton() : removeButtons(true, false);
         }
       });
-    }
+    },
   );
 }
 
