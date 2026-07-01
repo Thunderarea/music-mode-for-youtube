@@ -10,16 +10,16 @@ See the LICENSE file in the project root for full license terms.
 
 /* Mobile */
 /* Image of thumbnail */
-.video-thumbnail-img,
+.ytThumbnailViewModelImage img,
 /* Shorts in homepage */
 ytm-shorts-lockup-view-model img,
 /* Posts */
-ytm-rich-section-renderer img {
+ytm-rich-section-renderer img,
+/* Playlist thumbnails */
+img.video-thumbnail-img {
   display: none !important;
 }
 
-/* Outter container of video time in Home page */
-.video-thumbnail-overlay-bottom-left-right-group,
 /* Outter container of video time (recommended videos etc) */
 .video-thumbnail-overlay-bottom-group {
   height: 100% !important;
@@ -52,6 +52,10 @@ ytm-thumbnail-overlay-time-status-renderer {
   background-color: #323232 !important;
 }
 
+/* Time container homepage */
+yt-thumbnail-overlay-badge-view-model,
+/* Time container in videos with progress bar */
+.ytThumbnailBottomOverlayViewModelBadgeContainer,
 ytm-thumbnail-overlay-time-status-renderer,
 .video-thumbnail-overlay-bottom-icon-text,
 .video-thumbnail-overlay-bottom-icon {
@@ -63,6 +67,18 @@ ytm-thumbnail-overlay-time-status-renderer,
   height: 100% !important;
   justify-content: center !important;
   align-items: center !important;
+}
+
+/* Time container homepage */
+yt-thumbnail-overlay-badge-view-model,
+.ytThumbnailBottomOverlayViewModelBadgeContainer {
+  background-color: #323232 !important;
+}
+
+/* Time container in videos with progress bar */
+yt-thumbnail-bottom-overlay-view-model {
+  height: 100% !important;
+  flex-direction: column-reverse !important;
 }
 
 /* Normal video thumbnails */
@@ -87,7 +103,7 @@ ytm-thumbnail-overlay-time-status-renderer,
 }
 
 /* Collections in YouTube's Music channel */
-.video-thumbnail-container-compact {
+yt-collections-stack .video-thumbnail-container-compact {
   background-image: url('../img/youtube_logo.svg') !important;
   background-repeat: no-repeat !important;
   background-position: center !important;
@@ -110,6 +126,19 @@ ytm-backstage-image-renderer {
   background-color: #323232 !important;
 }
 
-badge-shape {
+/* Time element in videos */
+.ytBadgeShapeThumbnailBadge {
   background-color: #323232 !important;
+}
+
+/* PLaylist thumbnail in playlist's page */
+yt-content-preview-image-view-model {
+  display: none !important;
+}
+
+/* Playlist videos */
+ytm-compact-thumbnail .thumbnailBottomOverlayGroupHost {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
 }
