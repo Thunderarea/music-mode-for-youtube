@@ -86,13 +86,16 @@ async function setLowestQuality(ytb_player, retry = true) {
     }
   }
 
+  let currentVideoTime = 0;
   const playerQualityMetadata = localStorage.getItem("yt-player-quality");
+  const video = ytb_player.querySelector("video");
   try {
+    currentVideoTime = video.currentTime;
     ytb_player.setPlaybackQualityRange("tiny", "tiny");
     // Check that the quality has been set
-    const video = ytb_player.querySelector("video");
     const handler = async () => {
       const currentQuality = ytb_player.getPlaybackQuality();
+      if (currentVideoTime > 0) video.currentTime = currentVideoTime;
       if (currentQuality !== "tiny" && retry) await setLowestQuality(ytb_player, false);
     };
     video.addEventListener("loadedmetadata", handler, { once: true });
@@ -116,9 +119,20 @@ async function resetVideoQuality(ytb_player) {
 
   if (!lastQuality) return;
 
+  let currentVideoTime = 0;
   const playerQualityMetadata = localStorage.getItem("yt-player-quality");
+  const video = ytb_player.querySelector("video");
   try {
-    if (lastQuality != "unknown") ytb_player.setPlaybackQualityRange(lastQuality, lastQuality);
+
+    const handler = async () => {
+      if (currentVideoTime > 0) video.currentTime = currentVideoTime;
+    };
+
+    if (lastQuality != "unknown") {
+      currentVideoTime = video.currentTime;
+      ytb_player.setPlaybackQualityRange(lastQuality, lastQuality);
+      video.addEventListener("loadedmetadata", handler, { once: true });
+    }
   } catch (error) {
     console.error("resetVideoQuality: Error resetting video quality:", error);
   } finally {
@@ -126,6 +140,7 @@ async function resetVideoQuality(ytb_player) {
     if (playerQualityMetadata) {
       localStorage.setItem("yt-player-quality", playerQualityMetadata);
     }
+    if (currentVideoTime > 0) video.currentTime = currentVideoTime;
   }
 }
 
