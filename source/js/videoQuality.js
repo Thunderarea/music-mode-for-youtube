@@ -80,25 +80,34 @@ function stopWaitingForPlayer() {
 
 async function setLowestQuality(ytb_player, retry = true) {
   if (!sessionStorage.getItem("mmfytb_last_quality")) {
-    let quality = await getCurrentVideoQuality(ytb_player);
+    const quality = await getCurrentVideoQuality(ytb_player);
     if (quality !== "tiny") {
       sessionStorage.setItem("mmfytb_last_quality", quality);
     }
   }
 
-  let currentVideoTime = 0;
-  const playerQualityMetadata = localStorage.getItem("yt-player-quality");
   const video = ytb_player.querySelector("video");
+
+  const videoData = {
+    currentTime: video.currentTime,
+    videoId: getVideoId(ytb_player),
+  };
+  const playerQualityMetadata = localStorage.getItem("yt-player-quality");
+
   try {
-    currentVideoTime = video.currentTime;
-    ytb_player.setPlaybackQualityRange("tiny", "tiny");
     // Check that the quality has been set
     const handler = async () => {
+      const currentVideoId = getVideoId(ytb_player);
+      if (!videoData.videoId || currentVideoId != videoData.videoId ) return;
+
       const currentQuality = ytb_player.getPlaybackQuality();
-      if (currentVideoTime > 0) video.currentTime = currentVideoTime;
+      if (videoData.currentTime > 0) {
+        video.currentTime = videoData.currentTime;
+      }
       if (currentQuality !== "tiny" && retry) await setLowestQuality(ytb_player, false);
     };
     video.addEventListener("loadedmetadata", handler, { once: true });
+    ytb_player.setPlaybackQualityRange("tiny", "tiny");
   } catch (error) {
     console.error("setLowestQuality: Error setting video quality:", error);
   } finally {
@@ -119,19 +128,26 @@ async function resetVideoQuality(ytb_player) {
 
   if (!lastQuality) return;
 
-  let currentVideoTime = 0;
-  const playerQualityMetadata = localStorage.getItem("yt-player-quality");
   const video = ytb_player.querySelector("video");
+  const videoData = {
+    currentTime: video.currentTime,
+    videoId: getVideoId(ytb_player),
+  };
+
+  const playerQualityMetadata = localStorage.getItem("yt-player-quality");
+
   try {
 
     const handler = async () => {
-      if (currentVideoTime > 0) video.currentTime = currentVideoTime;
+      const currentVideoId = getVideoId(ytb_player);
+      if (!videoData.videoId || currentVideoId != videoData.videoId ) return;
+
+      if (videoData.currentTime > 0) video.currentTime = videoData.currentTime;
     };
 
     if (lastQuality != "unknown") {
-      currentVideoTime = video.currentTime;
-      ytb_player.setPlaybackQualityRange(lastQuality, lastQuality);
       video.addEventListener("loadedmetadata", handler, { once: true });
+      ytb_player.setPlaybackQualityRange(lastQuality, lastQuality);
     }
   } catch (error) {
     console.error("resetVideoQuality: Error resetting video quality:", error);
@@ -140,7 +156,6 @@ async function resetVideoQuality(ytb_player) {
     if (playerQualityMetadata) {
       localStorage.setItem("yt-player-quality", playerQualityMetadata);
     }
-    if (currentVideoTime > 0) video.currentTime = currentVideoTime;
   }
 }
 
@@ -192,4 +207,12 @@ function findVideoEl() {
     }
   }
   return video;
+}
+
+function getVideoId(videoPlayer) {
+  try {
+    return videoPlayer?.getPlayerResponse()?.videoDetails?.videoId || "";
+  } catch (e) {
+    return "";
+  }
 }
