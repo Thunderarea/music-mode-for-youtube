@@ -386,7 +386,6 @@ yt-thumbnail-bottom-overlay-view-model yt-thumbnail-badge-view-model badge-shape
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  padding: 0 !important;
 }
 
 yt-thumbnail-view-model:has(yt-thumbnail-hover-overlay-toggle-actions-view-model) {
@@ -453,5 +452,4 @@ yt-thumbnail-overlay-badge-view-model badge-shape.ytBadgeShapeThumbnailSpecial {
   color: white !important;
   background-color: transparent !important;
   align-items: flex-end !important;
-  margin-bottom: 8px !important;
 }
