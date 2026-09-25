@@ -354,8 +354,8 @@ ytd-thumbnail-overlay-time-status-renderer badge-shape {
 }
 
 /* Playlists in Playlists page */
-yt-thumbnail-overlay-badge-view-model,
-yt-thumbnail-bottom-overlay-view-model {
+yt-collections-stack yt-thumbnail-overlay-badge-view-model,
+yt-collections-stack yt-thumbnail-bottom-overlay-view-model {
   width: 100% !important;
   height: 100% !important;
   margin: 0 !important;
@@ -363,12 +363,19 @@ yt-thumbnail-bottom-overlay-view-model {
 
 yt-thumbnail-overlay-badge-view-model yt-thumbnail-badge-view-model,
 yt-thumbnail-bottom-overlay-view-model yt-thumbnail-badge-view-model {
-  width: 100% !important;
   height: 100% !important;
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
   margin: 0 !important;
+}
+
+yt-thumbnail-overlay-badge-view-model yt-thumbnail-badge-view-model {
+  width: 100% !important;
+}
+
+yt-thumbnail-bottom-overlay-view-model yt-thumbnail-badge-view-model {
+  width: auto !important;
 }
 
 yt-thumbnail-overlay-badge-view-model yt-thumbnail-badge-view-model badge-shape,
@@ -379,18 +386,6 @@ yt-thumbnail-bottom-overlay-view-model yt-thumbnail-badge-view-model badge-shape
   display: flex !important;
   justify-content: center !important;
   align-items: center !important;
-  padding: 0 !important;
-}
-
-.ytThumbnailBottomOverlayViewModelBadgeContainer {
-  width: 100% !important;
-  height: 100% !important;
-  position: absolute !important;
-  padding: 0 !important;
-}
-
-yt-thumbnail-overlay-progress-bar-view-model {
-  z-index: 2 !important;
 }
 
 yt-thumbnail-view-model:has(yt-thumbnail-hover-overlay-toggle-actions-view-model) {
@@ -426,4 +421,35 @@ animated-thumbnail-overlay-view-model img {
   width: 100% !important;
   border-radius: 12px !important;
   opacity: 1 !important;
+}
+
+/* Container of the badges (except the new badge) */
+yt-thumbnail-bottom-overlay-view-model {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.ytThumbnailBottomOverlayViewModelBadgeContainer {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding: 0 !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 5px !important;
+  background: #323232 !important;
+}
+
+/* Progress bar */
+yt-thumbnail-overlay-progress-bar-view-model {
+  z-index: 2 !important;
+  width: auto !important;
+}
+
+/* New badge */
+yt-thumbnail-overlay-badge-view-model badge-shape.ytBadgeShapeThumbnailSpecial {
+  color: white !important;
+  background-color: transparent !important;
+  align-items: flex-end !important;
 }

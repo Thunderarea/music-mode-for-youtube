@@ -106,3 +106,16 @@ ytd-secondary-search-container-renderer ytd-vertical-watch-card-list-renderer yt
 #product-image {
   display: none !important;
 }
+
+/* Next to the section title in Games */
+ytm-profile-icon {
+  display: none !important;
+}
+
+mini-game-card-view-model img {
+  display: none !important;
+}
+
+mini-game-card-view-model .ytMiniGameCardViewModelGradientScrim {
+  background: #323232 !important;
+}
