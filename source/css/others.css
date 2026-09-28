@@ -119,3 +119,8 @@ mini-game-card-view-model img {
 mini-game-card-view-model .ytMiniGameCardViewModelGradientScrim {
   background: #323232 !important;
 }
+
+/* Background image in topics (Search page) */
+cinematic-container-view-model img {
+  display: none !important;
+}
